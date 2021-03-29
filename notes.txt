@@ -1,7 +1,17 @@
 NOTE: 
 	- Must use powershell
 	- Must have python3
+	- Recommended using a venv
+
+*Start Enviroment*
+python3 -m venv pwork
+
 *Enter Enviroment*
-./pywork/Scripts/Activate.ps1
+./pwork/Scripts/Activate.ps1
+
+*Pip3 installs (inside venv)*
+- pyinstaller (if u want to export .exe)
+- cx_Oracle
+
 *Create Executable*
 pyinstaller --onefile xxx.py
