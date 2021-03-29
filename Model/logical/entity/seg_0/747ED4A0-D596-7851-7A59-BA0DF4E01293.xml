@@ -1,0 +1,128 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="747ED4A0-D596-7851-7A59-BA0DF4E01293" name="Profile">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 08:54:31 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="u_id" id="4FC8E0C4-C9F3-F2E7-6971-86F4A13568A7">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:08:23 UTC</createdTime>
+<generatorID>E51BE5AF-8575-EEAF-FD54-04D77003D371</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<referedAttribute>ED61221B-6323-A561-1B21-D8A285228842</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="327CCBED-184E-734A-377C-6B0DD0490BBC">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 08:54:51 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="weight" id="BFBC27A8-3848-A378-DA90-C4D376AB5A41">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 08:55:09 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="height" id="3A9C867B-BD7E-9E82-6DA2-3D60FE65CB7E">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:01:13 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="bday" id="E01D4A20-9B59-EEF1-C692-CC0991B4C942">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:01:53 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="daily_steps" id="C6195905-75C8-A92A-1E39-04FDB778B141">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:03:06 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="daily_cals" id="07088088-F3E5-6207-597B-5D09593670FD">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:06:22 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="23249782-4F76-DA02-BE8A-A135842AF922" name="Profile PK">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:18 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4FC8E0C4-C9F3-F2E7-6971-86F4A13568A7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

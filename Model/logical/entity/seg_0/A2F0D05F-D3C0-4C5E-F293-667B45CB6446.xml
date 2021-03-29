@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A2F0D05F-D3C0-4C5E-F293-667B45CB6446" name="Activitie Template">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:11:17 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="act_id" id="AF4E9CB6-D929-6D5D-5CA6-68CC822946EE">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:17:49 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="2F18AACB-FA4A-84E5-348E-8C2DCAA24F4C">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:20:32 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1B9E884F-39E6-CA01-64E6-AD81440805E6" name="Activitie Template PK">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:17:57 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>AF4E9CB6-D929-6D5D-5CA6-68CC822946EE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="activite_exercise" directorySegmentName="seg_0" id="A572AF6E-FF57-11C9-CE71-D593DEDF89C4">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:56:57 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<engineerTo>
+<item key="EC95321A-403F-8F03-14FD-766EF2EA32FA" value="true"/>
+</engineerTo>
+<sourcePk>1B9E884F-39E6-CA01-64E6-AD81440805E6</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A2F0D05F-D3C0-4C5E-F293-667B45CB6446</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>04D37824-9BC1-3AA3-F52B-BC303B378083</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

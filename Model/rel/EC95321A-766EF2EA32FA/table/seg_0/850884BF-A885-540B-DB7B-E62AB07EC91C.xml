@@ -1,0 +1,115 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="850884BF-A885-540B-DB7B-E62AB07EC91C" name="User">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>446A198B-44C4-2ACB-23FD-5673A8F034A6</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="27F92043-293F-835A-ACF7-61753E255FFF">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>ED61221B-6323-A561-1B21-D8A285228842</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="premium" id="2025BC2C-234A-7C10-A523-D9CF74662F66">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>14BD68A0-8B26-97C0-D70A-5F0DCC422677</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pt" id="1DFF4A8F-94E0-1205-9144-BA85BBF03394">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>73CA9EF7-D19B-AED3-FBEB-67B1B57C078E</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="active" id="E88EF8C1-437B-C034-9275-CE2F2F6F0267">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>ED2CF3ED-B88E-6EF0-3C93-65171FDF5789</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="username" id="615B0878-6E93-5315-0302-ACC9977BF700">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>19502664-6B8A-0F00-27AF-D660E94D9E77</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pass" id="3BB675DE-A044-EA68-0E7F-9A9536362133">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>58E35B88-E843-BAA0-950E-6BFF2031ADED</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="9E4A9892-0628-FF12-D779-9B50FE15CE6C">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>2B57E747-4221-DC1E-9382-56C8925DC5C2</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="CC40490B-CD72-7B0F-2018-0E84EEAD120E" name="User_PK">
+<createdBy>Dell</createdBy>
+<createdTime>2021-03-29 09:10:01 UTC</createdTime>
+<generatorID>400A4F37-B7D8-14D4-1C99-8255B37FB51F</generatorID>
+<ownerDesignName>Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27F92043-293F-835A-ACF7-61753E255FFF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
