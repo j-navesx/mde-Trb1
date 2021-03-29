@@ -1,0 +1,7 @@
+NOTE: 
+	- Must use powershell
+	- Must have python3
+*Enter Enviroment*
+./pywork/Scripts/Activate.ps1
+*Create Executable*
+pyinstaller --onefile xxx.py
