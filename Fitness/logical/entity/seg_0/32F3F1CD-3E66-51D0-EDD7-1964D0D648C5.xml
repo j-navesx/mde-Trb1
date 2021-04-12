@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="32F3F1CD-3E66-51D0-EDD7-1964D0D648C5" name="user_activity">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:43:36 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="42D1C1A9-5746-F2CD-827F-B268D027AB6C">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:44:47 UTC</createdTime>
+<generatorID>EA64F4A0-43A1-A07F-EA5A-D7B0C8C1A67C</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<referedAttribute>BF2BBE28-C5C5-63F1-5F5E-A1E32F8EC6FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="month" id="7E1C1BC9-9AE0-0014-8BEE-986849A78621">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:44:02 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="begin_date" id="517A3F0F-B354-62F3-9069-87AB58EF202C">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:44:07 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT047</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="end_date" id="5FCDFCCB-5FD4-E13C-148D-5F11E4E8D01F">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:44:26 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT047</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="paid" id="5E5DEF6C-1E67-451D-0721-424787B7B4D6">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:45:25 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

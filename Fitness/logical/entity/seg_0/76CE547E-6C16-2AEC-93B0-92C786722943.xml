@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="76CE547E-6C16-2AEC-93B0-92C786722943" name="friends_leaderboard">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:00:13 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="leader_id" id="636DDC1D-17A9-24EC-9DD7-E6C68E4F618C">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:08:48 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id" id="AF18413D-9DA9-248D-2003-2A6BDE216A37">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:07:32 UTC</createdTime>
+<generatorID>E95F0534-50B6-2F35-2549-86198D556D73</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<referedAttribute>BF2BBE28-C5C5-63F1-5F5E-A1E32F8EC6FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="BB879F5D-98D1-D8E9-97CA-3A0CE1548DC9">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:06:13 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="place" id="29948E69-DB3A-5D26-D987-2805C26805E5">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:05:06 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="exercise" id="2657097B-F766-0782-44A3-89AEE2C9955B">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:05:21 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="value" id="06B0EA09-5DC4-BD78-235D-33E1A99B9303">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:05:16 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="25C51738-E532-2F7D-8284-DC3C6DD40848" name="friends_leaderboard PK">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 10:08:56 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>636DDC1D-17A9-24EC-9DD7-E6C68E4F618C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

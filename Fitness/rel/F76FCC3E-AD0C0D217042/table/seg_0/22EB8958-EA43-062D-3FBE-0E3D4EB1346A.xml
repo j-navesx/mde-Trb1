@@ -1,0 +1,167 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="22EB8958-EA43-062D-3FBE-0E3D4EB1346A" name="Exercises">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>1A2B35DE-6BCD-DE26-9748-19CA3E8CA9D1</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ex_id" id="29585D3B-0651-857F-2E0D-708215AC40F5">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>B9824CB8-E89E-F4FC-7471-E6D5231987C6</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="activities_template_act_id" id="F6D1F46E-F51D-7187-5365-D33ED0E813D9">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>65E3F984-68D8-F8F3-37EF-86F4E7D67DBB</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="91896E2B-918D-AC81-8EA6-49AC95DB5467" referredColumn="9AC599DB-410A-2803-5FFF-0D86A98CAE1E"/>
+</associations>
+</Column>
+<Column name="user_id" id="2AA39E23-F6DE-477F-2F2F-D217CD05C390">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>6CA9872E-2118-E497-0AE6-C06CBA5615B7</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A640BB0-F826-097C-9905-346BFD58A2AF" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
+</associations>
+</Column>
+<Column name="duration" id="DB5830D6-7003-BE1B-7EF4-277A879507CB">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>91D3E2E4-31AE-8A82-0B80-75C8A26F49C9</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT014</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="steps" id="E3F85CB4-20CD-23A0-7AB5-0EDD0BDE31CF">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>7D2C28DF-5F6D-8279-3661-0D5AAFF937B5</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="distance" id="2D535944-6857-977A-00C0-B5F6DE13094E">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>A44E50B3-0ABC-5330-70AC-2859C688BF87</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="calories" id="EA158E63-58EC-6428-0BDC-D21B16A0B55A">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>B49BF791-0A89-7E9C-471E-9444C0FB9ED7</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="begin_date" id="2DCED0C6-0262-89E4-15DB-5787F5E7783E">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>8844E45E-AC48-2FE2-24BD-D9E22CFCAADA</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="end_date" id="943318C9-B1B0-6946-8ABB-DE755A1E33FE">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>CD581FF0-22E4-625B-2142-FBE93857F171</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3BE2BB13-DB4C-F5C0-EA9F-108AED1F9C15" name="Exercises_PK">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>4893F2AB-8861-6D5E-2EAE-42D18C5C45B1</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29585D3B-0651-857F-2E0D-708215AC40F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E0202993-A8FF-817B-D5E4-423A5F86ADFE" name="Exercises_activities_template_FK">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>3A65B306-CC5D-46AA-40BD-732A302B2D57</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F6D1F46E-F51D-7187-5365-D33ED0E813D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1CB08949-6030-2E8E-7A4E-5ECA9B9C3F4F" name="Exercises_user_FK">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>6306C47E-54CE-CC0F-7D59-124AA8675519</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2AA39E23-F6DE-477F-2F2F-D217CD05C390"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

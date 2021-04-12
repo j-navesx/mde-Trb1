@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user_daily_status" directorySegmentName="seg_0" id="587E579D-A26F-0E5A-A8CD-BD5BEB87C5E2">
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-12 09:31:58 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<sourcePk>9105C780-CD34-4676-E292-246957A7230D</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>30452ED3-30A7-1975-1875-65BB886939C9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>24F89629-161E-1245-7595-D5FF167C4EA2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFED285C-9B39-418F-ECB0-AC9DED69B1D4" name="Transaction">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>D6C961AC-DD9B-A180-C777-DBFAD2417D6F</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="tr_id" id="B95457D9-782E-091C-0405-BB7318046599">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>E67F3619-F1AD-EFFC-DDDD-61E8D980794B</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="user_id" id="EAF2837C-940F-CD63-EBE2-A1EF98A67BBC">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>A8BC209E-B1C7-8F63-8086-72F0AA113F7C</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DBF42689-828E-2A75-60F8-3A3283D09A14" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
+</associations>
+</Column>
+<Column name="value" id="16C98522-A7D9-20B7-4244-BBEF14F358E3">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>C08849E6-485B-ADD1-684F-FE62D57DA7BC</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,4,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="date" id="FD164874-B7E0-BD9E-6C61-927065480131">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>319AD47C-5727-352C-FE2A-8A904E7EF45A</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="60311B69-B861-8D88-A0EA-2BA96FBD9F4F" name="Transaction_PK">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>74660ADE-A613-3D55-ABE6-C8563C18EF70</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B95457D9-782E-091C-0405-BB7318046599"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D" name="Transaction_user_FK">
+<createdBy>guilh</createdBy>
+<createdTime>2021-03-30 15:31:56 UTC</createdTime>
+<generatorID>03638656-9461-3635-AF44-CA78947B0E3A</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EAF2837C-940F-CD63-EBE2-A1EF98A67BBC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
