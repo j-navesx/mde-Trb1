@@ -9,11 +9,6 @@
 <accessDriverType>oracle_loader</accessDriverType>
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
-<ColumnProxy name="daity_steps" id="0A1C2B47-E7EA-B17F-2BF9-A2F529ACB73F">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-</ColumnProxy>
 <ColumnProxy name="bday" id="4A799A24-BC9C-0791-2F9B-28C9101DF714">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
@@ -30,11 +25,6 @@
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="name" id="A22E9979-8A00-79C1-F7C8-3D641ED20CED">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-</ColumnProxy>
-<ColumnProxy name="daily_cals" id="C612E9D5-6313-9C19-EB4D-1F6C3D9024DE">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>

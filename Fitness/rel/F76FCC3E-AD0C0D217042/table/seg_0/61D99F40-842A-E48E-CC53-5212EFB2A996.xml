@@ -18,6 +18,8 @@
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="3B23A41A-AFE2-E757-4A8B-B185D8FC8DA7" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
@@ -72,32 +74,6 @@
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="daity_steps" id="0A1C2B47-E7EA-B17F-2BF9-A2F529ACB73F">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:31:56 UTC</createdTime>
-<generatorID>189C485C-F9C2-D98E-D8DA-095DADEE0C67</generatorID>
-<ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="daily_cals" id="C612E9D5-6313-9C19-EB4D-1F6C3D9024DE">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:31:56 UTC</createdTime>
-<generatorID>83FEF32F-C2E9-881A-98AE-86EA7DB8C0CC</generatorID>
-<ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT026</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="gender" id="FCC52DCD-5A4B-7B32-FC00-794BBB644565">

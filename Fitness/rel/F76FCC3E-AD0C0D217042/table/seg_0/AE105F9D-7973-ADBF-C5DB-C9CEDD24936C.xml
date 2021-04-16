@@ -101,11 +101,13 @@
 <createdTime>2021-04-16 15:18:37 UTC</createdTime>
 <generatorID>E1FC028F-7342-275D-F8A2-6DF36C2341EB</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
+<defaultOntNull>true</defaultOntNull>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="C3DA56D4-6FA5-A994-DB45-7B28D3BE3578" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
