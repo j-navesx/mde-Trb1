@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="totals" directorySegmentName="seg_0" id="06A80B72-BDB0-8440-865B-54CE6EE33CB8">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <logging>YES</logging>
 <partitionedRowMovement>DISABLE</partitionedRowMovement>
@@ -10,42 +10,42 @@
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="fit_user_id" id="1F5CB9C4-9005-5AE3-0BFC-BED72B1426B9">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="distance" id="33B3D5C3-A0F4-EA46-FAA6-02123B0844DC">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="activities_template_act_id" id="98B722C7-70D6-8C4D-DC29-EE78266098D2">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="calories" id="FE49FBCA-70FC-366F-B014-664C92C03510">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="totals_fit_user_FK" id="1D1E7D9E-1DE3-87E2-8694-022B579D6663">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="totals_activities_template_FK" id="4FAF68BE-2CB4-8FCF-BCF4-502716650322">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 </foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="totals_PK" id="244A16AA-12C2-73C9-021B-9A5F1FCEA7E6">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>

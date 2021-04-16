@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="daily_goals" directorySegmentName="seg_0" id="FBEC0F97-886C-96A2-A9FF-17FA8FBBE8DD">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <logging>YES</logging>
 <partitionedRowMovement>DISABLE</partitionedRowMovement>
@@ -10,34 +10,34 @@
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="daily_steps" id="98A35BFE-7BF7-CDD7-EC64-3CFC8FDC9350">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <defaultValue>0</defaultValue>
 </ColumnProxy>
 <ColumnProxy name="daily_cals" id="AC9D78EE-929B-8360-5324-9D993AB3D1D1">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <defaultValue>0</defaultValue>
 </ColumnProxy>
 <ColumnProxy name="fit_user_id" id="D36EB61A-E41F-8897-E77B-4FCBE028EEAF">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="daily_goals_fit_user_FK" id="27DEF463-0E98-072F-F629-40C634FF9342">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 </foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="daily_goals_PK" id="3CB20B65-9067-BF24-E66D-7044F37EEB2C">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>

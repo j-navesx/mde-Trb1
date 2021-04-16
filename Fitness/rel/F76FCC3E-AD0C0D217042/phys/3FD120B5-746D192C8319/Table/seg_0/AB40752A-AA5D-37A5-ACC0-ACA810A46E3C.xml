@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="daily_status" directorySegmentName="seg_0" id="AB40752A-AA5D-37A5-ACC0-ACA810A46E3C">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <logging>YES</logging>
 <partitionedRowMovement>DISABLE</partitionedRowMovement>
@@ -10,53 +10,54 @@
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="completed" id="24F71097-CDFD-5ABC-7F1D-F6CF78279AE7">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <defaultValue>0</defaultValue>
 </ColumnProxy>
 <ColumnProxy name="steps" id="30B6BAD6-CBC6-5297-BD0D-65A0FCF08665">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="calories" id="3F74CDD5-A929-3F0F-1ED7-D4CBB85A045F">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="daily_id" id="6593DA1D-C7FE-757E-6D4D-CDE8353DF346">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 </ColumnProxy>
 <ColumnProxy name="distance" id="752D96EF-F0DD-BB7F-7555-32C390540C5E">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="weigth" id="89043E3A-6B27-9ED7-19B7-D15DD5BC8F3F">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="fit_user_id" id="B3905466-0FAE-FDDD-0E2A-BCE7E406AB81">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="daily_status_fit_user_FK" id="9900E6CF-5C5F-D736-51A7-03CEC8A28E1C">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 </foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="daily_status_PK" id="13BAAB43-CB02-E133-38FB-EBE701F1958A">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>

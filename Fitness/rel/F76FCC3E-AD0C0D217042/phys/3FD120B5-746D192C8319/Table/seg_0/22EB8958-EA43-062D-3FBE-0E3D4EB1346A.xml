@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="exercises" directorySegmentName="seg_0" id="22EB8958-EA43-062D-3FBE-0E3D4EB1346A">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <logging>YES</logging>
 <partitionedRowMovement>DISABLE</partitionedRowMovement>
@@ -10,67 +10,68 @@
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="ex_id" id="29585D3B-0651-857F-2E0D-708215AC40F5">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 </ColumnProxy>
 <ColumnProxy name="fit_user_id" id="2AA39E23-F6DE-477F-2F2F-D217CD05C390">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="distance" id="2D535944-6857-977A-00C0-B5F6DE13094E">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="begin_date" id="2DCED0C6-0262-89E4-15DB-5787F5E7783E">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="end_date" id="943318C9-B1B0-6946-8ABB-DE755A1E33FE">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="duration" id="DB5830D6-7003-BE1B-7EF4-277A879507CB">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="steps" id="E3F85CB4-20CD-23A0-7AB5-0EDD0BDE31CF">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="calories" id="EA158E63-58EC-6428-0BDC-D21B16A0B55A">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="activities_template_act_id" id="F6D1F46E-F51D-7187-5365-D33ED0E813D9">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="exercises_fit_user_FK" id="1CB08949-6030-2E8E-7A4E-5ECA9B9C3F4F">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="exercises_act_FK" id="E0202993-A8FF-817B-D5E4-423A5F86ADFE">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 </foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="exercises_PK" id="3BE2BB13-DB4C-F5C0-EA9F-108AED1F9C15">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>

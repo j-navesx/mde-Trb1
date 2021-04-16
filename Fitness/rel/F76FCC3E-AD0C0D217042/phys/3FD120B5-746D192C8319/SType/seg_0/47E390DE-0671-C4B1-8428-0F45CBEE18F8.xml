@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <StructuredTypeProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.StructuredTypeProxyOraclev10g" name="SDO_GEOMETRY" directorySegmentName="seg_0" id="47E390DE-0671-C4B1-8428-0F45CBEE18F8">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-16 16:00:11 UTC</createdTime>
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <owner>MDSYS</owner>
 </StructuredTypeProxyOraclev10g>
