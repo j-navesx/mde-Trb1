@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="77098E78-8EDD-4FF3-3B38-C9657BA0893D" name="Notice">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="77098E78-8EDD-4FF3-3B38-C9657BA0893D" name="notice">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>241C9386-BE5C-49CA-E939-9C8C6C2D264F</generatorID>
@@ -34,15 +34,29 @@
 <colAssociation fkAssociation="844821A1-E01D-1486-A764-B11F63562A49" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
 </associations>
 </Column>
+<Column name="exercises_ex_id" id="5C8151E9-D79C-B343-A483-374DF6A34F79">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>3D4C38DD-554C-B557-AAD7-478C98DAD233</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FD8E2438-BF7A-F5CF-22D6-86A7E1042284" referredColumn="29585D3B-0651-857F-2E0D-708215AC40F5"/>
+</associations>
+</Column>
 <Column name="date_hour" id="0067D371-EF7F-91AA-10E8-3EFC73B2AA0F">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>B53D2739-E286-BF96-BC62-AEA9C456E9AC</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
+<logicalDatatype>LOGDT047</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -63,7 +77,6 @@
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>CF0A7586-8D08-BBC1-A353-167E4A323D85</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -76,7 +89,6 @@
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>8C4D5B73-E081-69C7-1D04-8D4011A42C6C</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -107,6 +119,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="AB08E9DF-3F8B-5B1C-0902-FF99B687E606"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A7C9C441-8385-40A9-79F1-D9120C25B519" name="notice_exercises_FK">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>8E2EDBA3-4ED3-A3B7-E647-A89DDD128D0A</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5C8151E9-D79C-B343-A483-374DF6A34F79"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

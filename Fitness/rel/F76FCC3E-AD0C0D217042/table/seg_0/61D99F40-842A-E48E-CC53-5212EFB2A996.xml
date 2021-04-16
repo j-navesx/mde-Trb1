@@ -100,6 +100,19 @@
 <ownDataTypeParameters>,6,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="gender" id="FCC52DCD-5A4B-7B32-FC00-794BBB644565">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>077AF04E-1E7B-61BF-4EF5-65A303C1AFE8</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64</dataTypeSize>
+<ownDataTypeParameters>64,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="BFBC47A2-29DD-5AC9-5E53-BBF16C05D083" name="profile_PK">

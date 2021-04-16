@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DBF42689-828E-2A75-60F8-3A3283D09A14" containerWithKeyObject="FFED285C-9B39-418F-ECB0-AC9DED69B1D4" localFKIndex="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D" name="transaction_user_FK">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:31:56 UTC</createdTime>
-<generatorID>03638656-9461-3635-AF44-CA78947B0E3A</generatorID>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="82E7EE65-EEF7-01CB-DFF8-6B3C74E039E7" containerWithKeyObject="AB40752A-AA5D-37A5-ACC0-ACA810A46E3C" localFKIndex="9900E6CF-5C5F-D736-51A7-03CEC8A28E1C" name="daily_status_user_FK">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>587E579D-A26F-0E5A-A8CD-BD5BEB87C5E2</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <referredTableLongName>user</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

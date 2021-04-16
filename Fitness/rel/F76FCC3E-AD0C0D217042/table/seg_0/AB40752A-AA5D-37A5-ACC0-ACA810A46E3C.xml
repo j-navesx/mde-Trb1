@@ -19,10 +19,10 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="user_id" id="10DA048E-8A6D-57CD-7F33-05FE5219E64F">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:31:56 UTC</createdTime>
-<generatorID>CA061EF8-2445-6131-FAAB-8581871D338C</generatorID>
+<Column name="user_id1" id="B3905466-0FAE-FDDD-0E2A-BCE7E406AB81">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>09C59EFE-0AEC-E7EB-EA47-2EC548540699</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -31,7 +31,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="601B80A1-4EC4-EC89-AB8F-C165FF16D55E" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
+<colAssociation fkAssociation="82E7EE65-EEF7-01CB-DFF8-6B3C74E039E7" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
 </associations>
 </Column>
 <Column name="distance" id="752D96EF-F0DD-BB7F-7555-32C390540C5E">
@@ -86,6 +86,20 @@
 <ownDataTypeParameters>,7,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="completed" id="24F71097-CDFD-5ABC-7F1D-F6CF78279AE7">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>0A2C1222-00CE-3233-2EEC-C27C4863987C</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="13BAAB43-CB02-E133-38FB-EBE701F1958A" name="daily_status_PK">
@@ -100,15 +114,15 @@
 <colUsage columnID="6593DA1D-C7FE-757E-6D4D-CDE8353DF346"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="DF324313-59A6-8F9E-2ED3-A7BCC282FEB2" name="daily_status_user_FK">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:31:56 UTC</createdTime>
-<generatorID>4A48585F-B275-E676-69AB-7823B8518772</generatorID>
+<ind_PK_UK id="9900E6CF-5C5F-D736-51A7-03CEC8A28E1C" name="daily_status_user_FK">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-16 14:33:42 UTC</createdTime>
+<generatorID>587E579D-A26F-0E5A-A8CD-BD5BEB87C5E2</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="10DA048E-8A6D-57CD-7F33-05FE5219E64F"/>
+<colUsage columnID="B3905466-0FAE-FDDD-0E2A-BCE7E406AB81"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

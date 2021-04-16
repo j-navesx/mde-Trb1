@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFED285C-9B39-418F-ECB0-AC9DED69B1D4" name="Transaction">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FFED285C-9B39-418F-ECB0-AC9DED69B1D4" name="transaction">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>D6C961AC-DD9B-A180-C777-DBFAD2417D6F</generatorID>
@@ -54,7 +54,7 @@
 <ownerDesignName>Fitness</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
+<logicalDatatype>LOGDT047</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -72,7 +72,7 @@
 <colUsage columnID="B95457D9-782E-091C-0405-BB7318046599"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D" name="Transaction_user_FK">
+<ind_PK_UK id="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D" name="transaction_user_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>03638656-9461-3635-AF44-CA78947B0E3A</generatorID>
