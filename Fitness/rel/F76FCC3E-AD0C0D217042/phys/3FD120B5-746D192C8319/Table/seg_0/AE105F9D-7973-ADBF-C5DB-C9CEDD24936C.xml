@@ -14,11 +14,6 @@
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="fit_user_id" id="42667DED-01B9-8F03-E174-F3905DFCD7CE">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-</ColumnProxy>
 <ColumnProxy name="password" id="4A90E6D6-019B-A78F-ECA3-173E0D1AB09E">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
@@ -51,20 +46,6 @@
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
-<indexProxies>
-<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="fit_user__IDX" id="D003E531-7274-CE71-F6E2-A620E43135D0">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-</IndexProxy>
-</indexProxies>
-<foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fit_user_fit_user_FK" id="ED8728D9-52A6-E96E-10DD-A10CE20B2D43">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-</ForeignKey>
-</foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="user_PK" id="038795AC-9CB7-CB65-B516-BACEE0957529">
 <createdBy>Guilherme</createdBy>

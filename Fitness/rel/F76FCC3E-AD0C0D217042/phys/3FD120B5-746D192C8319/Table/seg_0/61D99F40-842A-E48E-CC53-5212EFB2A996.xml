@@ -8,6 +8,7 @@
 <temporaryChanged>false</temporaryChanged>
 <accessDriverType>oracle_loader</accessDriverType>
 <rejectLimit></rejectLimit>
+<storeAs>CLOB</storeAs>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="bday" id="4A799A24-BC9C-0791-2F9B-28C9101DF714">
 <createdBy>Guilherme</createdBy>
@@ -23,6 +24,7 @@
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 </ColumnProxy>
 <ColumnProxy name="name" id="A22E9979-8A00-79C1-F7C8-3D641ED20CED">
 <createdBy>Guilherme</createdBy>
