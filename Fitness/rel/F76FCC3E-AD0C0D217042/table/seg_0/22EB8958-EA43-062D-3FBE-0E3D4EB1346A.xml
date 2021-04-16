@@ -129,7 +129,7 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="3BE2BB13-DB4C-F5C0-EA9F-108AED1F9C15" name="Exercises_PK">
+<ind_PK_UK id="3BE2BB13-DB4C-F5C0-EA9F-108AED1F9C15" name="exercises_PK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>4893F2AB-8861-6D5E-2EAE-42D18C5C45B1</generatorID>
@@ -141,7 +141,7 @@
 <colUsage columnID="29585D3B-0651-857F-2E0D-708215AC40F5"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E0202993-A8FF-817B-D5E4-423A5F86ADFE" name="exercises_act_temp_FK">
+<ind_PK_UK id="E0202993-A8FF-817B-D5E4-423A5F86ADFE" name="exercises_act_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>3A65B306-CC5D-46AA-40BD-732A302B2D57</generatorID>
