@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="transaction" directorySegmentName="seg_0" id="FFED285C-9B39-418F-ECB0-AC9DED69B1D4">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:59 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <logging>YES</logging>
 <partitionedRowMovement>DISABLE</partitionedRowMovement>
@@ -10,37 +10,37 @@
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="value" id="16C98522-A7D9-20B7-4244-BBEF14F358E3">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="tr_id" id="B95457D9-782E-091C-0405-BB7318046599">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="fit_user_id" id="EAF2837C-940F-CD63-EBE2-A1EF98A67BBC">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="t_date" id="FD164874-B7E0-BD9E-6C61-927065480131">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <foreignKeys>
 <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="transaction_fit_user_FK" id="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 </foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Transaction_PK" id="60311B69-B861-8D88-A0EA-2BA96FBD9F4F">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>

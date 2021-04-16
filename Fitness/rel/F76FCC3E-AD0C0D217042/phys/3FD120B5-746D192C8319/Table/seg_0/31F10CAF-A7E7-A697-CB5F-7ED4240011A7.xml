@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="activities_template" directorySegmentName="seg_0" id="31F10CAF-A7E7-A697-CB5F-7ED4240011A7">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <logging>YES</logging>
 <partitionedRowMovement>DISABLE</partitionedRowMovement>
@@ -10,35 +10,35 @@
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
 <ColumnProxy name="act_id" id="9AC599DB-410A-2803-5FFF-0D86A98CAE1E">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="cal_time_mult" id="9AEE7AEE-EDC8-B6D6-9B98-46E77B947DBE">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="name" id="AD0E6BC6-DCF0-8665-0960-6F982ABC5361">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="cal_dist_mutl" id="DBDD5342-2C46-F01D-86F6-1933FAF7A8F2">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="cal_step_mult" id="DE1E0E83-29F8-27AC-E20A-637B17C2C3B7">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="activities_template_PK" id="4AA17C66-BC66-BEE2-1A71-CAA4174B8C69">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 15:55:58 UTC</createdTime>
+<createdBy>Dell</createdBy>
+<createdTime>2021-04-16 16:00:11 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
