@@ -55,7 +55,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,4,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="date" id="319AD47C-5727-352C-FE2A-8A904E7EF45A">
+<Attribute name="t_date" id="319AD47C-5727-352C-FE2A-8A904E7EF45A">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:29:50 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -73,8 +73,9 @@
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:09:42 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

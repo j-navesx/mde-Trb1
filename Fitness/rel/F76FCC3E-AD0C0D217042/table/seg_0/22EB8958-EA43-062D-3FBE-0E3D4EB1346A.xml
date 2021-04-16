@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="act_id" id="F6D1F46E-F51D-7187-5365-D33ED0E813D9">
+<Column name="activities_template_act_id" id="F6D1F46E-F51D-7187-5365-D33ED0E813D9">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>65E3F984-68D8-F8F3-37EF-86F4E7D67DBB</generatorID>
@@ -34,7 +34,7 @@
 <colAssociation fkAssociation="91896E2B-918D-AC81-8EA6-49AC95DB5467" referredColumn="9AC599DB-410A-2803-5FFF-0D86A98CAE1E"/>
 </associations>
 </Column>
-<Column name="user_id" id="2AA39E23-F6DE-477F-2F2F-D217CD05C390">
+<Column name="fit_user_id" id="2AA39E23-F6DE-477F-2F2F-D217CD05C390">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>6CA9872E-2118-E497-0AE6-C06CBA5615B7</generatorID>
@@ -141,7 +141,7 @@
 <colUsage columnID="29585D3B-0651-857F-2E0D-708215AC40F5"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E0202993-A8FF-817B-D5E4-423A5F86ADFE" name="exercises_activities_template_FK">
+<ind_PK_UK id="E0202993-A8FF-817B-D5E4-423A5F86ADFE" name="exercises_act_temp_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>3A65B306-CC5D-46AA-40BD-732A302B2D57</generatorID>
@@ -152,7 +152,7 @@
 <colUsage columnID="F6D1F46E-F51D-7187-5365-D33ED0E813D9"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="1CB08949-6030-2E8E-7A4E-5ECA9B9C3F4F" name="exercises_user_FK">
+<ind_PK_UK id="1CB08949-6030-2E8E-7A4E-5ECA9B9C3F4F" name="exercises_fit_user_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>6306C47E-54CE-CC0F-7D59-124AA8675519</generatorID>

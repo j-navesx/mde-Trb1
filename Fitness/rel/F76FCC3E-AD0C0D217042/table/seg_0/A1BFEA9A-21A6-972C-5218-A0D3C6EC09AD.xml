@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="user_id" id="361DAEF8-6A13-FACF-A7B4-0EC68BCB4C81">
+<Column name="fit_user_id" id="361DAEF8-6A13-FACF-A7B4-0EC68BCB4C81">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>42D1C1A9-5746-F2CD-827F-B268D027AB6C</generatorID>
@@ -33,7 +33,7 @@
 <colAssociation fkAssociation="4170E521-65C4-B922-E0EB-2881E15A5E04" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
 </associations>
 </Column>
-<Column name="Date" id="7C88AC45-40E7-BB99-801F-62C0AB7D6017">
+<Column name="act_date" id="7C88AC45-40E7-BB99-801F-62C0AB7D6017">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>7E1C1BC9-9AE0-0014-8BEE-986849A78621</generatorID>
@@ -95,7 +95,7 @@
 <colUsage columnID="8FED5EF7-5E91-0859-F91A-43137B02A5E3"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="580FF504-4A98-20A2-6942-16598BFCC819" name="user_activity_user_FK">
+<ind_PK_UK id="580FF504-4A98-20A2-6942-16598BFCC819" name="user_activity_fit_user_FK">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>EA64F4A0-43A1-A07F-EA5A-D7B0C8C1A67C</generatorID>

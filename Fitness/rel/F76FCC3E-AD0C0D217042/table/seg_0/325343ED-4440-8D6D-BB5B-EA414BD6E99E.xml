@@ -18,7 +18,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="user_id" id="DA32BE62-626E-19FA-178D-AD5B77E5659F">
+<Column name="fit_user_id" id="DA32BE62-626E-19FA-178D-AD5B77E5659F">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>E48415FD-5744-B64F-BD95-AB7FE24FAC63</generatorID>
@@ -57,7 +57,7 @@
 <colUsage columnID="C2787369-E9B5-F946-7BB1-DBFB57945626"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="002422EA-61D6-BC5D-5AFD-20CF1063581E" name="friends_list_user_FK">
+<ind_PK_UK id="002422EA-61D6-BC5D-5AFD-20CF1063581E" name="friends_list_fit_user_FK">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>0C1BA97B-C894-CF72-942F-B5E3BFEBB89E</generatorID>

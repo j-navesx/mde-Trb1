@@ -19,7 +19,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="user_id" id="EAF2837C-940F-CD63-EBE2-A1EF98A67BBC">
+<Column name="fit_user_id" id="EAF2837C-940F-CD63-EBE2-A1EF98A67BBC">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>A8BC209E-B1C7-8F63-8086-72F0AA113F7C</generatorID>
@@ -47,7 +47,7 @@
 <ownDataTypeParameters>,4,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="date" id="FD164874-B7E0-BD9E-6C61-927065480131">
+<Column name="t_date" id="FD164874-B7E0-BD9E-6C61-927065480131">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>319AD47C-5727-352C-FE2A-8A904E7EF45A</generatorID>
@@ -72,7 +72,7 @@
 <colUsage columnID="B95457D9-782E-091C-0405-BB7318046599"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D" name="transaction_user_FK">
+<ind_PK_UK id="E32BFFE5-2732-1C4A-77CA-29DB4C3CB36D" name="transaction_fit_user_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>03638656-9461-3635-AF44-CA78947B0E3A</generatorID>

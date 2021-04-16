@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0B942364-BA2D-E37C-EC25-30980D70D862" containerWithKeyObject="FBEC0F97-886C-96A2-A9FF-17FA8FBBE8DD" localFKIndex="27DEF463-0E98-072F-F629-40C634FF9342" name="daily_goals_fit_user_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C3DA56D4-6FA5-A994-DB45-7B28D3BE3578" containerWithKeyObject="AE105F9D-7973-ADBF-C5DB-C9CEDD24936C" localFKIndex="ED8728D9-52A6-E96E-10DD-A10CE20B2D43" name="fit_user_fit_user_FK">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 14:33:42 UTC</createdTime>
-<generatorID>8AB5467D-36DE-F1D7-1E6D-D1A421879EAB</generatorID>
+<createdTime>2021-04-16 15:18:37 UTC</createdTime>
+<generatorID>E9F431A7-A486-B8F2-0AF3-1014E68E5911</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <referredTableLongName>fit_user</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

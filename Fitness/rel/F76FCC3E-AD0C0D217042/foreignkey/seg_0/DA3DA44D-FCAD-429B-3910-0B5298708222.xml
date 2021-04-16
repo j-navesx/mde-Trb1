@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DA3DA44D-FCAD-429B-3910-0B5298708222" containerWithKeyObject="272D7B72-2ED6-BFDC-0B2A-45DC57EF6D3D" localFKIndex="C55DB47E-513D-D31B-8B89-584146F82584" name="friends_leaderboard_user_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DA3DA44D-FCAD-429B-3910-0B5298708222" containerWithKeyObject="272D7B72-2ED6-BFDC-0B2A-45DC57EF6D3D" localFKIndex="C55DB47E-513D-D31B-8B89-584146F82584" name="fl_user_FK">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>E95F0534-50B6-2F35-2549-86198D556D73</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
-<referredTableLongName>user</referredTableLongName>
+<referredTableLongName>fit_user</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>
 <referredTableID>AE105F9D-7973-ADBF-C5DB-C9CEDD24936C</referredTableID>
 <keyObject>038795AC-9CB7-CB65-B516-BACEE0957529</keyObject>

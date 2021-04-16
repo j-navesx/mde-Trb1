@@ -29,7 +29,7 @@
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="month" id="7E1C1BC9-9AE0-0014-8BEE-986849A78621">
+<Attribute name="act_date" id="7E1C1BC9-9AE0-0014-8BEE-986849A78621">
 <createdBy>Dell</createdBy>
 <createdTime>2021-04-12 09:44:02 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -39,7 +39,7 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="begin_date" id="517A3F0F-B354-62F3-9069-87AB58EF202C">

@@ -80,7 +80,7 @@
 <logicalDatatype>LOGDT047</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="comment" id="CF0A7586-8D08-BBC1-A353-167E4A323D85">
+<Attribute name="description" id="CF0A7586-8D08-BBC1-A353-167E4A323D85">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:08:32 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -112,8 +112,9 @@
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:07:44 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
