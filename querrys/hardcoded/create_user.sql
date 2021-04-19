@@ -17,20 +17,14 @@ begin
     if ipt_id != null then
         insert into fit_user (username, password, email, premium, active, pt, fit_user_id)
         values (iusername,ipassword,iemail,ipremium,iactive,ipt,ipt_id);
-        
-        insert into profile (name, weight, height, bday, gender)
-        values (iname, iweight, iheight, ibday, igender);
     else
         insert into fit_user (username, password, email, premium, active, pt)
         values (iusername,ipassword,iemail,ipremium,iactive, ipt);
-        
-        insert into profile (name, weight, height, bday, gender)
-        values (iname, iweight, iheight, ibday, igender);
     end if;
+    
+    insert into profile (name, weight, height, bday, gender)
+    values (iname, iweight, iheight, ibday, igender);
 end;
-
-select * from fit_user;
-select * from profile;
 
 
 
