@@ -25,4 +25,3 @@ begin
     insert into profile (name, weight, height, bday, gender)
     values (iname, iweight, iheight, ibday, igender);
 end;
-
