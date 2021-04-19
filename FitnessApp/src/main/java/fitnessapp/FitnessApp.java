@@ -7,7 +7,7 @@ package fitnessapp;
 
 /**
  *
- * @author Dell
+ * @author João Naves & Guilherme Pombo
  */
 public class FitnessApp {
 
