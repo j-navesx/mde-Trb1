@@ -1,24 +1,20 @@
-create or replace procedure create_user(
-    iusername     VARCHAR2,
-    ipassword     VARCHAR2,
-    iemail        VARCHAR2,
-    ipremium      NUMBER,
-    iactive       NUMBER,
-    ipt           NUMBER,
-    ipt_id       INTEGER
-) as
+create or replace procedure read_user(
+    uId INTEGER
+)
+is
+    rUsername fit_user.username%TYPE;
+    rEmail fit_user.email%TYPE;
+    rPremium fit_user.premium%TYPE;
+    rActive fit_user.active%TYPE;
+    rPt fit_user.pt%TYPE;
+    rUserPt fit_user.fit_user_id%TYPE;
 begin
-    if ipt_id != null then
-        insert into fit_user (username, password, email, premium, active, pt, fit_user_id)
-        values (iusername,ipassword,iemail,ipremium,iactive,ipt,ipt_id);
-        
-        insert into profile (name, weight, height, bday, gender)
-        values ('comrad',100,250,to_date('16/04/2000','DD/MM/YYYY'),'male');
-    else
-        insert into fit_user (username, password, email, premium, active, pt)
-        values (iusername,ipassword,iemail,ipremium,iactive, ipt);
-        
-        insert into profile (name, weight, height, bday, gender)
-        values ('comrad',100,250,to_date('16/04/2000','DD/MM/YYYY'),'male');
-    end if;
+    select username, email, premium, active, pt, fit_user_id
+    into rUsername, rEmail, rPremium, rActive, rPt, rUserPt
+        from fit_user
+    where fit_user.id = uId;
+    
+    dbms_output.put_line(
+        rUsername ||' '|| rEmail ||' ' || rPremium ||' '|| rActive ||' '|| rPt ||' '|| rUserPt
+    );
 end;
