@@ -1,4 +1,5 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import cx_Oracle
 import time
 import json
 import cgi
@@ -29,14 +30,25 @@ class MyServer(BaseHTTPRequestHandler):
             print(message)
         else:
             print("No Body")
+
+
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
+    #conn = cx_Oracle.connect("mde_trb1","mde","mde_trb1@//localhost:1521/xe",encoding="UTF-8")
+    try:
+        conn = cx_Oracle.connect("mde_trb1/mde@//localhost:1521/xe")
+    except KeyboardInterrupt:
+        pass
     print("Server started http://%s:%s" % (hostName, serverPort))
-
+    cursor = conn.cursor()
+    sql_query = "select * from fit_user"
+    result = cursor.execute(sql_query)
+    print(cursor.fetchall())
     try:
         webServer.serve_forever()
     except KeyboardInterrupt:
         pass
+    input(">>")
 
     webServer.server_close()
     print("Server stopped.")
