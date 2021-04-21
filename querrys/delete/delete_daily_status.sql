@@ -1,5 +1,5 @@
 create or replace procedure create_daily_status(
-    ifit_user_id  INTEGER
+    fit_user_id  INTEGER
 ) as
 begin
     insert into daily_status (

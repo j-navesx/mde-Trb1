@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="leader_id" id="636DDC1D-17A9-24EC-9DD7-E6C68E4F618C">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-12 10:08:48 UTC</createdTime>
+<Attribute name="id" id="CEC3D4FA-C67A-1A07-150C-B2E0084E4C44">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 15:08:38 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <engineerTo>
 <item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
@@ -27,15 +27,29 @@
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id" id="AF18413D-9DA9-248D-2003-2A6BDE216A37">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-12 10:07:32 UTC</createdTime>
-<generatorID>E95F0534-50B6-2F35-2549-86198D556D73</generatorID>
+<Attribute name="id1" id="BD0774B5-7DE1-7702-E27E-B976F7FF9679">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 15:09:10 UTC</createdTime>
+<generatorID>FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <engineerTo>
 <item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
 </engineerTo>
-<referedAttribute>BF2BBE28-C5C5-63F1-5F5E-A1E32F8EC6FE</referedAttribute>
+<referedAttribute>C87E3389-122B-906B-B336-A9D5330557C4</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id2" id="7223AEA1-AD0B-D76C-1810-4FB26D201AC7">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 15:09:10 UTC</createdTime>
+<generatorID>FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<referedAttribute>11B35C47-C916-A471-7D86-55D55B6CEAB5</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT027</logicalDatatype>
@@ -69,47 +83,19 @@
 <dataTypePrecision>7</dataTypePrecision>
 <ownDataTypeParameters>,7,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="exercise" id="2657097B-F766-0782-44A3-89AEE2C9955B">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-12 10:05:21 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-<engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>64</dataTypeSize>
-<ownDataTypeParameters>64,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="value" id="06B0EA09-5DC4-BD78-235D-33E1A99B9303">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-12 10:05:16 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-<engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT026</logicalDatatype>
-<dataTypePrecision>7</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,7,2</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="25C51738-E532-2F7D-8284-DC3C6DD40848" name="friends_leaderboard PK">
 <createdBy>Dell</createdBy>
 <createdTime>2021-04-12 10:08:56 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>636DDC1D-17A9-24EC-9DD7-E6C68E4F618C</attributeRef>
+<attributeRef>CEC3D4FA-C67A-1A07-150C-B2E0084E4C44</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

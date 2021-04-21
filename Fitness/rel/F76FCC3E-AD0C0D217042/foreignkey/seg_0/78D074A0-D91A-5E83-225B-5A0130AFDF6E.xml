@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="78D074A0-D91A-5E83-225B-5A0130AFDF6E" containerWithKeyObject="272D7B72-2ED6-BFDC-0B2A-45DC57EF6D3D" localFKIndex="E266F532-EF2A-8AA1-27B5-80EDACD178FB" name="f_lb_totals_FK">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:19:05 UTC</createdTime>
+<generatorID>FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<referredTableLongName>totals</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>06A80B72-BDB0-8440-865B-54CE6EE33CB8</referredTableID>
+<keyObject>244A16AA-12C2-73C9-021B-9A5F1FCEA7E6</keyObject>
+<referredKeyID>244A16AA-12C2-73C9-021B-9A5F1FCEA7E6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>fit_user_id,activities_template_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="user_activity" directorySegmentName="seg_0" id="A1BFEA9A-21A6-972C-5218-A0D3C6EC09AD">
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="user_activity" directorySegmentName="seg_0" id="A1BFEA9A-21A6-972C-5218-A0D3C6EC09AD">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -34,6 +34,7 @@
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+<notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
 <ColumnProxy name="paid" id="B4B034FD-016A-73D6-8781-720EABB02BB8">
 <createdBy>Guilherme</createdBy>
@@ -56,4 +57,4 @@
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
 </primaryKeys>
-</TableProxyOraclev12c>
+</TableProxyOraclev11g>

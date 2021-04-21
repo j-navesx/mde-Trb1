@@ -93,12 +93,10 @@
 <createdTime>2021-04-16 14:33:42 UTC</createdTime>
 <generatorID>0A2C1222-00CE-3233-2EEC-C27C4863987C</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>1</dataTypePrecision>
-<defaultValue>0</defaultValue>
 <ownDataTypeParameters>,1,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>

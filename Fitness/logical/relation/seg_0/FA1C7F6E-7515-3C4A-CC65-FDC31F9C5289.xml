@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="totals_friend_leaderboard" directorySegmentName="seg_0" id="FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 15:08:59 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<sourcePk>25C51738-E532-2F7D-8284-DC3C6DD40848</sourcePk>
+<targetPk>6CBDFB9B-61CD-B73A-6094-368B9998B84E</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>76CE547E-6C16-2AEC-93B0-92C786722943</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>6982CD17-1C47-43A9-7C7F-84D192F5B705</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

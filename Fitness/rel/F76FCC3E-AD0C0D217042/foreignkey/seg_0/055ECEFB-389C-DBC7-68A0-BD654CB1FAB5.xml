@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="055ECEFB-389C-DBC7-68A0-BD654CB1FAB5" containerWithKeyObject="06A80B72-BDB0-8440-865B-54CE6EE33CB8" localFKIndex="4FAF68BE-2CB4-8FCF-BCF4-502716650322" name="totals_activities_template_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="055ECEFB-389C-DBC7-68A0-BD654CB1FAB5" containerWithKeyObject="06A80B72-BDB0-8440-865B-54CE6EE33CB8" localFKIndex="4FAF68BE-2CB4-8FCF-BCF4-502716650322" name="totals_act_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>104A0A8F-4D71-8A40-788F-4FF474719F07</generatorID>
@@ -10,7 +10,7 @@
 <keyObject>4AA17C66-BC66-BEE2-1A71-CAA4174B8C69</keyObject>
 <referredKeyID>4AA17C66-BC66-BEE2-1A71-CAA4174B8C69</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>act_id</refColNames>
+<refColNames>id</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

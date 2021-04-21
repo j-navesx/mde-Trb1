@@ -10,7 +10,7 @@
 <keyObject>4AA17C66-BC66-BEE2-1A71-CAA4174B8C69</keyObject>
 <referredKeyID>4AA17C66-BC66-BEE2-1A71-CAA4174B8C69</referredKeyID>
 <mandatory>true</mandatory>
-<refColNames>act_id</refColNames>
+<refColNames>id</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>
 <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

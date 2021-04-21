@@ -1,18 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user_friends_list" directorySegmentName="seg_0" id="0C1BA97B-C894-CF72-942F-B5E3BFEBB89E">
-<createdBy>Dell</createdBy>
-<createdTime>2021-04-12 09:55:53 UTC</createdTime>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="friend_friends_list" directorySegmentName="seg_0" id="4D5844BC-D764-C331-F79F-C3CB68AD6BB6">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:55:25 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <engineerTo>
 <item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
 </engineerTo>
 <sourcePk>9105C780-CD34-4676-E292-246957A7230D</sourcePk>
-<identifying>false</identifying>
+<identifying>true</identifying>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>30452ED3-30A7-1975-1875-65BB886939C9</sourceEntity>
-<targetCardinalityString>*</targetCardinalityString>
+<targetCardinalityString>1</targetCardinalityString>
 <targetEntity>450FF758-3A5D-3891-E66E-D2594CD64DE2</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>

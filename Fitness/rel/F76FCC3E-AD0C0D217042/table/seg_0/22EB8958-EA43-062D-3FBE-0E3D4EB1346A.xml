@@ -21,7 +21,7 @@
 <identityColumn>true</identityColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="activities_template_act_id" id="F6D1F46E-F51D-7187-5365-D33ED0E813D9">
+<Column name="activities_template_id" id="F6D1F46E-F51D-7187-5365-D33ED0E813D9">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>65E3F984-68D8-F8F3-37EF-86F4E7D67DBB</generatorID>

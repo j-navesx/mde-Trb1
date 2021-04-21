@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="act_id" id="65E3F984-68D8-F8F3-37EF-86F4E7D67DBB">
+<Attribute name="id1" id="65E3F984-68D8-F8F3-37EF-86F4E7D67DBB">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:28:34 UTC</createdTime>
 <generatorID>3A65B306-CC5D-46AA-40BD-732A302B2D57</generatorID>
@@ -145,8 +145,9 @@
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:28:21 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

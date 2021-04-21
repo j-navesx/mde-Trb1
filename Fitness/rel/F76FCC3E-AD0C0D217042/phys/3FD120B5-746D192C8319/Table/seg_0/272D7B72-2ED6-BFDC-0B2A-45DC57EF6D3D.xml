@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="friends_leaderboard" directorySegmentName="seg_0" id="272D7B72-2ED6-BFDC-0B2A-45DC57EF6D3D">
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="friends_leaderboard" directorySegmentName="seg_0" id="272D7B72-2ED6-BFDC-0B2A-45DC57EF6D3D">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -15,14 +15,19 @@
 <ownerDesignName>Fitness</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 </ColumnProxy>
+<ColumnProxy name="totals_activities_template_id" id="1255CEFC-6B63-A1F1-E25C-6793E21A2F40">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:19:05 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+</ColumnProxy>
 <ColumnProxy name="name" id="4C37E7F2-7DE6-572D-7271-E5B79EA96E90">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="fit_user_id" id="5CDA1146-21D6-6B5C-D3D0-FC28DCF8F9D5">
+<ColumnProxy name="totals_fit_user_id" id="5368760F-96C2-7590-7A08-F0FCD83ADD9E">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
+<createdTime>2021-04-21 16:19:05 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="place" id="A2FD66FD-2B10-806A-EE2A-5125471D2ECE">
@@ -35,16 +40,29 @@
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
+<ColumnProxy name="id" id="C85DC2B4-29EC-FE34-0ADA-34BB6E4A8BAD">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:19:05 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
 <ColumnProxy name="value" id="CF247973-8BE2-B016-A928-EB345F97B115">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
-<foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fl_fit_user_FK" id="C55DB47E-513D-D31B-8B89-584146F82584">
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="friends_leaderboard__IDX" id="AD7EAD85-11B6-7D69-893B-FF35C50E9FA8">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
+<createdTime>2021-04-21 16:19:05 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="f_lb_totals_FK" id="E266F532-EF2A-8AA1-27B5-80EDACD178FB">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:19:05 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ForeignKey>
 </foreignKeys>
@@ -56,4 +74,4 @@
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
 </primaryKeys>
-</TableProxyOraclev12c>
+</TableProxyOraclev11g>

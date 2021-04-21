@@ -104,12 +104,10 @@
 <engineerTo>
 <item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>1</dataTypePrecision>
-<defaultValue>0</defaultValue>
 <ownDataTypeParameters>,1,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -118,8 +116,9 @@
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:05:25 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

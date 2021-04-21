@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="fit_user" directorySegmentName="seg_0" id="AE105F9D-7973-ADBF-C5DB-C9CEDD24936C">
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="fit_user" directorySegmentName="seg_0" id="AE105F9D-7973-ADBF-C5DB-C9CEDD24936C">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -14,6 +14,11 @@
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
+<ColumnProxy name="fit_user_id" id="1D66DEA3-AE28-15B4-972E-217907F84D7E">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 14:29:14 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+</ColumnProxy>
 <ColumnProxy name="password" id="4A90E6D6-019B-A78F-ECA3-173E0D1AB09E">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
@@ -24,6 +29,7 @@
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+<notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
 <ColumnProxy name="premium" id="6E28DB10-4CBF-EDA5-94E0-2CDC5CB58225">
 <createdBy>Guilherme</createdBy>
@@ -46,6 +52,13 @@
 <ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="fit_user_fit_user_FK" id="71097E06-C6A9-F753-1982-2EEE6342B2B6">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 14:29:14 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="user_PK" id="038795AC-9CB7-CB65-B516-BACEE0957529">
 <createdBy>Guilherme</createdBy>
@@ -54,4 +67,4 @@
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
 </primaryKeys>
-</TableProxyOraclev12c>
+</TableProxyOraclev11g>

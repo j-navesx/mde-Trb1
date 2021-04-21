@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="daily_status" directorySegmentName="seg_0" id="AB40752A-AA5D-37A5-ACC0-ACA810A46E3C">
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="daily_status" directorySegmentName="seg_0" id="AB40752A-AA5D-37A5-ACC0-ACA810A46E3C">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -30,6 +30,7 @@
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+<notnullConstraintnameChanged>true</notnullConstraintnameChanged>
 </ColumnProxy>
 <ColumnProxy name="distance" id="752D96EF-F0DD-BB7F-7555-32C390540C5E">
 <createdBy>Guilherme</createdBy>
@@ -62,4 +63,4 @@
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
 </primaryKeys>
-</TableProxyOraclev12c>
+</TableProxyOraclev11g>

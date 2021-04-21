@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E7B0EFB9-D44D-98F5-1108-9CE48B19D23E" name="friends_list">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>450FF758-3A5D-3891-E66E-D2594CD64DE2</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="fit_user_id" id="7193D684-D40E-82E5-300A-DB85A6E47B4E">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>67C0B66E-DB60-B4C8-1282-2A88106DF1CC</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EBBD6883-2058-79C6-B16E-918B0C24EA95" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
+</associations>
+</Column>
+<Column name="fit_friend_id" id="1AC7F543-1524-E45D-6B11-496D3CAFC8E1">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>1304DACB-F028-4A45-8851-A25CF370DA4F</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="70E3FE7C-8410-BCB3-361B-016314F45781" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
+</associations>
+</Column>
+<Column name="accepted" id="25BE68A2-790C-C714-13CB-8384B00554C0">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>89006FE3-ABED-8BF8-BE48-5A059F883847</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<ownDataTypeParameters>,1,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A07C1B13-0FB2-1F0E-C773-A14F2215F450" name="friends_list_PK">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>9E6241F2-F2FD-1EF7-CEA8-6F640302C5A2</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
+<colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8296D8F5-1524-F356-37AE-730C30E3DE3E" name="friends_list__IDX">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>4D5844BC-D764-C331-F79F-C3CB68AD6BB6</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="45456E3E-BE19-0C09-382B-C3BBBF25C3C1" name="friends_list__IDXv1">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>F745DBE2-1DCA-9B6C-92FA-14E311FBE8D4</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1B6FC193-9B85-8B55-A2CF-243820E231D6" name="friends_list_fit_user_FK">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>4D5844BC-D764-C331-F79F-C3CB68AD6BB6</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv2">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-21 16:58:44 UTC</createdTime>
+<generatorID>F745DBE2-1DCA-9B6C-92FA-14E311FBE8D4</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
