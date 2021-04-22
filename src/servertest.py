@@ -57,7 +57,7 @@ class MyServer(BaseHTTPRequestHandler):
 if __name__ == "__main__":
     if(len(sys.argv) > 1):
         try:
-            assert len(sys.argv) == 4
+            assert len(sys.argv) >= 4
         
         except AssertionError:
             print("\nInsufficient number of arguments\n")
