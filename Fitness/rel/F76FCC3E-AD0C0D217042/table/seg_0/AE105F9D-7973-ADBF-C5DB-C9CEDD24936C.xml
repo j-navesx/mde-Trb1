@@ -126,6 +126,16 @@
 <colUsage columnID="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="B5FB1F8F-53B4-DDB4-4CE1-656425B05FA0" name="fit_user__UN">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-23 18:39:38 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BFD14A3-A73B-CD07-06A0-B537D31B78A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="71097E06-C6A9-F753-1982-2EEE6342B2B6" name="fit_user_fit_user_FK">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 17:51:40 UTC</createdTime>

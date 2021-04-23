@@ -1,4 +1,3 @@
-
 create or replace procedure create_user(
     iusername     VARCHAR2,
     ipassword     VARCHAR2,
@@ -12,7 +11,8 @@ create or replace procedure create_user(
     iheight       NUMBER,
     ibday         DATE,
     igender       VARCHAR2
-) as
+) is
+    aux_fit_user_id INTEGER;
 begin
     if ipt_id != null then
         insert into fit_user (username, password, email, premium, active, pt, fit_user_id)
@@ -22,18 +22,25 @@ begin
         values (iusername,ipassword,iemail,ipremium,iactive, ipt);
     end if;
     
+    -- select fit_user_id from username
+    
+    SELECT id 
+    INTO aux_fit_user_id
+    FROM fit_user 
+    WHERE username = iusername;
+    
     -- create user's profile
     
     insert into profile (fit_user_id, name, weight, height, bday, gender)
-    values ((SELECT id FROM fit_user WHERE username = iusername), iname, iweight, iheight, ibday, igender);
-    
-    -- create totals rows
+    values (aux_fit_user_id, iname, iweight, iheight, ibday, igender);
     
     FOR aRow IN (
         SELECT id
         FROM activities_template
     )
     LOOP
+    
+    -- create totals rows
     
     insert into totals (
         fit_user_id,
@@ -42,21 +49,13 @@ begin
         calories
     )
     values (
-        (SELECT id FROM fit_user WHERE username = iusername),
+        aux_fit_user_id,
         aRow.id,
         0,
         0
     );
     
-    END LOOP;
-    
     -- create friends leaderboard
-    
-    FOR aRow IN (
-        SELECT id
-        FROM activities_template
-    )
-    LOOP
     
     insert into friends_leaderboard (
         totals_fit_user_id,
@@ -64,7 +63,7 @@ begin
         place
     )
     values (
-        (SELECT id FROM fit_user WHERE username = iusername),
+        aux_fit_user_id,
         aRow.id,
         1
     );

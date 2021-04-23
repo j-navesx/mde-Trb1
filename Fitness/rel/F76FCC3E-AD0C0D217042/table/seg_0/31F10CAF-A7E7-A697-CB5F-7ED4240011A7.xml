@@ -89,5 +89,15 @@
 <colUsage columnID="9AC599DB-410A-2803-5FFF-0D86A98CAE1E"/>
 </indexColumnUsage>
 </ind_PK_UK>
+<ind_PK_UK id="AA491E15-7997-9E20-F531-898263BB2F2D" name="activities_template__UN">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-23 18:39:52 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD0E6BC6-DCF0-8665-0960-6F982ABC5361"/>
+</indexColumnUsage>
+</ind_PK_UK>
 </indexes>
 </Table>

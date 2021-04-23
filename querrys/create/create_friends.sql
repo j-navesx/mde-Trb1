@@ -1,5 +1,5 @@
 create or replace procedure create_friends(
-    ifit_user_id  INTEGER,
+    ifit_user_id     INTEGER,
     ifit_friend_id   INTEGER
 ) as
 begin

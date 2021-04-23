@@ -3,18 +3,26 @@ create or replace procedure create_activities_template(
     ical_step_mult  NUMBER,
     ical_dist_mutl  NUMBER,
     ical_time_mult  NUMBER
-) as
+) is
+    aux_act_id INTEGER;
 begin
     insert into activities_template (name,cal_step_mult,cal_dist_mutl,cal_time_mult)
     values (iname,ical_step_mult,ical_dist_mutl,ical_time_mult);
     
-    -- create totals rows
+    -- select activities_template_id from name
+    
+    SELECT id 
+    INTO aux_act_id
+    FROM activities_template 
+    WHERE name = iname;
     
     FOR aRow IN (
         SELECT id
         FROM fit_user
     )
     LOOP
+    
+    -- create totals rows
     
     insert into totals (
         fit_user_id,
@@ -24,20 +32,12 @@ begin
     )
     values (
         aRow.id,
-        (SELECT id FROM activities_template WHERE name = iname),
+        aux_act_id,
         0,
         0
     );
     
-    END LOOP;
-    
     -- create friends leaderboard
-    
-    FOR aRow IN (
-        SELECT id
-        FROM fit_user
-    )
-    LOOP
     
     insert into friends_leaderboard (
         totals_fit_user_id,
@@ -46,7 +46,7 @@ begin
     )
     values (
         aRow.id,
-        (SELECT id FROM activities_template WHERE name = iname),
+        aux_act_id,
         1
     );
     
