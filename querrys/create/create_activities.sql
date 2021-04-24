@@ -1,8 +1,8 @@
 create or replace procedure create_activities_template(
-    iname           VARCHAR2,
-    ical_step_mult  NUMBER,
-    ical_dist_mutl  NUMBER,
-    ical_time_mult  NUMBER
+    iname           activities_template.name%type,
+    ical_step_mult  activities_template.cal_step_mult%type,
+    ical_dist_mutl  activities_template.cal_dist_mutl%type,
+    ical_time_mult  activities_template.cal_time_mult%type
 ) is
     aux_act_id INTEGER;
 begin

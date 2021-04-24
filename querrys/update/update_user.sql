@@ -1,4 +1,5 @@
 create or replace procedure update_user(
+    ifit_user_id  fit_user.id%type,
     ipassword     fit_user.password%type,
     ipremium      fit_user.premium%type,
     iactive       fit_user.active%type,
@@ -9,12 +10,14 @@ begin
 
     UPDATE fit_user
     SET
-        a = b
+        password = ipassword,
+        premium = ipremium,
+        active = iactive,
+        pt = ipt,
+        fit_user_id = ipt_id
     WHERE
-        password = ipassword
-        AND premium = ipremium
-        AND active = iactive
-        AND pt = ipt
-        AND fit_user_id = ipt_id;
+        id = ifit_user_id;
         
 end;
+
+select username, email, active, premium from fit_user;
