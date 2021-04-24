@@ -81,7 +81,7 @@ def handle_post_request(message:dict):
                 assert len(message.get("args")) == 2
             except AssertionError:
                 print("Insuffiecient login Data")
-            querry = "select check_password('"+message.get("args")[0]+"','"+message.get("args")[1]+"') from dual"
+            querry = "select check_password('"+message.get("args")[0].get("username")+"','"+message.get("args")[0].get("password")+"') from dual"
             print(querry)
             result, error_flag = execute_queries(querry)
             result = result[0][0]
@@ -92,6 +92,8 @@ def handle_post_request(message:dict):
                 print(users)
             else:
                 print("Incorrect login or login error")
+        if message.get("action") == "create_user":
+            pass
     print("\n")           
 
 
@@ -165,7 +167,6 @@ if __name__ == "__main__":
                     index += 2
                     procs[0] = procs[0][:index] + " " + procs[0][index:]
                 procs = ';'.join(procs)
-                print(procs,"\n\n")
                 result, error = execute_queries(procs,True)
             
             if not error:
