@@ -3,9 +3,6 @@ create or replace procedure create_user(
     ipassword     VARCHAR2,
     iemail        VARCHAR2,
     ipremium      NUMBER,
-    iactive       NUMBER,
-    ipt           NUMBER,
-    ipt_id        INTEGER,
     iname         VARCHAR2,
     iweight       NUMBER,
     iheight       NUMBER,
@@ -14,13 +11,11 @@ create or replace procedure create_user(
 ) is
     aux_fit_user_id INTEGER;
 begin
-    if ipt_id != null then
-        insert into fit_user (username, password, email, premium, active, pt, fit_user_id)
-        values (iusername,ipassword,iemail,ipremium,iactive,ipt,ipt_id);
-    else
-        insert into fit_user (username, password, email, premium, active, pt)
-        values (iusername,ipassword,iemail,ipremium,iactive, ipt);
-    end if;
+
+    -- create user
+
+    insert into fit_user (username, password, email, premium, active, pt)
+    values (iusername,ipassword,iemail, 0, 0, 0);
     
     -- select fit_user_id from username
     
