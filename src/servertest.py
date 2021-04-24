@@ -41,13 +41,23 @@ def get_queries(sqlfile):
 def execute_queries(queries):
     error_flag = False
     results = []
-    for querry in queries:
+    if isinstance(queries, list):
+        for querry in queries:
+            try:
+                cursor.execute(querry)
+                results.append(cursor.fetchall())
+            except cx_Oracle.DatabaseError as ex:
+                error_flag = True
+                results.append("ERROR")
+            except cx_Oracle.InterfaceError:
+                pass
+    else:
         try:
-            cursor.execute(querry)
-            results.append(cursor.fetchall())
+            cursor.execute(queries)
+            results = (cursor.fetchall())
         except cx_Oracle.DatabaseError as ex:
             error_flag = True
-            results.append("ERROR")
+            results = ("ERROR")
         except cx_Oracle.InterfaceError:
             pass
     return results, error_flag
@@ -69,11 +79,17 @@ def handle_post_request(message:dict):
                 assert len(message.get("args")) == 2
             except AssertionError:
                 print("Insuffiecient login Data")
-            if True:
-                #something
+            querry = "select check_password('"+message.get("args")[0]+"','"+message.get("args")[1]+"') from dual"
+            print(querry)
+            result, error_flag = execute_queries(querry)
+            result = result[0][0]
+            print(result,error_flag)
+            if not error_flag and result != 0:
                 print("Login successful")
-                users[message.get("appid")] = 1
+                users[message.get("appid")] = result
                 print(users)
+            else:
+                print("Incorrect login or login error")
     print("\n")           
 
 
@@ -141,7 +157,7 @@ if __name__ == "__main__":
                 print("Database Build Successful")
         
         if sys.argv[1] == '-r':
-            result, error = execute_queries(["select * from fit_user"])
+            result, error = execute_queries("select * from fit_user")
             if not error:
                 print("\nReconnected to the Database\n")
             else:
