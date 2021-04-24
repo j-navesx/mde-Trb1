@@ -11,19 +11,16 @@ create or replace procedure create_user(
     aux_fit_user_id INTEGER;
 begin
 
-    -- create user
 
     insert into fit_user (username, password, email, premium, active, pt)
     values (iusername,ipassword,iemail, 0, 0, 0);
     
-    -- select fit_user_id from username
     
     SELECT id 
     INTO aux_fit_user_id
     FROM fit_user 
     WHERE username = iusername;
     
-    -- create user's profile
     
     insert into profile (fit_user_id, name, weight, height, bday, gender)
     values (aux_fit_user_id, iname, iweight, iheight, ibday, igender);
@@ -34,7 +31,6 @@ begin
     )
     LOOP
     
-    -- create totals rows
     
     insert into totals (
         fit_user_id,
@@ -49,7 +45,6 @@ begin
         0
     );
     
-    -- create friends leaderboard
     
     insert into friends_leaderboard (
         totals_fit_user_id,

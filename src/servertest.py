@@ -18,7 +18,7 @@ def app_id_generator():
 
 def get_queries(sqlfile):
     parsed_queries = []
-    parent_dir = __file__.strip("src\servertest.py") + '\queries/'
+    parent_dir = __file__.strip("src\servertest.py") + '\querrys/'
     for root, dirs, files in os.walk(parent_dir):
         if sqlfile in files:
             directory = root+"/"+sqlfile
@@ -34,19 +34,21 @@ def get_queries(sqlfile):
                             q.remove(line);
                     q = ''.join(map(str,q))
                     parsed_queries.append(q)
-                parsed_queries.remove('')
-         
+                parsed_queries.remove('')   
     return parsed_queries
 
-def execute_queries(queries):
+def execute_queries(queries, error=False):
     error_flag = False
     results = []
+
     if isinstance(queries, list):
         for querry in queries:
             try:
                 cursor.execute(querry)
                 results.append(cursor.fetchall())
             except cx_Oracle.DatabaseError as ex:
+                if error:
+                    print(ex)
                 error_flag = True
                 results.append("ERROR")
             except cx_Oracle.InterfaceError:
@@ -155,6 +157,19 @@ if __name__ == "__main__":
             result, error = execute_queries(get_queries("fitness_schema.sql"))
             if not error:
                 print("Database Build Successful")
+            for filename in get_queries("compile_procedures.sql"):
+                procs = get_queries(filename)
+                procs.append(' ')
+                index = procs[0].find("asbegin")
+                if index != -1:
+                    index += 2
+                    procs[0] = procs[0][:index] + " " + procs[0][index:]
+                procs = ';'.join(procs)
+                print(procs,"\n\n")
+                result, error = execute_queries(procs,True)
+            
+            if not error:
+                print("Procedures Built Successfully")
         
         if sys.argv[1] == '-r':
             result, error = execute_queries("select * from fit_user")
