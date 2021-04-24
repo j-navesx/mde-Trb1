@@ -2,7 +2,6 @@ create or replace procedure create_user(
     iusername     VARCHAR2,
     ipassword     VARCHAR2,
     iemail        VARCHAR2,
-    ipremium      NUMBER,
     iname         VARCHAR2,
     iweight       NUMBER,
     iheight       NUMBER,

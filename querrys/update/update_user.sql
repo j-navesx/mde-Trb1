@@ -6,5 +6,15 @@ create or replace procedure update_user(
     ipt_id        fit_user.fit_user_id%type
 ) as
 begin
-    
+
+    UPDATE fit_user
+    SET
+        a = b
+    WHERE
+        password = ipassword
+        AND premium = ipremium
+        AND active = iactive
+        AND pt = ipt
+        AND fit_user_id = ipt_id;
+        
 end;
