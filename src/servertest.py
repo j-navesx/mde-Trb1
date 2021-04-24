@@ -158,16 +158,12 @@ if __name__ == "__main__":
             if not error:
                 print("Database Build Successful")
             for filename in get_queries("compile_procedures.sql"):
-                #procs = list(map(lambda x: x+';',get_queries(filename)))
                 procs = get_queries(filename)
-                #print("1.",procs,"\n","-"*20,"\n")
                 procs.append(' ')
                 index = procs[0].find("asbegin")
-                #print(procs[0],"\n\n")
                 if index != -1:
                     index += 2
                     procs[0] = procs[0][:index] + " " + procs[0][index:]
-                #print("2.",procs)
                 procs = ';'.join(procs)
                 print(procs,"\n\n")
                 result, error = execute_queries(procs,True)
