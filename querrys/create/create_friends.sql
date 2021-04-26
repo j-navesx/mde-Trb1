@@ -5,7 +5,4 @@ create or replace procedure create_friends(
 begin
     insert into friends_list (fit_user_id,fit_user_id1)
     values (ifit_user_id,ifit_user_id1);
-    
-    insert into friends_list (fit_user_id,fit_user_id1)
-    values (ifit_user_id1,ifit_user_id);
 end;

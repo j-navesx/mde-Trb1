@@ -2,17 +2,31 @@ create or replace procedure update_leaderboard (
     itotals_fit_user_id in FRIENDS_LEADERBOARD.TOTALS_FIT_USER_ID%type,
     itotals_activities_template_id in FRIENDS_LEADERBOARD.TOTALS_ACTIVITIES_TEMPLATE_ID%type
 ) is
+    aux_fit_user_calories TOTALS.CALORIES%type;
+    place_var FRIENDS_LEADERBOARD.place%type;
 begin
-    update FRIENDS_LEADERBOARD set
-    place = iplace
-    where totals_fit_user_id = itotals_fit_user_id and totals_activities_template_id = itotals_activities_template_id;
     
-    FOR aRow IN (
-        SELECT distance
-        FROM totals
-        WHERE activities_template_id = itotals_activities_template_id
+    select calories
+    into aux_fit_user_calories
+    from totals 
+    where fit_user_id = itotals_fit_user_id and activities_template_id = itotals_activities_template_id;
+    
+    place_var := 1;
+    
+    for aRow in (
+    select fit_user_id1
+    from friends_list
+    where accepted = 1
     )
     LOOP
-        
+        if 
+            aux_fit_user_calories < (select calories from totals where activities_template_id = itotals_activities_template_id and fit_user_id = aRow.fit_user_id1)
+        then
+            place_var := place_var + 1;
+        end if;
     END LOOP;
+    
+    update FRIENDS_LEADERBOARD set
+    place = place_var
+    where totals_fit_user_id = itotals_fit_user_id and totals_activities_template_id = itotals_activities_template_id;
 end;
