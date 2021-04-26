@@ -1,23 +1,18 @@
-create or replace procedure create_leaderboard(
-    ifit_user_id  INTEGER,
-    iname         VARCHAR2,
-    iplace        NUMBER,
-    iexercise     VARCHAR2,
-    ivalue        NUMBER
-) as
+create or replace procedure update_leaderboard (
+    itotals_fit_user_id in FRIENDS_LEADERBOARD.TOTALS_FIT_USER_ID%type,
+    itotals_activities_template_id in FRIENDS_LEADERBOARD.TOTALS_ACTIVITIES_TEMPLATE_ID%type
+) is
 begin
-    insert into friends_leaderboard (
-        fit_user_id,
-        name,
-        place,
-        exercise,
-        value
+    update FRIENDS_LEADERBOARD set
+    place = iplace
+    where totals_fit_user_id = itotals_fit_user_id and totals_activities_template_id = itotals_activities_template_id;
+    
+    FOR aRow IN (
+        SELECT distance
+        FROM totals
+        WHERE activities_template_id = itotals_activities_template_id
     )
-    values (
-        ifit_user_id,
-        iname,
-        iplace,
-        iexercise,
-        ivalue
-    );
+    LOOP
+        
+    END LOOP;
 end;
