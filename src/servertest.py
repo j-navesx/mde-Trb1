@@ -167,7 +167,7 @@ if __name__ == "__main__":
                     index += 2
                     procs[0] = procs[0][:index] + " " + procs[0][index:]
                 procs = ';'.join(procs)
-                result, error = execute_queries(procs,True)
+                result, error = execute_queries(procs)
             
             if not error:
                 print("Procedures Built Successfully")
