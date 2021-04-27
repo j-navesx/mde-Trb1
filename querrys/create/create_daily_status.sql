@@ -7,7 +7,7 @@ begin
         fit_user_id,
         distance,
         steps,
-        weigth,
+        weight,
         calories,
         completed
     )

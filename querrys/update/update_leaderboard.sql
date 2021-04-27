@@ -3,6 +3,7 @@ create or replace procedure update_leaderboard (
     itotals_activities_template_id in FRIENDS_LEADERBOARD.TOTALS_ACTIVITIES_TEMPLATE_ID%type
 ) is
     aux_fit_user_calories TOTALS.CALORIES%type;
+    aux_fit_friend_calories TOTALS.CALORIES%type;
     place_var FRIENDS_LEADERBOARD.place%type;
 begin
     
@@ -19,8 +20,14 @@ begin
     where accepted = 1
     )
     LOOP
+        select calories 
+        into aux_fit_friend_calories
+        from totals 
+        where activities_template_id = itotals_activities_template_id 
+        and fit_user_id = aRow.fit_user_id1;
+        
         if 
-            aux_fit_user_calories < (select calories from totals where activities_template_id = itotals_activities_template_id and fit_user_id = aRow.fit_user_id1)
+            aux_fit_user_calories < aux_fit_friend_calories
         then
             place_var := place_var + 1;
         end if;

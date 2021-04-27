@@ -1,0 +1,5 @@
+compile_creates.sql;
+
+compile_updates.sql;
+
+compile_deletes.sql;
