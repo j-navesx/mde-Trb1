@@ -15,3 +15,12 @@ begin
         (SELECT premium from fit_user where id = ifit_user_id)
     );
 end;
+
+create or replace trigger update_user_activity_trg
+    after update of active
+    on fit_user
+    referencing new as fit_user
+    for each row   
+begin
+    
+end;

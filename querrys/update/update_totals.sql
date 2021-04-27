@@ -1,18 +1,13 @@
-create or replace procedure create_totals(
-    ifit_user_id                 INTEGER,
-    iactivities_template_act_id  INTEGER
-) as
+create or replace trigger update_totals_trg
+    after update of end_date
+    on exercises
+    referencing new as ex
+    for each row   
 begin
-    insert into totals (
-        fit_user_id,
-        activities_template_act_id,
-        distance,
-        calories
-    )
-    values (
-        ifit_user_id,
-        iactivities_template_act_id,
-        0,
-        0
-    );
+    update TOTALS set
+        distance = distance + :ex.distance,
+        calories = calories + :ex.calories
+    where 
+        fit_user_id = :ex.fit_user_id 
+        and activities_template_id = :ex.activities_template_id;
 end;

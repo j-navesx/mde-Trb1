@@ -3,7 +3,7 @@ create or replace procedure create_daily_status(
 ) as
 begin
     insert into daily_status (
-        "date",
+        status_date,
         fit_user_id,
         distance,
         steps,

@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="70E3FE7C-8410-BCB3-361B-016314F45781" containerWithKeyObject="E7B0EFB9-D44D-98F5-1108-9CE48B19D23E" localFKIndex="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv2">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="70E3FE7C-8410-BCB3-361B-016314F45781" containerWithKeyObject="E7B0EFB9-D44D-98F5-1108-9CE48B19D23E" localFKIndex="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv1">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-21 16:58:44 UTC</createdTime>
 <generatorID>F745DBE2-1DCA-9B6C-92FA-14E311FBE8D4</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <referredTableLongName>fit_user</referredTableLongName>
-<deleteRule>CASCADE</deleteRule>
+<deleteRule>NO ACTION</deleteRule>
 <referredTableID>AE105F9D-7973-ADBF-C5DB-C9CEDD24936C</referredTableID>
 <keyObject>038795AC-9CB7-CB65-B516-BACEE0957529</keyObject>
 <referredKeyID>038795AC-9CB7-CB65-B516-BACEE0957529</referredKeyID>

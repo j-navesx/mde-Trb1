@@ -13,5 +13,5 @@ begin
     weigth = iweigth,
     calories = icalories,
     steps = isteps
-    where fit_user_id = ifit_user_id and "date" = (select sysdate from dual);
+    where fit_user_id = ifit_user_id and status_date = (select sysdate from dual);
 end;

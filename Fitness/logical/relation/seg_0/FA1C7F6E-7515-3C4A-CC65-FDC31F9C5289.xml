@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="totals_friend_leaderboard" directorySegmentName="seg_0" id="FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="totals_f_l" directorySegmentName="seg_0" id="FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-21 15:08:59 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>

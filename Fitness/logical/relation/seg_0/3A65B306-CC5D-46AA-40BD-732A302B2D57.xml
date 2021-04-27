@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="activities_exercises" directorySegmentName="seg_0" id="3A65B306-CC5D-46AA-40BD-732A302B2D57">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="act_ex" directorySegmentName="seg_0" id="3A65B306-CC5D-46AA-40BD-732A302B2D57">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:28:34 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>

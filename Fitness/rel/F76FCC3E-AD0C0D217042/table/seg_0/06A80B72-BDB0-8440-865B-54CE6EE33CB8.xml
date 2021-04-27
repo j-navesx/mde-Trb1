@@ -81,7 +81,7 @@
 <colUsage columnID="98B722C7-70D6-8C4D-DC29-EE78266098D2"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="4FAF68BE-2CB4-8FCF-BCF4-502716650322" name="totals_act_FK">
+<ind_PK_UK id="4FAF68BE-2CB4-8FCF-BCF4-502716650322" name="totals_activities_template_FK">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>104A0A8F-4D71-8A40-788F-4FF474719F07</generatorID>

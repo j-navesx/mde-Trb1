@@ -23,7 +23,7 @@
 <colAssociation fkAssociation="EBBD6883-2058-79C6-B16E-918B0C24EA95" referredColumn="59984E6F-BE08-ABFD-4908-1166EE61FFDD"/>
 </associations>
 </Column>
-<Column name="fit_friend_id" id="1AC7F543-1524-E45D-6B11-496D3CAFC8E1">
+<Column name="fit_user_id1" id="1AC7F543-1524-E45D-6B11-496D3CAFC8E1">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-21 16:58:44 UTC</createdTime>
 <generatorID>1304DACB-F028-4A45-8851-A25CF370DA4F</generatorID>
@@ -99,7 +99,7 @@
 <colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv2">
+<ind_PK_UK id="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv1">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-21 16:58:44 UTC</createdTime>
 <generatorID>F745DBE2-1DCA-9B6C-92FA-14E311FBE8D4</generatorID>
