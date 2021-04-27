@@ -65,10 +65,6 @@ call create_friends ( 6, 23);
 call create_friends ( 24, 12);
 call create_friends ( 16, 11);
 
-update friends_list
-set accepted = 1
-where fit_user_id = 2;
-
 commit;
 
 select * 

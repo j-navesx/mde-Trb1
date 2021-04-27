@@ -2,7 +2,7 @@
 
 @C:\lang\mde-Trb1\querrys\update\update_daily_weight_trg.sql;
 
-@C:\lang\mde-Trb1\querrys\update\update_exercises_trg.sql;
+@C:\lang\mde-Trb1\querrys\update\update_exercises.sql;
 
 @C:\lang\mde-Trb1\querrys\update\update_user_activity_trg.sql;
 

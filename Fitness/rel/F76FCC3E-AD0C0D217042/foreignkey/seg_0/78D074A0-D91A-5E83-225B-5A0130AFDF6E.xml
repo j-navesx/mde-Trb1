@@ -5,7 +5,7 @@
 <generatorID>FA1C7F6E-7515-3C4A-CC65-FDC31F9C5289</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <referredTableLongName>totals</referredTableLongName>
-<deleteRule>NO ACTION</deleteRule>
+<deleteRule>CASCADE</deleteRule>
 <referredTableID>06A80B72-BDB0-8440-865B-54CE6EE33CB8</referredTableID>
 <keyObject>244A16AA-12C2-73C9-021B-9A5F1FCEA7E6</keyObject>
 <referredKeyID>244A16AA-12C2-73C9-021B-9A5F1FCEA7E6</referredKeyID>

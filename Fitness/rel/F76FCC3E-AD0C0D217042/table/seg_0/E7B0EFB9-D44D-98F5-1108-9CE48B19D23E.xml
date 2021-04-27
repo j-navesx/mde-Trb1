@@ -99,7 +99,7 @@
 <colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv1">
+<ind_PK_UK id="09F4D2BD-507E-9EA2-E4B1-5C58B530B05C" name="friends_list_fit_user_FKv2">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-21 16:58:44 UTC</createdTime>
 <generatorID>F745DBE2-1DCA-9B6C-92FA-14E311FBE8D4</generatorID>
