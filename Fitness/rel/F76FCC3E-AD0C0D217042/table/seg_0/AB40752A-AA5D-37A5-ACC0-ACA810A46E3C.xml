@@ -62,7 +62,7 @@
 <ownDataTypeParameters>,7,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="weigth" id="89043E3A-6B27-9ED7-19B7-D15DD5BC8F3F">
+<Column name="weight" id="89043E3A-6B27-9ED7-19B7-D15DD5BC8F3F">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>
 <generatorID>D22D050C-97E1-407E-36F0-E871C42F44FE</generatorID>
@@ -100,7 +100,7 @@
 <ownDataTypeParameters>,1,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="date" id="8E9EA1DA-DCC7-464B-643C-E16D36A2FA2F">
+<Column name="status_date" id="8E9EA1DA-DCC7-464B-643C-E16D36A2FA2F">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-26 07:43:12 UTC</createdTime>
 <generatorID>AED24F84-DD64-7170-5972-FEF46C404185</generatorID>

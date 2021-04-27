@@ -41,7 +41,7 @@
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="date" id="AED24F84-DD64-7170-5972-FEF46C404185">
+<Attribute name="status_date" id="AED24F84-DD64-7170-5972-FEF46C404185">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-26 07:40:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -81,7 +81,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,7,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="weigth" id="D22D050C-97E1-407E-36F0-E871C42F44FE">
+<Attribute name="weight" id="D22D050C-97E1-407E-36F0-E871C42F44FE">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:06:24 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
