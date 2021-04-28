@@ -58,43 +58,48 @@ def execute_queries(queries, error=False):
             cursor.execute(queries)
             results = (cursor.fetchall())
         except cx_Oracle.DatabaseError as ex:
+            if error:
+                print(ex)
             error_flag = True
             results = ("ERROR")
         except cx_Oracle.InterfaceError:
             pass
     return results, error_flag
 
-def handle_get_request(message:dict):
+def handle_get_request(self, message:dict):
     if message.get("appid") == "request":
         print("App Id requested")
-        print("Served Id:\n",app_id_generator())
+        app_id = app_id_generator()
+        print("Served Id:\n",app_id)
+        jsonsend = "{\""+str(app_id)+"\"}"
+        self.wfile.write(jsonsend.encode('utf-8'))
     if message.get("appid") != "request" or not None:
         pass
     print("\n") 
 
 
-def handle_post_request(message:dict):
+def handle_post_request(self, message:dict):
     if message.get("appid") != "request" or not None:
         if message.get("action") == "login":
             print("Login requested")
             try:
-                assert len(message.get("args")) == 2
+                assert len(message.get("args")) > 0
             except AssertionError:
                 print("Insuffiecient login Data")
             querry = "select check_password('"+message.get("args")[0].get("username")+"','"+message.get("args")[0].get("password")+"') from dual"
-            print(querry)
             result, error_flag = execute_queries(querry)
             result = result[0][0]
-            print(result,error_flag)
             if not error_flag and result != 0:
                 print("Login successful")
                 users[message.get("appid")] = result
+                jsonsend = "{"+str(result)+"}"
+                self.wfile.write(jsonsend.encode('utf-8'))
                 print(users)
             else:
                 print("Incorrect login or login error")
         if message.get("action") == "create_user":
             pass
-    print("\n")           
+    print("\n")          
 
 
 class MyServer(BaseHTTPRequestHandler):
@@ -103,6 +108,8 @@ class MyServer(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'application/json')
         self.end_headers()
 
+
+    
     def do_GET(self):
         self._set_headers()
         length = 0
@@ -112,7 +119,7 @@ class MyServer(BaseHTTPRequestHandler):
             pass
         if length:
             message = json.loads(self.rfile.read(length))
-            handle_get_request(message)
+            handle_get_request(self,message)
     
     def do_POST(self):
         self._set_headers()
@@ -123,7 +130,7 @@ class MyServer(BaseHTTPRequestHandler):
             pass
         if length:
             message = json.loads(self.rfile.read(length))
-            handle_post_request(message)
+            handle_post_request(self,message)
 
 
 if __name__ == "__main__":

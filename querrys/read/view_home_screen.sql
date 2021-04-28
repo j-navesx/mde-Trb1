@@ -1,10 +1,11 @@
 create or replace view home_screen
 as
 select 
+    profile.fit_user_id,
     profile.name, 
     daily_status.steps, 
     daily_goals.daily_steps, 
-    daily_status.weigth,
+    profile.weight,
     exercises.duration, 
     exercises.distance, 
     exercises.calories, 
