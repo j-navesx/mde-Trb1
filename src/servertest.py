@@ -78,26 +78,37 @@ def handle_get_request(self, message:dict):
         send_func(jsonsend)
 
     if message.get("appid") != "request" or not None:
+        
         if ticket == "get_home":
             pass
+        
         if ticket == "get_friends_list":
             pass
+        
         if ticket == "get_friends_request":
             pass
+        
         if ticket == "get_notifications":
             pass
+        
         if ticket == "get_transactions":
             pass
+        
         if ticket == "get_daily_status":
             pass
+        
         if ticket == "get_transactions":
             pass
+        
         if ticket == "get_transactions":
             pass
+        
         if ticket == "get_exercises":
             pass
+        
         if ticket == "get_nonactive_users":
             pass
+        
         if ticket == "get_user_activitie":
             pass
     print("\n") 
@@ -127,24 +138,34 @@ def handle_post_request(self, message:dict):
             else:
                 print("Incorrect login or login error")
         
+        
         if ticket == "create_user":
             pass
+        
         if ticket == "create_activities":
             pass
+        
         if ticket == "create_daily_goals":
             pass
+        
         if ticket == "create_daily_status":
             pass
+        
         if ticket == "create_exercises":
             pass
+        
         if ticket == "create_friends":
             pass
+        
         if ticket == "create_notice":
             pass
+        
         if ticket == "create_transaction":
             pass
+        
         if ticket == "create_user_activity":
             pass
+    
     print("\n")          
 
 def handle_put_request(self, message:dict):
