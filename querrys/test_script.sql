@@ -76,7 +76,7 @@ select * from fit_user;
 delete from friends_list;
 
 update friends_list
-set active = 1
+set accepted = 1
 where fit_user_id = 2;
 
 
