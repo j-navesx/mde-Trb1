@@ -67,20 +67,49 @@ def execute_queries(queries, error=False):
     return results, error_flag
 
 def handle_get_request(self, message:dict):
+    ticket = message.get("action")
+    send_func = lambda x: self.wfile.write(x.encode('utf-8'))
+
     if message.get("appid") == "request":
         print("App Id requested")
         app_id = app_id_generator()
         print("Served Id:\n",app_id)
         jsonsend = "{\""+str(app_id)+"\"}"
-        self.wfile.write(jsonsend.encode('utf-8'))
+        send_func(jsonsend)
+
     if message.get("appid") != "request" or not None:
-        pass
+        if ticket == "get_home":
+            pass
+        if ticket == "get_friends_list":
+            pass
+        if ticket == "get_friends_request":
+            pass
+        if ticket == "get_notifications":
+            pass
+        if ticket == "get_transactions":
+            pass
+        if ticket == "get_daily_status":
+            pass
+        if ticket == "get_transactions":
+            pass
+        if ticket == "get_transactions":
+            pass
+        if ticket == "get_exercises":
+            pass
+        if ticket == "get_nonactive_users":
+            pass
+        if ticket == "get_user_activitie":
+            pass
     print("\n") 
 
 
 def handle_post_request(self, message:dict):
+    ticket = message.get("action")
+    send_func = lambda x: self.wfile.write(x.encode('utf-8'))
+
     if message.get("appid") != "request" or not None:
-        if message.get("action") == "login":
+        
+        if ticket == "login":
             print("Login requested")
             try:
                 assert len(message.get("args")) > 0
@@ -93,22 +122,54 @@ def handle_post_request(self, message:dict):
                 print("Login successful")
                 users[message.get("appid")] = result
                 jsonsend = "{"+str(result)+"}"
-                self.wfile.write(jsonsend.encode('utf-8'))
+                send_func(jsonsend)
                 print(users)
             else:
                 print("Incorrect login or login error")
-        if message.get("action") == "create_user":
+        
+        if ticket == "create_user":
+            pass
+        if ticket == "create_activities":
+            pass
+        if ticket == "create_daily_goals":
+            pass
+        if ticket == "create_daily_status":
+            pass
+        if ticket == "create_exercises":
+            pass
+        if ticket == "create_friends":
+            pass
+        if ticket == "create_notice":
+            pass
+        if ticket == "create_transaction":
+            pass
+        if ticket == "create_user_activity":
             pass
     print("\n")          
 
+def handle_put_request(self, message:dict):
+    pass
+
+def handle_patch_request(self, message:dict):
+    ticket = message.get("action")
+    send_func = lambda x: self.wfile.write(x.encode('utf-8'))
+
+    if message.get("appid") != "request" or not None:
+        if ticket == "update_exercises":
+            pass
+        if ticket == "update_friends":
+            pass
+        if ticket == "update_leaderboard":
+            pass
+
+def handle_delete_request(self, message:dict):
+    pass
 
 class MyServer(BaseHTTPRequestHandler):
     def _set_headers(self):
         self.send_response(200)
         self.send_header('Content-type', 'application/json')
         self.end_headers()
-
-
     
     def do_GET(self):
         self._set_headers()
@@ -131,6 +192,39 @@ class MyServer(BaseHTTPRequestHandler):
         if length:
             message = json.loads(self.rfile.read(length))
             handle_post_request(self,message)
+
+    def do_PUT(self):
+        self._set_headers()
+        length = 0
+        try:
+            length = int(self.headers['Content-Length'])
+        except:
+            pass
+        if length:
+            message = json.loads(self.rfile.read(length))
+            handle_put_request(self,message)
+
+    def do_PATCH(self):
+        self._set_headers()
+        length = 0
+        try:
+            length = int(self.headers['Content-Length'])
+        except:
+            pass
+        if length:
+            message = json.loads(self.rfile.read(length))
+            handle_patch_request(self,message)
+
+    def do_DELETE(self):
+        self._set_headers()
+        length = 0
+        try:
+            length = int(self.headers['Content-Length'])
+        except:
+            pass
+        if length:
+            message = json.loads(self.rfile.read(length))
+            handle_delete_request(self,message)        
 
 
 if __name__ == "__main__":
