@@ -11,7 +11,6 @@ create or replace procedure create_user(
     aux_fit_user_id INTEGER;
 begin
 
-
     insert into fit_user (username, password, email, premium, active, pt)
     values (iusername,ipassword,iemail, 0, 0, 0);
     
@@ -24,6 +23,9 @@ begin
     
     insert into profile (fit_user_id, name, weight, height, bday, gender)
     values (aux_fit_user_id, iname, iweight, iheight, ibday, igender);
+    
+    insert into daily_goals (fit_user_id,daily_steps,daily_cals)
+    values (aux_fit_user_id,0,0);
     
     FOR aRow IN (
         SELECT id

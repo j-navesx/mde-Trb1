@@ -38,7 +38,7 @@ call create_user ('Narayana', 'mde', 'Narayana@campus.fct.unl.pt', 'Narayana', 6
 call create_activities_template ('Squats', NULL, NULL, 8);
 call create_activities_template ('Jumping Jacks', NULL, NULL, 16);
 call create_activities_template ('Crab Walk', NULL, NULL, 10);
-call create_activities_template ('Jogging', TO_NUMBER('0.04', '99.99'), 60, NULL);
+call create_activities_template ('Jogging', NULL, 60, NULL);
 call create_activities_template ('Crunches', NULL, NULL, 6);
 call create_activities_template ('Wall Pushups', NULL, NULL, 7);
 call create_activities_template ('Lunges', NULL, NULL, 6);
@@ -65,22 +65,50 @@ call create_friends ( 6, 23);
 call create_friends ( 24, 12);
 call create_friends ( 16, 11);
 
+call update_friends ( 7, 2);
+call update_friends ( 4, 5);
+call update_friends ( 26, 2);
+call update_friends ( 3, 7);
+call update_friends ( 5, 2);
+call update_friends ( 16, 6);
+call update_friends ( 21, 18);
+call update_friends ( 1, 16);
+call update_friends ( 1, 2);
+call update_friends ( 1, 28);
+call update_friends ( 12, 2);
+call update_friends ( 3, 4);
+call update_friends ( 6, 25);
+call update_friends ( 8, 2);
+call update_friends ( 19, 14);
+call update_friends ( 17, 4);
+call update_friends ( 23, 6);
+call update_friends ( 12, 24);
+call update_friends ( 11, 16);
+
+call create_exercises(4,1);
+
+call update_exercises(2,10,0);
+
 commit;
 
 select * 
 from friends_list
-;
+where fit_user_id = 2 and accepted = 1;
 
 select * from fit_user;
 
+select * from daily_status;
+
+select * from daily_goals;
+
 delete from friends_list;
-
-update friends_list
-set accepted = 1
-where fit_user_id = 2;
-
 
 delete from fit_user;
 
+delete from daily_status;
+
 select * 
 from activities_template;
+
+select * 
+from exercises;

@@ -4,9 +4,9 @@ create or replace procedure update_exercises (
     isteps in EXERCISES.STEPS%type
 ) is
     ex_calories       EXERCISES.CALORIES%type;
-    current_date      EXERCISES.end_date%type;
+    ex_end_date       EXERCISES.end_date%type;
     ex_duration       EXERCISES.duration%type;
-    ex_duration_min   integer;
+    ex_duration_min   number(38);
     ex_begin_date     EXERCISES.begin_date%type;
     act_id            EXERCISES.activities_template_id%type;  
     ex_cal_step_mult  activities_template.cal_step_mult%type;
@@ -14,7 +14,7 @@ create or replace procedure update_exercises (
     ex_cal_time_mult  activities_template.cal_time_mult%type;
 begin
     select SYSTIMESTAMP 
-    into current_date
+    into ex_end_date
     from dual;
 
     select 
@@ -37,16 +37,12 @@ begin
     from activities_template
     where id = act_id;
     
-    select 
-        abs( extract( minute from ex_duration ) 
+    ex_duration := ex_end_date - ex_begin_date;
+    
+    ex_duration_min := abs( extract( minute from ex_duration ) 
         + extract( hour from ex_duration ) * 60 
         + extract( day from ex_duration ) * 60 * 24
-        )
-    into ex_duration_min
-    from ( 
-        select (current_date - ex_begin_date) as ex_duration
-        from dual 
-    );
+        );
     
     ex_calories := 0;
     
@@ -68,7 +64,7 @@ begin
     update EXERCISES set
         distance = idistance,
         calories = ex_calories,
-        end_date = current_date,
+        end_date = ex_end_date,
         duration = ex_duration,
         steps = isteps
     where ex_id = iex_id;
