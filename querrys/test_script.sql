@@ -87,19 +87,33 @@ call update_friends ( 11, 16);
 
 call create_exercises(4,1);
 
-call update_exercises(2,10,0);
+call update_exercises(3,10,0,159);
+
+call create_transactions (1, TO_NUMBER('0.99', '9.99'))
+
+update fit_user set premium = 1 where id = 1;
+
+update fit_user set active = 0 where id = 1;
 
 commit;
 
 select * 
 from friends_list
-where fit_user_id = 2 and accepted = 1;
+where fit_user_id = 1 and accepted = 1;
 
 select * from fit_user;
+
+select * from user_activity;
 
 select * from daily_status;
 
 select * from daily_goals;
+
+select * from transaction;
+
+select * from notice;
+
+select * from totals where activities_template_id = 4;
 
 delete from friends_list;
 

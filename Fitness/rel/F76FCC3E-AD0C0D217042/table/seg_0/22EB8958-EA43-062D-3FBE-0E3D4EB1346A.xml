@@ -130,6 +130,19 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="avg_bpm" id="3916ACC9-954C-98AC-89B3-80872E7865BB">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 16:17:40 UTC</createdTime>
+<generatorID>255F37DC-9942-A332-C480-D7C31DA3FB05</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="3BE2BB13-DB4C-F5C0-EA9F-108AED1F9C15" name="exercises_PK">

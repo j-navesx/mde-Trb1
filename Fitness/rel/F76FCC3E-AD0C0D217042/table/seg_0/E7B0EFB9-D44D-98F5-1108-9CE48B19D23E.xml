@@ -53,13 +53,25 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BCEE7F41-6425-9CFB-8AF4-77479579A12B" name="friends_list_PKv1">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 16:17:40 UTC</createdTime>
+<generatorID>60E86519-69DE-9A62-448B-8DE3EA7AEF9E</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
+<colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="A07C1B13-0FB2-1F0E-C773-A14F2215F450" name="friends_list_PK">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-21 16:58:44 UTC</createdTime>
 <generatorID>9E6241F2-F2FD-1EF7-CEA8-6F640302C5A2</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
-<pk>true</pk>
-<indexState>Primary Constraint</indexState>
+<indexState>Unique Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>

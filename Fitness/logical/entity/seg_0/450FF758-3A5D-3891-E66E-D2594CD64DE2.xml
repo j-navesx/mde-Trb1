@@ -59,13 +59,38 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="9E6241F2-F2FD-1EF7-CEA8-6F640302C5A2" name="friends_list PK">
+<identifier id="B470D1BE-073D-1CEC-D7F1-C9D6EA971062" name="friends_list PK">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-21 15:01:38 UTC</createdTime>
+<createdTime>2021-04-30 16:15:56 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="false"/>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1304DACB-F028-4A45-8851-A25CF370DA4F</attributeRef>
+<attributeRef>67C0B66E-DB60-B4C8-1282-2A88106DF1CC</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="71D7DCC6-2EBF-693F-78F5-03AB21A24301" name="friends_list PKv1">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 16:15:56 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>1304DACB-F028-4A45-8851-A25CF370DA4F</attributeRef>
+<attributeRef>67C0B66E-DB60-B4C8-1282-2A88106DF1CC</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="60E86519-69DE-9A62-448B-8DE3EA7AEF9E" name="friends_list PKv2">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 16:15:56 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

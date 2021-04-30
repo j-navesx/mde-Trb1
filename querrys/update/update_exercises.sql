@@ -1,7 +1,8 @@
 create or replace procedure update_exercises (
     iex_id in EXERCISES.EX_ID%type,
     idistance in EXERCISES.DISTANCE%type,
-    isteps in EXERCISES.STEPS%type
+    isteps in EXERCISES.STEPS%type,
+    ibpm in EXERCISES.avg_bpm%type
 ) is
     ex_calories       EXERCISES.CALORIES%type;
     ex_end_date       EXERCISES.end_date%type;
@@ -66,7 +67,8 @@ begin
         calories = ex_calories,
         end_date = ex_end_date,
         duration = ex_duration,
-        steps = isteps
+        steps = isteps,
+        avg_bpm = ibpm
     where ex_id = iex_id;
 end;
 

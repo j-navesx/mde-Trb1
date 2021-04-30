@@ -20,7 +20,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="22EB8958-EA43-062D-3FBE-0E3D4EB1346A" otype="Table" vid="151AD9DD-4B85-B39E-4763-99F7F8684783">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="597" y="595" width="187" height="169"/>
+<bounds x="597" y="595" width="187" height="186"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.relational.TVTable" oid="272D7B72-2ED6-BFDC-0B2A-45DC57EF6D3D" otype="Table" vid="6E951F96-D169-0CB6-398D-BF9D5E98C0C3">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -150,8 +150,8 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="699" y="478"/>
-<point x="699" y="595"/>
+<point x="684" y="478"/>
+<point x="684" y="595"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="91896E2B-918D-AC81-8EA6-49AC95DB5467" otype="FKIndexAssociation" vid_source="F3E10155-59E5-0EF1-B36D-CECF4BE9D14D" vid_target="151AD9DD-4B85-B39E-4763-99F7F8684783">
