@@ -66,20 +66,6 @@
 <dataTypeSize>128</dataTypeSize>
 <ownDataTypeParameters>128,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="premium" id="F8E611B0-9F73-5876-E9C0-895127254FD7">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-29 09:11:35 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-<engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="active" id="A4E1207D-6A27-0D1A-B348-35A25DAEAC22">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-29 09:11:49 UTC</createdTime>

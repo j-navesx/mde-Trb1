@@ -78,7 +78,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="605" y="413"/>
+<point x="605" y="398"/>
 <point x="339" y="412"/>
 </points>
 </Connector>
@@ -96,7 +96,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="763" y="387"/>
+<point x="763" y="402"/>
 <point x="900" y="387"/>
 </points>
 </Connector>
@@ -105,7 +105,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="605" y="333"/>
+<point x="625" y="319"/>
 <point x="429" y="130"/>
 </points>
 </Connector>
@@ -114,7 +114,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="605" y="358"/>
+<point x="605" y="343"/>
 <point x="331" y="126"/>
 </points>
 </Connector>
@@ -123,7 +123,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="670" y="319"/>
+<point x="685" y="319"/>
 <point x="670" y="264"/>
 </points>
 </Connector>
@@ -141,7 +141,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="605" y="450"/>
+<point x="605" y="471"/>
 <point x="328" y="451"/>
 </points>
 </Connector>
@@ -150,7 +150,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="684" y="478"/>
+<point x="699" y="478"/>
 <point x="684" y="595"/>
 </points>
 </Connector>
@@ -168,11 +168,11 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="763" y="446"/>
-<point x="821" y="446"/>
-<point x="822" y="513"/>
-<point x="732" y="514"/>
-<point x="732" y="478"/>
+<point x="763" y="412"/>
+<point x="813" y="412"/>
+<point x="813" y="528"/>
+<point x="697" y="528"/>
+<point x="697" y="478"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="DBF42689-828E-2A75-60F8-3A3283D09A14" otype="FKIndexAssociation" vid_source="25B19208-5245-E4A2-31F2-B3AAB00649A9" vid_target="2F1E7725-B4E0-E61B-0D14-76D7FF146682">
@@ -180,7 +180,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="605" y="382"/>
+<point x="605" y="366"/>
 <point x="333" y="196"/>
 </points>
 </Connector>
@@ -189,7 +189,7 @@
 <backgroundColor>-16777216</backgroundColor>
 <lineWidth>1</lineWidth>
 <points>
-<point x="715" y="319"/>
+<point x="685" y="319"/>
 <point x="715" y="264"/>
 </points>
 </Connector>

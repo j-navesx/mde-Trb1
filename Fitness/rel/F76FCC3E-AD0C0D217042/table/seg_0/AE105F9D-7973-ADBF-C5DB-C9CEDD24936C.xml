@@ -57,19 +57,6 @@
 <ownDataTypeParameters>128,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="premium" id="6E28DB10-4CBF-EDA5-94E0-2CDC5CB58225">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:31:56 UTC</createdTime>
-<generatorID>F8E611B0-9F73-5876-E9C0-895127254FD7</generatorID>
-<ownerDesignName>Fitness</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
-<ownDataTypeParameters>1,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="active" id="E8312A4C-FA90-8F21-F76B-2B9936AFEF78">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:31:56 UTC</createdTime>

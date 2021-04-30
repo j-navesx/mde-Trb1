@@ -91,9 +91,9 @@ call update_exercises(3,10,0,159);
 
 call create_transactions (1, TO_NUMBER('0.99', '9.99'))
 
-update fit_user set premium = 1 where id = 1;
+update profile set premium = 1 where fit_user_id = 1;
 
-update fit_user set active = 0 where id = 1;
+update fit_user set active = 1 where id = 1;
 
 commit;
 
@@ -104,6 +104,8 @@ where fit_user_id = 1 and accepted = 1;
 select * from fit_user;
 
 select * from user_activity;
+
+select * from profile;
 
 select * from daily_status;
 

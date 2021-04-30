@@ -98,6 +98,20 @@
 <dataTypeSize>64</dataTypeSize>
 <ownDataTypeParameters>64,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="premium" id="7BF48E8D-AFF5-21BE-5219-8A744DAEA5FB">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 19:10:58 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="0CF7EE66-7B33-C7C0-52D3-862A9093A7C5" name="profile PK">

@@ -89,6 +89,19 @@
 <ownDataTypeParameters>64,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="premium" id="78D7DDFB-8720-9E60-AC87-63C8D31876BC">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 19:11:17 UTC</createdTime>
+<generatorID>7BF48E8D-AFF5-21BE-5219-8A744DAEA5FB</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="BFBC47A2-29DD-5AC9-5E53-BBF16C05D083" name="profile_PK">

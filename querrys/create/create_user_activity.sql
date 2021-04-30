@@ -12,6 +12,6 @@ begin
         ifit_user_id,
         TO_DATE(sysdate,'YYYY-MM-DD'),
         (SELECT SYSTIMESTAMP FROM dual),
-        (SELECT premium from fit_user where id = ifit_user_id)
+        (SELECT premium from profile where fit_user_id = ifit_user_id)
     );
 end;

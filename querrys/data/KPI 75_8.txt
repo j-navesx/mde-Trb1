@@ -1,0 +1,17 @@
+Simulation date: 210413_122332
+
+KPI (output): 10.559272200377208
+KPI (input): 65.31601637105179
+KPI (total): 75.875288571429
+
+Controller parameters [CPAR, U0, Ke]:
+0.3 0.0 0.0 
+1.0 -0.92 0.0 
+0.0 0.0 0.0 
+0.2593681442307692
+6.5
+
+Contact person info
+NAME: 
+E-MAIL: 
+

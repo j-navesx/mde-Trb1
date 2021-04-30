@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="fit_user" directorySegmentName="seg_0" id="AE105F9D-7973-ADBF-C5DB-C9CEDD24936C">
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="fit_user" directorySegmentName="seg_0" id="AE105F9D-7973-ADBF-C5DB-C9CEDD24936C">
 <createdBy>Guilherme</createdBy>
 <createdTime>2021-04-16 16:09:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
@@ -30,11 +30,6 @@
 <ownerDesignName>Fitness</ownerDesignName>
 <autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
 <notnullConstraintnameChanged>true</notnullConstraintnameChanged>
-</ColumnProxy>
-<ColumnProxy name="premium" id="6E28DB10-4CBF-EDA5-94E0-2CDC5CB58225">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-16 16:09:55 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
 </ColumnProxy>
 <ColumnProxy name="email" id="847E56DF-122A-882F-3BA9-E31E70C73A77">
 <createdBy>Guilherme</createdBy>
@@ -67,4 +62,12 @@
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
 </primaryKeys>
-</TableProxyOraclev11g>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="fit_user__UN" id="B5FB1F8F-53B4-DDB4-4CE1-656425B05FA0">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-04-30 19:28:25 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev12c>
