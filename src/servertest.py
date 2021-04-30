@@ -34,7 +34,10 @@ def get_queries(sqlfile):
                             q.remove(line);
                     q = ''.join(map(str,q))
                     parsed_queries.append(q)
-                parsed_queries.remove('')   
+                try:
+                    parsed_queries.remove('')
+                except:
+                    pass  
     return parsed_queries
 
 def execute_queries(queries, error=False):
@@ -49,6 +52,7 @@ def execute_queries(queries, error=False):
             except cx_Oracle.DatabaseError as ex:
                 if error:
                     print(ex)
+                    print('\n',querry,'\n')
                 error_flag = True
                 results.append("ERROR")
             except cx_Oracle.InterfaceError:
@@ -60,6 +64,7 @@ def execute_queries(queries, error=False):
         except cx_Oracle.DatabaseError as ex:
             if error:
                 print(ex)
+                print('\n',queries,'\n')
             error_flag = True
             results = ("ERROR")
         except cx_Oracle.InterfaceError:
@@ -67,26 +72,52 @@ def execute_queries(queries, error=False):
     return results, error_flag
 
 def handle_get_request(self, message:dict):
+    app = message.get("appid")
     ticket = message.get("action")
+    new_message = dict(message)
+    new_args = new_message.get("args")
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
 
     if message.get("appid") == "request":
         print("App Id requested")
         app_id = app_id_generator()
         print("Served Id:\n",app_id)
-        jsonsend = "{\""+str(app_id)+"\"}"
-        send_func(jsonsend)
+        jsonsend = {"appid":str(app_id)}
+        send_func(json.dumps(jsonsend))
 
     if message.get("appid") != "request" or not None:
         
         if ticket == "get_home":
-            pass
+            print("Getting Home Screen to "+app)
+            q = "select * from home_screen where fit_user_id="+str(users[app])
+            result, error_flag = execute_queries(q)
+            result = list(result[0])
+            result.pop(0)
+            for key, value in zip(new_args, result):
+                new_args[key] = value
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
         
         if ticket == "get_friends_list":
-            pass
+            print("Getting Friends List to "+app)
+            q = "select * from friends_list_screen where fit_user_id="+str(users[app])
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["users"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
+
         
         if ticket == "get_friends_request":
-            pass
+            print("Getting Friends Request to "+app)
+            q = "select * from friends_request_screen where fit_user_id1="+str(users[app])
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["users"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
         
         if ticket == "get_notifications":
             pass
@@ -126,17 +157,19 @@ def handle_post_request(self, message:dict):
                 assert len(message.get("args")) > 0
             except AssertionError:
                 print("Insuffiecient login Data")
-            querry = "select check_password('"+message.get("args")[0].get("username")+"','"+message.get("args")[0].get("password")+"') from dual"
+            querry = "select check_password('"+message.get("args").get("username")+"','"+message.get("args").get("password")+"') from dual"
             result, error_flag = execute_queries(querry)
             result = result[0][0]
-            if not error_flag and result != 0:
+            if not error_flag and result != None:
                 print("Login successful")
                 users[message.get("appid")] = result
-                jsonsend = "{"+str(result)+"}"
-                send_func(jsonsend)
-                print(users)
+                result, error_flag = execute_queries("update fit_user set active=1 where id = " + str(users[message.get("appid")]))
+                jsonsend = {"success": 1}
+                send_func(json.dumps(jsonsend))
             else:
                 print("Incorrect login or login error")
+                jsonsend = {"success": 0}
+                send_func(json.dumps(jsonsend))
         
         
         if ticket == "create_user":
@@ -281,13 +314,17 @@ if __name__ == "__main__":
             result, error = execute_queries(get_queries("fitness_schema.sql"))
             if not error:
                 print("Database Build Successful")
-            for filename in get_queries("compile_procedures.sql"):
+            for filename in get_queries("compile_crud.txt"):
                 procs = get_queries(filename)
                 procs.append(' ')
                 index = procs[0].find("asbegin")
+                index2 = procs[0].find("isbegin")
                 if index != -1:
                     index += 2
                     procs[0] = procs[0][:index] + " " + procs[0][index:]
+                if index2 != -1:
+                    index2 += 2
+                    procs[0] = procs[0][:index2] + " " + procs[0][index2:]
                 procs = ';'.join(procs)
                 result, error = execute_queries(procs)
             
