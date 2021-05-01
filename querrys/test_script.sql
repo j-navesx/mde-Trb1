@@ -92,7 +92,7 @@ call create_transactions (1, TO_NUMBER('0.99', '9.99'))
 
 update profile set premium = 1 where fit_user_id = 1;
 
-update fit_user set active = 1 where id = 1;
+update fit_user set active = 0 where id = 1;
 
 commit;
 
@@ -107,6 +107,8 @@ select * from user_activity;
 select * from profile;
 
 select * from daily_status;
+
+call update_leaderboard (1,4);
 
 select * from daily_goals;
 
@@ -149,3 +151,5 @@ and to_date('2021-05-01','YYYY-MM-DD')+1;
 select id, total_paid(id,to_date('2000-01-01','YYYY-MM-DD'),sysdate) as total_paid
 from fit_user
 where id = fit_user.id;
+
+select id, name, active, begin_date, end_date, total_paid(id, begin_date, end_date) as total_paid from nonactive_users;
