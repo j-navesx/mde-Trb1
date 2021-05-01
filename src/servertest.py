@@ -10,6 +10,7 @@ import secrets
 hostName = "localhost"
 serverPort = 9000
 cursor = None
+conn = None
 
 users = {}
 
@@ -162,19 +163,43 @@ def handle_get_request(self, message:dict):
             send_func(json.dumps(new_message))
         
         if ticket == "get_nonactive_users":
-            
-            pass
+            print("Getting Non Active Users to "+app)
+            q = "select id, name, active, begin_date, end_date, total_paid(id, begin_date, end_date) as total_paid from nonactive_users"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["users"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
         
         if ticket == "get_user_activities":
-            pass
+            print("Getting Non Active Users to "+app)
+            q = "select * from user_activities_screen"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["users"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
 
-        if ticket == "get_user_paid_screen":
-            q = "select id, name, premium, total_paid(user_paid_screen.id, to_date('"+new_args["begin_date"]+"','YYYY-MM-DD'),sysdate) from user_paid_screen"
-    print("\n") 
+        if ticket == "get_users_paid":
+            print("Getting Users Paid to "+app)
+            q = "select id, name, premium, total_paid(user_paid_screen.id, to_date('"+new_args["begin_date"]+"','YYYY-MM-DD'),sysdate) as total_paid from user_paid_screen"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["users"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
+    print("\n")
+    conn.commit()
 
 
 def handle_post_request(self, message:dict):
+    app = message.get("appid")
     ticket = message.get("action")
+    args = message.get("args")
+    new_message = {}
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
 
     if message.get("appid") != "request" or not None:
@@ -192,46 +217,78 @@ def handle_post_request(self, message:dict):
                 print("Login successful")
                 users[message.get("appid")] = result
                 result, error_flag = execute_queries("update fit_user set active=1 where id = " + str(users[message.get("appid")]))
-                jsonsend = {"success": 1}
-                send_func(json.dumps(jsonsend))
+                new_message["success"] = 1
+                send_func(json.dumps(new_message))
             else:
                 print("Incorrect login or login error")
-                jsonsend = {"success": 0}
-                send_func(json.dumps(jsonsend))
+                new_message["success"] = 0
+                send_func(json.dumps(new_message))
         
         
         if ticket == "create_user":
-            pass
-        
+            print("Create User Requested for "+app)
+            q = "begin create_user('"+args["username"]+"','"+args["password"]+"','"+args["email"]+"','"+args["name"]+"',"+str(args["weight"])+","+str(args["height"])+",to_date('"+args["bday"]+"','YYYY-MM-DD'),'"+args["gender"]+"'); end;"
+            result, error_flag = execute_queries(q)
+
         if ticket == "create_activities":
-            pass
+            print("Create Activity Requested for "+app)
+            q = "begin create_activities_template('"+args["name"]+"',"+str(args["cal_step_mult"])+","+str(args["cal_dist_mult"])+","+str(args["cal_time_mult"])+"); end;"
+            result, error_flag = execute_queries(q)
                 
         if ticket == "create_exercises":
-            pass
+            print("Create Exercise for"+app)
+            q = "select id from activities_template where name='" + args["act_name"]+"'"
+            result, error_flag = execute_queries(q)
+            act_id = result[0][0]
+            q = "begin create_exercises("+str(act_id)+","+str(users[app])+"); end;"
+            result, error_flag = execute_queries(q)
         
         if ticket == "create_friends":
-            pass
+            print("Send Friend Request for"+app)
+            q = "select id from fit_user where username='" + args["username"]+"'"
+            result, error_flag = execute_queries(q)
+            u_id = result[0][0]
+            q = "begin create_friends("+str(users[app])+","+str(u_id)+"); end;"
+            result, error_flag = execute_queries(q, True)
                 
         if ticket == "create_transaction":
-            pass
+            print("Create Transaction for"+app)
+            q = "begin create_transactions ("+str(users[app])+", TO_NUMBER('"+str(args["value"])+"', '9.99')); end;"
+            result, error_flag = execute_queries(q, True)
+            print(result)
 
 
-    print("\n")          
+    print("\n")
+    conn.commit()          
 
 def handle_put_request(self, message:dict):
     pass
 
 def handle_patch_request(self, message:dict):
+    app = message.get("appid")
     ticket = message.get("action")
+    args = message.get("args")
+    new_message = {}
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
-
     if message.get("appid") != "request" or not None:
+        
         if ticket == "update_exercises":
-            pass
+            print("Update Exercise for"+app)
+            q = "begin update_exercises("+str(users[app])+", TO_NUMBER('"+str(args["distance"])+"', '99999.99'), "+str(args["steps"])+","+str(args["bpm"])+"); end;"
+            result, error_flag = execute_queries(q, True)
+            print(result)
+
         if ticket == "update_friends":
             pass
+
         if ticket == "update_leaderboard":
             pass
+
+        if ticket == "update_daily_goals":
+            pass
+
+    print('\n')
+    conn.commit()
 
 def handle_delete_request(self, message:dict):
     pass
