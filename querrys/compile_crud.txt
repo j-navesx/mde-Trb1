@@ -24,5 +24,6 @@ view_notification_screen.sql;
 view_recent_exercises_screen.sql;
 view_transactions_screen.sql;
 view_user_activities_screen.sql;
+view_users_paid_screen.sql;
 check_password.sql;
 total_paid.sql;

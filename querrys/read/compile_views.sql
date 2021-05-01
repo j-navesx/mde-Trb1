@@ -15,3 +15,5 @@
 @C:\lang\mde-Trb1\querrys\read\view_transactions_screen.sql;
 
 @C:\lang\mde-Trb1\querrys\read\view_user_activities_screen.sql;
+
+@C:\lang\mde-Trb1\querrys\read\view_users_paid_screen.sql;
