@@ -356,3 +356,23 @@ update profile set premium = 1 where fit_user_id = 35;
 call create_transactions (35, TO_NUMBER('0.99', '9.99'));
 call create_transactions (35, TO_NUMBER('0.99', '9.99'));
 update fit_user set active = 0 where id = 35;
+
+-- Update leaderboards
+
+call update_leaderboard(1,4);
+call update_leaderboard(28,4);
+call update_leaderboard(4,3);
+call update_leaderboard(12,4);
+call update_leaderboard(5,9);
+call update_leaderboard(13,4);
+call update_leaderboard(7,5);
+call update_leaderboard(14,4);
+call update_leaderboard(8,4);
+call update_leaderboard(15,4);
+call update_leaderboard(9,7);
+call update_leaderboard(17,6);
+call update_leaderboard(10,5);
+call update_leaderboard(18,4);
+call update_leaderboard(11,4);
+call update_leaderboard(21,4);
+
