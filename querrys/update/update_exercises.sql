@@ -1,5 +1,5 @@
 create or replace procedure update_exercises (
-    iex_id in EXERCISES.EX_ID%type,
+    ifit_user_id in fit_user.id%type,
     idistance in EXERCISES.DISTANCE%type,
     isteps in EXERCISES.STEPS%type,
     ibpm in EXERCISES.avg_bpm%type
@@ -9,7 +9,8 @@ create or replace procedure update_exercises (
     ex_duration       EXERCISES.duration%type;
     ex_duration_min   number(38);
     ex_begin_date     EXERCISES.begin_date%type;
-    act_id            EXERCISES.activities_template_id%type;  
+    act_id            EXERCISES.activities_template_id%type;
+    iex_id            EXERCISES.ex_id%type;
     ex_cal_step_mult  activities_template.cal_step_mult%type;
     ex_cal_dist_mutl  activities_template.cal_dist_mutl%type;
     ex_cal_time_mult  activities_template.cal_time_mult%type;
@@ -17,6 +18,12 @@ begin
     select SYSTIMESTAMP 
     into ex_end_date
     from dual;
+    
+    select ex_id
+    into iex_id
+    from exercises
+    where fit_user_id = ifit_user_id
+    and end_date is null;
 
     select 
         activities_template_id,

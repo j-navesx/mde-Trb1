@@ -29,11 +29,14 @@ order by fit_user_id;
 -- Visualizar cada utilizador e o total pago desde uma data anterior (fornecida) até à 
 -- data actual.
 
-select id, name, premium, total_paid(user_paid_screen.id, to_date('"+new_args["begin_date"]+"','YYYY-MM-DD'),sysdate) as total_paid 
+select id, name, premium, total_paid(user_paid_screen.id, to_date('2021-04-19','YYYY-MM-DD'),sysdate) as total_paid 
 from user_paid_screen;
 
 -- RF 8
 -- Visualizar os clientes não ativos. Para cada um deles, visualizar as datas de 
 -- inicio/fim do período de activo e eventualmente, o total de valor pago.
+
+select id, name, active, begin_date, end_date, total_paid(id, begin_date, end_date) as total_paid 
+from nonactive_users;
 
 

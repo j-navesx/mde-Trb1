@@ -113,20 +113,20 @@ call create_exercises(4,11);
 -- Finish exercises
 
 call update_exercises(1,23,0,159);
-call update_exercises(2,10,0,153);
-call update_exercises(3,0,0,132);
-call update_exercises(4,20,0,179);
+call update_exercises(28,10,0,153);
+call update_exercises(4,0,0,132);
+call update_exercises(12,20,0,179);
 call update_exercises(5,0,0,139);
-call update_exercises(6,30,0,146);
+call update_exercises(13,30,0,146);
 call update_exercises(7,0,0,179);
-call update_exercises(8,40,0,145);
-call update_exercises(9,20,0,146);
-call update_exercises(10,30,0,179);
-call update_exercises(11,0,0,211);
-call update_exercises(12,0,0,146);
-call update_exercises(13,0,0,132);
-call update_exercises(14,10,0,146);
-call update_exercises(15,15,0,153);
+call update_exercises(14,40,0,145);
+call update_exercises(8,20,0,146);
+call update_exercises(15,30,0,179);
+call update_exercises(9,0,0,211);
+call update_exercises(17,0,0,146);
+call update_exercises(10,0,0,132);
+call update_exercises(18,10,0,146);
+call update_exercises(11,15,0,153);
 
 -- Online/offline and transactions
 
