@@ -56,7 +56,7 @@ select activities_template.name, friends_leaderboard.place
 from friends_leaderboard
 left join activities_template 
 on activities_template.id = friends_leaderboard.totals_activities_template_id
-where totals_fit_user_id = 18
+where totals_fit_user_id = 1
 order by place;
 
 -- RF 11

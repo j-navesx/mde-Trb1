@@ -1,4 +1,9 @@
-create or replace NONEDITIONABLE procedure create_activities_template(
+--------------------------------------------------------
+--  DDL for Procedure CREATE_ACTIVITIES_TEMPLATE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_ACTIVITIES_TEMPLATE" (
     iname           VARCHAR2,
     ical_step_mult  NUMBER,
     ical_dist_mutl  NUMBER,
@@ -47,7 +52,13 @@ begin
     END LOOP;
 end;
 
-create or replace procedure create_daily_goals(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_DAILY_GOALS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_DAILY_GOALS" (
     ifit_user_id  INTEGER,
     idaily_steps  NUMBER,
     idaily_cals   NUMBER
@@ -57,7 +68,13 @@ begin
     values (ifit_user_id,idaily_steps,idaily_cals);
 end;
 
-create or replace procedure create_daily_status(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_DAILY_STATUS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_DAILY_STATUS" (
     ifit_user_id  INTEGER
 ) as
 begin
@@ -81,7 +98,13 @@ begin
     );
 end;
 
-create or replace procedure create_exercises(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_EXERCISES
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_EXERCISES" (
     iactivities_template_id  INTEGER,
     ifit_user_id             INTEGER
 ) as
@@ -90,7 +113,13 @@ begin
     values (iactivities_template_id,ifit_user_id,(SELECT SYSTIMESTAMP FROM dual));
 end;
 
-create or replace procedure create_friends(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_FRIENDS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_FRIENDS" (
     ifit_user_id     INTEGER,
     ifit_user_id1    INTEGER
 ) as
@@ -99,7 +128,13 @@ begin
     values (ifit_user_id,ifit_user_id1);
 end;
 
-create or replace procedure create_notice(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_NOTICE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_NOTICE" (
     iexercises_ex_id  INTEGER,
     ifit_user_id      INTEGER,
     ititle            VARCHAR2,
@@ -111,7 +146,13 @@ begin
     values (iexercises_ex_id,ifit_user_id,(SELECT SYSTIMESTAMP FROM dual),ititle,idescription,ibrief);
 end;
 
-create or replace procedure create_transactions(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_TRANSACTIONS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_TRANSACTIONS" (
     ifit_user_id  INTEGER,
     ivalue        NUMBER
 ) as
@@ -128,7 +169,13 @@ begin
     );
 end;
 
-create or replace procedure create_user(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_USER
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_USER" (
     iusername     VARCHAR2,
     ipassword     VARCHAR2,
     iemail        VARCHAR2,
@@ -143,27 +190,27 @@ begin
 
     insert into fit_user (username, password, email, active, pt)
     values (iusername,ipassword,iemail, 0, 0);
-    
-    
+
+
     SELECT id 
     INTO aux_fit_user_id
     FROM fit_user 
     WHERE username = iusername;
-    
-    
+
+
     insert into profile (fit_user_id, name, weight, height, bday, gender, premium)
     values (aux_fit_user_id, iname, iweight, iheight, ibday, igender, 0);
-    
+
     insert into daily_goals (fit_user_id,daily_steps,daily_cals)
     values (aux_fit_user_id,0,0);
-    
+
     FOR aRow IN (
         SELECT id
         FROM activities_template
     )
     LOOP
-    
-    
+
+
     insert into totals (
         fit_user_id,
         activities_template_id,
@@ -176,8 +223,8 @@ begin
         0,
         0
     );
-    
-    
+
+
     insert into friends_leaderboard (
         totals_fit_user_id,
         totals_activities_template_id,
@@ -188,11 +235,17 @@ begin
         aRow.id,
         1
     );
-    
+
     END LOOP;
 end;
 
-create or replace procedure create_user_activity(
+/
+--------------------------------------------------------
+--  DDL for Procedure CREATE_USER_ACTIVITY
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_USER_ACTIVITY" (
     ifit_user_id  INTEGER
 ) as
 begin
@@ -210,7 +263,13 @@ begin
     );
 end;
 
-create or replace NONEDITIONABLE procedure delect_user (
+/
+--------------------------------------------------------
+--  DDL for Procedure DELECT_USER
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."DELECT_USER" (
     p_ID in FIT_USER.ID%type
 ) is
 begin
@@ -218,7 +277,13 @@ begin
     where ID = p_ID;
 end;
 
-create or replace NONEDITIONABLE procedure delete_activities (
+/
+--------------------------------------------------------
+--  DDL for Procedure DELETE_ACTIVITIES
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."DELETE_ACTIVITIES" (
     p_ID in ACTIVITIES_TEMPLATE.ID%type
 ) is
     begin
@@ -226,7 +291,13 @@ create or replace NONEDITIONABLE procedure delete_activities (
     where ID = p_ID;
 end;
 
-create or replace NONEDITIONABLE procedure delete_friend (
+/
+--------------------------------------------------------
+--  DDL for Procedure DELETE_FRIEND
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."DELETE_FRIEND" (
     ifit_user_id1 in FRIENDS_LIST.FIT_USER_ID1%type,
     ifit_user_id in FRIENDS_LIST.FIT_USER_ID%type
 ) is
@@ -235,7 +306,13 @@ begin
     where fit_user_id1 = ifit_user_id1 and fit_user_id = ifit_user_id;
 end;
 
-create or replace NONEDITIONABLE procedure update_exercises (
+/
+--------------------------------------------------------
+--  DDL for Procedure UPDATE_EXERCISES
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."UPDATE_EXERCISES" (
     ifit_user_id in fit_user.id%type,
     idistance in EXERCISES.DISTANCE%type,
     isteps in EXERCISES.STEPS%type,
@@ -316,7 +393,13 @@ begin
     where ex_id = iex_id;
 end;
 
-create or replace NONEDITIONABLE procedure update_friends (
+/
+--------------------------------------------------------
+--  DDL for Procedure UPDATE_FRIENDS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."UPDATE_FRIENDS" (
     ifit_user_id in FRIENDS_LIST.FIT_USER_ID%type,
     ifit_user_id1 in FRIENDS_LIST.FIT_USER_ID1%type
 ) is
@@ -329,7 +412,13 @@ begin
     values (ifit_user_id,ifit_user_id1,1);
 end;
 
-create or replace NONEDITIONABLE procedure update_leaderboard (
+/
+--------------------------------------------------------
+--  DDL for Procedure UPDATE_LEADERBOARD
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."UPDATE_LEADERBOARD" (
     itotals_fit_user_id in FRIENDS_LEADERBOARD.TOTALS_FIT_USER_ID%type,
     itotals_activities_template_id in FRIENDS_LEADERBOARD.TOTALS_ACTIVITIES_TEMPLATE_ID%type
 ) is
@@ -349,6 +438,7 @@ begin
     select fit_user_id1
     from friends_list
     where accepted = 1
+    and fit_user_id = itotals_fit_user_id
     )
     LOOP
         select calories 
@@ -369,7 +459,175 @@ begin
     where totals_fit_user_id = itotals_fit_user_id and totals_activities_template_id = itotals_activities_template_id;
 end;
 
-create or replace NONEDITIONABLE function check_password
+/
+--------------------------------------------------------
+--  DDL for View DAILY_STATUS_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."DAILY_STATUS_SCREEN" ("FIT_USER_ID", "NAME", "DAILY_ID", "STATUS_DATE", "DISTANCE", "STEPS", "WEIGHT", "CALORIES", "COMPLETED") AS 
+  select     
+        daily_status.fit_user_id,
+        profile.name,
+        daily_status.daily_id,
+        daily_status.status_date,  
+        daily_status.distance,     
+        daily_status.steps,        
+        daily_status.weight,       
+        daily_status.calories,     
+        daily_status.completed
+    from daily_status
+        left join profile on profile.fit_user_id = daily_status.fit_user_id
+;
+--------------------------------------------------------
+--  DDL for View FRIENDS_LIST_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."FRIENDS_LIST_SCREEN" ("FIT_USER_ID", "USERNAME", "NAME") AS 
+  select
+        friends_list.fit_user_id,
+        fit_user.username,
+        profile.name
+    from friends_list
+        full outer join fit_user on fit_user.id = friends_list.fit_user_id1
+        full outer join profile on profile.fit_user_id = fit_user.id
+    where friends_list.accepted = 1
+;
+--------------------------------------------------------
+--  DDL for View FRIENDS_REQUEST_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."FRIENDS_REQUEST_SCREEN" ("FIT_USER_ID1", "USERNAME", "NAME") AS 
+  select
+        friends_list.fit_user_id1,
+        fit_user.username,
+        profile.name
+    from friends_list
+        full outer join fit_user on fit_user.id = friends_list.fit_user_id
+        full outer join profile on profile.fit_user_id = fit_user.id
+    where friends_list.accepted is null
+;
+--------------------------------------------------------
+--  DDL for View HOME_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."HOME_SCREEN" ("FIT_USER_ID", "NAME", "STEPS", "DAILY_STEPS", "WEIGHT", "DURATION", "DISTANCE", "CALORIES", "BEGIN_DATE") AS 
+  select 
+        profile.fit_user_id,
+        profile.name, 
+        daily_status.steps, 
+        daily_goals.daily_steps, 
+        profile.weight,
+        exercises.duration, 
+        exercises.distance, 
+        exercises.calories, 
+        exercises.begin_date
+        from profile
+        full outer join daily_status on daily_status.fit_user_id = profile.fit_user_id
+        full outer join daily_goals on daily_goals.fit_user_id = daily_status.fit_user_id
+        full outer join exercises on exercises.fit_user_id = daily_goals.fit_user_id
+    where exercises.ex_id = (select max(ex_id) from exercises) or exercises.ex_id is null
+;
+--------------------------------------------------------
+--  DDL for View NONACTIVE_USERS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."NONACTIVE_USERS" ("ID", "NAME", "ACTIVE", "BEGIN_DATE", "END_DATE") AS 
+  select
+        fit_user.id,
+        profile.name,
+        fit_user.active,
+        user_activity.begin_date, 
+        user_activity.end_date
+    from fit_user
+        full outer join profile on profile.fit_user_id = fit_user.id
+        full outer join user_activity on user_activity.fit_user_id = profile.fit_user_id
+    where fit_user.active = 0
+    order by fit_user.id, user_activity.end_date desc
+;
+--------------------------------------------------------
+--  DDL for View NOTIFICATION_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."NOTIFICATION_SCREEN" ("FIT_USER_ID", "USER_NAME", "NAME", "DATE_HOUR", "TITLE", "DESCRIPTION") AS 
+  select
+        notice.fit_user_id,
+        profile.name as user_name,
+        activities_template.name,
+        notice.date_hour,
+        notice.title,
+        notice.description
+    from notice
+        full outer join profile on profile.fit_user_id = notice.fit_user_id
+        full outer join exercises on exercises.ex_id = notice.exercises_ex_id
+        full outer join activities_template on activities_template.id = exercises.activities_template_id  
+    where activities_template.id = (select activities_template_id from exercises where exercises.ex_id = notice.exercises_ex_id)
+    order by notice.date_hour desc
+;
+--------------------------------------------------------
+--  DDL for View RECENT_EXERCISES_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."RECENT_EXERCISES_SCREEN" ("FIT_USER_ID", "NAME", "BEGIN_DATE", "DURATION", "STEPS", "DISTANCE", "CALORIES") AS 
+  select 
+        exercises.fit_user_id,
+        activities_template.name,
+        exercises.begin_date,
+        exercises.duration,
+        exercises.steps,
+        exercises.distance,
+        exercises.calories
+    from exercises
+        left join activities_template on activities_template.id = exercises.activities_template_id
+        order by begin_date desc
+;
+--------------------------------------------------------
+--  DDL for View TRANSACTIONS_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."TRANSACTIONS_SCREEN" ("FIT_USER_ID", "NAME", "TR_ID", "VALUE", "T_DATE") AS 
+  select
+        transaction.fit_user_id,
+        profile.name, 
+        transaction.tr_id,
+        transaction.value,        
+        transaction.t_date
+    from transaction
+        left join profile on profile.fit_user_id = transaction.fit_user_id
+        order by transaction.t_date desc
+;
+--------------------------------------------------------
+--  DDL for View USER_ACTIVITIES_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."USER_ACTIVITIES_SCREEN" ("FIT_USER_ID", "NAME", "ACT_DATE", "BEGIN_DATE", "END_DATE", "PAID") AS 
+  select  
+        user_activity.fit_user_id,
+        profile.name,
+        user_activity.act_date,   
+        user_activity.begin_date, 
+        user_activity.end_date,   
+        user_activity.paid
+    from user_activity
+        left join profile on profile.fit_user_id = user_activity.fit_user_id
+;
+--------------------------------------------------------
+--  DDL for View USER_PAID_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."USER_PAID_SCREEN" ("ID", "NAME", "PREMIUM") AS 
+  select 
+        fit_user.id,
+        profile.name,
+        profile.premium
+    from fit_user
+        left join profile on profile.fit_user_id = fit_user.id
+        order by profile.premium desc, fit_user.id
+;
+--------------------------------------------------------
+--  DDL for Function CHECK_PASSWORD
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "MDE_TRAB1"."CHECK_PASSWORD" 
   (user_name VARCHAR2, passin VARCHAR2)
   return INTEGER
   is
@@ -387,35 +645,45 @@ create or replace NONEDITIONABLE function check_password
       return 0;
     end if;
   end;
-  
-create or replace NONEDITIONABLE function total_paid(
+
+/
+--------------------------------------------------------
+--  DDL for Function TOTAL_PAID
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION "MDE_TRAB1"."TOTAL_PAID" (
     ifit_user_id fit_user.id%type,
     begin_date  date, 
     end_date    date
-)
-return transaction.value%type
-is
-    total_val transaction.value%type;
-begin
-    select sum(value)
-    into total_val
-    from (
-        select value
-        from transaction
-        where t_date 
-        between begin_date and end_date
-        and fit_user_id = ifit_user_id
-    );
+    )
+    return transaction.value%type
+    is
+        total_val transaction.value%type;
+    begin
+        select sum(value)
+        into total_val
+        from (
+            select value
+            from transaction
+            where t_date 
+            between begin_date and end_date
+            and fit_user_id = ifit_user_id
+        );
 
-    if total_val is null
-    then
-        return 0;
-    end if;
+        if total_val is null
+        then
+            return 0;
+        end if;
 
-    return total_val;
-end;
+        return total_val;
+    end;
 
-create or replace NONEDITIONABLE trigger notice_trg
+/
+--------------------------------------------------------
+--  DDL for Trigger NOTICE_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."NOTICE_TRG" 
     after update of end_date
     on exercises
     referencing new as ex
@@ -448,8 +716,13 @@ begin
         create_notice (:ex.ex_id, :ex.fit_user_id, 'vai para o hospital rapido', 'placeholder', 'placeholder');
     end if;
 end;
+/
+ALTER TRIGGER "MDE_TRAB1"."NOTICE_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_DAILY_STATUS_TRG
+--------------------------------------------------------
 
-create or replace NONEDITIONABLE trigger update_daily_status_trg
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_DAILY_STATUS_TRG" 
     after update of end_date
     on exercises
     referencing new as ex
@@ -532,8 +805,13 @@ begin
         fit_user_id = :ex.fit_user_id 
         and to_date(status_date,'YYYY-MM-DD') = to_date(ex_end_date,'YYYY-MM-DD');
 end;
+/
+ALTER TRIGGER "MDE_TRAB1"."UPDATE_DAILY_STATUS_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_DAILY_WEIGHT_TRG
+--------------------------------------------------------
 
-create or replace NONEDITIONABLE trigger update_daily_weight_trg
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_DAILY_WEIGHT_TRG" 
     after update of weight
     on profile
     referencing new as profile
@@ -546,8 +824,27 @@ begin
     where 
         fit_user_id = :profile.fit_user_id and status_date = (select sysdate from dual);
 end;
+/
+ALTER TRIGGER "MDE_TRAB1"."UPDATE_DAILY_WEIGHT_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_LEADERBOARD_TRG
+--------------------------------------------------------
 
-create or replace NONEDITIONABLE trigger update_totals_trg
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_LEADERBOARD_TRG" 
+    after update of end_date
+    on exercises
+    referencing new as ex
+    for each row   
+begin
+    update_leaderboard (:ex.fit_user_id, :ex.activities_template_id);
+end;
+/
+ALTER TRIGGER "MDE_TRAB1"."UPDATE_LEADERBOARD_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_TOTALS_TRG
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_TOTALS_TRG" 
     after update of end_date
     on exercises
     referencing new as ex
@@ -560,8 +857,13 @@ begin
         fit_user_id = :ex.fit_user_id 
         and activities_template_id = :ex.activities_template_id;
 end;
+/
+ALTER TRIGGER "MDE_TRAB1"."UPDATE_TOTALS_TRG" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_USER_ACTIVITY_TRG
+--------------------------------------------------------
 
-create or replace NONEDITIONABLE trigger update_user_activity_trg
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_USER_ACTIVITY_TRG" 
     after update of active
     on fit_user
     referencing new as new old as old
@@ -613,147 +915,6 @@ begin
         end if;
     end if;
 end;
-
-create or replace NONEDITIONABLE trigger update_leaderboard_trg
-    after update of end_date
-    on exercises
-    referencing new as ex
-    for each row   
-begin
-    update_leaderboard (:ex.fit_user_id, :ex.activities_template_id);
-end;
-
-create or replace view daily_status_screen
-    as
-    select     
-        daily_status.fit_user_id,
-        profile.name,
-        daily_status.daily_id,
-        daily_status.status_date,  
-        daily_status.distance,     
-        daily_status.steps,        
-        daily_status.weight,       
-        daily_status.calories,     
-        daily_status.completed
-    from daily_status
-        left join profile on profile.fit_user_id = daily_status.fit_user_id;
-        
-create or replace view friends_list_screen
-    as
-    select
-        friends_list.fit_user_id,
-        fit_user.username,
-        profile.name
-    from friends_list
-        full outer join fit_user on fit_user.id = friends_list.fit_user_id1
-        full outer join profile on profile.fit_user_id = fit_user.id
-    where friends_list.accepted = 1;
-    
-create or replace view friends_request_screen
-    as
-    select
-        friends_list.fit_user_id1,
-        fit_user.username,
-        profile.name
-    from friends_list
-        full outer join fit_user on fit_user.id = friends_list.fit_user_id
-        full outer join profile on profile.fit_user_id = fit_user.id
-    where friends_list.accepted is null;
-    
-create or replace view home_screen
-    as
-    select 
-        profile.fit_user_id,
-        profile.name, 
-        daily_status.steps, 
-        daily_goals.daily_steps, 
-        profile.weight,
-        exercises.duration, 
-        exercises.distance, 
-        exercises.calories, 
-        exercises.begin_date
-        from profile
-        full outer join daily_status on daily_status.fit_user_id = profile.fit_user_id
-        full outer join daily_goals on daily_goals.fit_user_id = daily_status.fit_user_id
-        full outer join exercises on exercises.fit_user_id = daily_goals.fit_user_id
-    where exercises.ex_id = (select max(ex_id) from exercises) or exercises.ex_id is null;
-    
-create or replace view nonactive_users
-    as
-    select
-        fit_user.id,
-        profile.name,
-        fit_user.active,
-        user_activity.begin_date, 
-        user_activity.end_date
-    from fit_user
-        full outer join profile on profile.fit_user_id = fit_user.id
-        full outer join user_activity on user_activity.fit_user_id = profile.fit_user_id
-    where fit_user.active = 0
-    order by fit_user.id, user_activity.end_date desc;
-    
-create or replace view notification_screen
-    as
-    select
-        notice.fit_user_id,
-        profile.name as user_name,
-        activities_template.name,
-        notice.date_hour,
-        notice.title,
-        notice.description
-    from notice
-        full outer join profile on profile.fit_user_id = notice.fit_user_id
-        full outer join exercises on exercises.ex_id = notice.exercises_ex_id
-        full outer join activities_template on activities_template.id = exercises.activities_template_id  
-    where activities_template.id = (select activities_template_id from exercises where exercises.ex_id = notice.exercises_ex_id)
-    order by notice.date_hour desc;
-    
-create or replace view recent_exercises_screen
-    as
-    select 
-        exercises.fit_user_id,
-        activities_template.name,
-        exercises.begin_date,
-        exercises.duration,
-        exercises.steps,
-        exercises.distance,
-        exercises.calories
-    from exercises
-        left join activities_template on activities_template.id = exercises.activities_template_id
-        order by begin_date desc;
-        
-create or replace view transactions_screen
-    as
-    select
-        transaction.fit_user_id,
-        profile.name, 
-        transaction.tr_id,
-        transaction.value,        
-        transaction.t_date
-    from transaction
-        left join profile on profile.fit_user_id = transaction.fit_user_id
-        order by transaction.t_date desc;
-        
-create or replace view user_activities_screen
-    as
-    select  
-        user_activity.fit_user_id,
-        profile.name,
-        user_activity.act_date,   
-        user_activity.begin_date, 
-        user_activity.end_date,   
-        user_activity.paid
-    from user_activity
-        left join profile on profile.fit_user_id = user_activity.fit_user_id;
-        
-create or replace view user_paid_screen
-    as
-    select 
-        fit_user.id,
-        profile.name,
-        profile.premium
-    from fit_user
-        left join profile on profile.fit_user_id = fit_user.id
-        order by profile.premium desc, fit_user.id;
-
+/
+ALTER TRIGGER "MDE_TRAB1"."UPDATE_USER_ACTIVITY_TRG" ENABLE;
 
