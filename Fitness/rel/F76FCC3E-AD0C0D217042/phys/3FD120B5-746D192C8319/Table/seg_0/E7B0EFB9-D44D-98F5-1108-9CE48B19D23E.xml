@@ -26,15 +26,11 @@
 </ColumnProxy>
 </columnProxies>
 <indexProxies>
-<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="friends_list__IDXv1" id="45456E3E-BE19-0C09-382B-C3BBBF25C3C1">
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="friends_list_PK" id="D3B461C6-FAE9-89B2-E166-0B0E84687B6C">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-30 16:15:20 UTC</createdTime>
+<createdTime>2021-05-01 11:17:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
-</IndexProxy>
-<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="friends_list__IDX" id="8296D8F5-1524-F356-37AE-730C30E3DE3E">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-30 16:15:20 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
+<indexSort>SORTED</indexSort>
 </IndexProxy>
 </indexProxies>
 <foreignKeys>
@@ -50,17 +46,23 @@
 </ForeignKey>
 </foreignKeys>
 <primaryKeys>
-<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="friends_list_PKv1" id="BCEE7F41-6425-9CFB-8AF4-77479579A12B">
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="friends_list_PKv2" id="48E00278-11A7-5489-BA51-453EC434C2A0">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-30 16:17:40 UTC</createdTime>
+<createdTime>2021-05-01 11:28:09 UTC</createdTime>
+<ownerDesignName>Fitness</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="friends_list_PKv2" id="BCEE7F41-6425-9CFB-8AF4-77479579A12B">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-05-01 11:18:51 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </PrimaryKey>
 </primaryKeys>
 <uniqueKeys>
-<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="friends_list_PK" id="A07C1B13-0FB2-1F0E-C773-A14F2215F450">
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="friends_list_PK" id="D3B461C6-FAE9-89B2-E166-0B0E84687B6C">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-30 16:17:40 UTC</createdTime>
+<createdTime>2021-05-01 11:17:55 UTC</createdTime>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexSort>SORTED</indexSort>
 </UniqueKey>

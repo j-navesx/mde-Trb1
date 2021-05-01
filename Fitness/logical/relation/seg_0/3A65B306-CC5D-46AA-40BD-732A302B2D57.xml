@@ -8,6 +8,8 @@
 </engineerTo>
 <sourcePk>64EB0EDA-C25F-F04A-347C-F802CE9B9839</sourcePk>
 <identifying>false</identifying>
+<nameOnSource>act</nameOnSource>
+<nameOnTarget>ex</nameOnTarget>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>

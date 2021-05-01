@@ -27,20 +27,6 @@
 <logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id1" id="65E3F984-68D8-F8F3-37EF-86F4E7D67DBB">
-<createdBy>guilh</createdBy>
-<createdTime>2021-03-30 15:28:34 UTC</createdTime>
-<generatorID>3A65B306-CC5D-46AA-40BD-732A302B2D57</generatorID>
-<ownerDesignName>Fitness</ownerDesignName>
-<engineerTo>
-<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
-</engineerTo>
-<referedAttribute>AB3F4642-67C1-3419-D394-1EF3D29DD044</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT027</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="id" id="6CA9872E-2118-E497-0AE6-C06CBA5615B7">
 <createdBy>guilh</createdBy>
 <createdTime>2021-03-30 15:29:01 UTC</createdTime>
@@ -153,6 +139,20 @@
 <logicalDatatype>LOGDT026</logicalDatatype>
 <dataTypePrecision>3</dataTypePrecision>
 <ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="C64A7E73-85C6-6530-C85A-8851DBB023F1">
+<createdBy>Guilherme</createdBy>
+<createdTime>2021-05-01 11:21:02 UTC</createdTime>
+<generatorID>3A65B306-CC5D-46AA-40BD-732A302B2D57</generatorID>
+<ownerDesignName>Fitness</ownerDesignName>
+<engineerTo>
+<item key="F76FCC3E-9708-6DEC-D933-AD0C0D217042" value="true"/>
+</engineerTo>
+<referedAttribute>AB3F4642-67C1-3419-D394-1EF3D29DD044</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

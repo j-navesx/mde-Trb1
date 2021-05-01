@@ -1,3 +1,5 @@
+-- Create users
+
 call create_user ('Minecreeper', 'mde', 'gc.pombo@campus.fct.unl.pt', 'Guilherme', 61, 169, '2000-04-19', 'male');
 call create_user ('Loukios', 'mde', 'Loukios@campus.fct.unl.pt', 'Loukios', 69, 175, '2000-01-01', 'male');
 call create_user ('Duff', 'mde', 'Duff@campus.fct.unl.pt', 'Duff', 69, 175, '2000-01-01', 'male');
@@ -34,6 +36,8 @@ call create_user ('Sander', 'mde', 'Sander@campus.fct.unl.pt', 'Sander', 69, 175
 call create_user ('Kumaran', 'mde', 'Kumaran@campus.fct.unl.pt', 'Kumaran', 69, 175, '2000-01-01', 'male');
 call create_user ('Narayana', 'mde', 'Narayana@campus.fct.unl.pt', 'Narayana', 69, 175, '2000-01-01', 'male');
 
+-- Create activities
+
 call create_activities_template ('Squats', NULL, NULL, 8);
 call create_activities_template ('Jumping Jacks', NULL, NULL, 16);
 call create_activities_template ('Crab Walk', NULL, NULL, 10);
@@ -43,6 +47,8 @@ call create_activities_template ('Wall Pushups', NULL, NULL, 7);
 call create_activities_template ('Lunges', NULL, NULL, 6);
 call create_activities_template ('High Knees', NULL, NULL, 6);
 call create_activities_template ('Wall Sit', NULL, NULL, TO_NUMBER('3.6', '9.99'));
+
+-- Create friends
 
 call create_friends ( 2, 7);
 call create_friends ( 5, 4);
@@ -64,6 +70,8 @@ call create_friends ( 6, 23);
 call create_friends ( 24, 12);
 call create_friends ( 16, 11);
 
+-- Create accept all invitations
+
 call update_friends ( 7, 2);
 call update_friends ( 4, 5);
 call update_friends ( 26, 2);
@@ -83,69 +91,3 @@ call update_friends ( 17, 4);
 call update_friends ( 23, 6);
 call update_friends ( 12, 24);
 call update_friends ( 11, 16);
-
-call create_exercises(4,1);
-
-call update_exercises(2,10,0,300);
-
-call create_transactions (1, TO_NUMBER('0.99', '9.99'))
-
-update profile set premium = 1 where fit_user_id = 1;
-
-update fit_user set active = 1 where id = 1;
-
-commit;
-
-select * 
-from friends_list
-where fit_user_id = 1 and accepted = 1;
-
-select * from fit_user;
-
-select * from user_activity;
-
-select * from profile;
-
-select * from daily_status;
-
-select * from daily_goals;
-
-select * from transaction;
-
-select * from notice;
-
-select * from totals where activities_template_id = 4;
-
-delete from friends_list;
-
-delete from fit_user;
-
-delete from daily_status;
-
-select * 
-from activities_template;
-
-select * 
-from exercises;
-
-select *
-from notification_screen;
-
-select *
-from notification_screen 
-where fit_user_id = 1 and
-date_hour between sysdate-7 and sysdate;
-
-select * 
-from daily_status_screen;
-
-select * 
-from daily_status_screen 
-where fit_user_id = 1 
-and status_date 
-between to_date('2021-04-28','YYYY-MM-DD') 
-and to_date('2021-05-01','YYYY-MM-DD')+1;
-
-select id, total_paid(id,to_date('2000-01-01','YYYY-MM-DD'),sysdate) as total_paid
-from fit_user
-where id = fit_user.id;

@@ -53,50 +53,28 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="BCEE7F41-6425-9CFB-8AF4-77479579A12B" name="friends_list_PKv1">
+<ind_PK_UK id="48E00278-11A7-5489-BA51-453EC434C2A0" name="friends_list_PKv2">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-30 16:17:40 UTC</createdTime>
-<generatorID>60E86519-69DE-9A62-448B-8DE3EA7AEF9E</generatorID>
+<createdTime>2021-05-01 11:28:09 UTC</createdTime>
+<generatorID>AA8C6DD8-86CA-E28D-B90D-5C17866F6360</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
 <colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
+<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="A07C1B13-0FB2-1F0E-C773-A14F2215F450" name="friends_list_PK">
+<ind_PK_UK id="D3B461C6-FAE9-89B2-E166-0B0E84687B6C" name="friends_list_PK">
 <createdBy>Guilherme</createdBy>
-<createdTime>2021-04-21 16:58:44 UTC</createdTime>
-<generatorID>9E6241F2-F2FD-1EF7-CEA8-6F640302C5A2</generatorID>
+<createdTime>2021-05-01 11:17:55 UTC</createdTime>
+<generatorID>B470D1BE-073D-1CEC-D7F1-C9D6EA971062</generatorID>
 <ownerDesignName>Fitness</ownerDesignName>
 <indexState>Unique Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
 <colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="8296D8F5-1524-F356-37AE-730C30E3DE3E" name="friends_list__IDX">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-21 16:58:44 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>4D5844BC-D764-C331-F79F-C3CB68AD6BB6</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="7193D684-D40E-82E5-300A-DB85A6E47B4E"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="45456E3E-BE19-0C09-382B-C3BBBF25C3C1" name="friends_list__IDXv1">
-<createdBy>Guilherme</createdBy>
-<createdTime>2021-04-21 16:58:44 UTC</createdTime>
-<ownerDesignName>Fitness</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>F745DBE2-1DCA-9B6C-92FA-14E311FBE8D4</relationGeneratorID>
-<indexColumnUsage>
 <colUsage columnID="1AC7F543-1524-E45D-6B11-496D3CAFC8E1"/>
 </indexColumnUsage>
 </ind_PK_UK>
