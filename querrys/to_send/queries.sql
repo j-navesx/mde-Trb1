@@ -39,4 +39,50 @@ from user_paid_screen;
 select id, name, active, begin_date, end_date, total_paid(id, begin_date, end_date) as total_paid 
 from nonactive_users;
 
+-- RF 10
+-- Proponha um requisito relevante ainda por identificar e que requeira uma query 
+-- simples para o satisfazer. Implemente
+
+-- Ver amigos aceites
+
+select * 
+from friends_list
+where fit_user_id = 1
+and accepted = 1;
+
+-- Ver posição na leaderboard em relação aos amigos aceites por atividade
+
+select activities_template.name, friends_leaderboard.place 
+from friends_leaderboard
+left join activities_template 
+on activities_template.id = friends_leaderboard.totals_activities_template_id
+where totals_fit_user_id = 1
+order by place;
+
+-- RF 11
+-- Proponha um requisito relevante ainda por identificar e que requeira uma query 
+-- com funções de agregação (sum, max, min, etc) para o satisfazer. Implemente.
+
+-- max() utilizado em trigger update_user_activity_trg
+
+select sum(value)
+from (
+    select value
+    from transaction
+    where t_date 
+    between begin_date and end_date
+    and fit_user_id = 1
+);
+
+-- sum() utilizado em function total_paid
+
+select max(t_date)
+from ( 
+    select tr_id, t_date 
+    from transaction
+    where fit_user_id = 1
+);
+
+
+
 

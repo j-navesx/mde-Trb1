@@ -18,6 +18,7 @@ begin
     select fit_user_id1
     from friends_list
     where accepted = 1
+    and fit_user_id = itotals_fit_user_id
     )
     LOOP
         select calories 

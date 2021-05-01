@@ -12,6 +12,7 @@ update_daily_weight_trg.sql;
 update_exercises.sql;
 update_friends.sql;
 update_leaderboard.sql;
+update_leaderboard_trg.sql;
 update_totals_trg.sql;
 update_user_activity_trg.sql;
 notice_trg.sql;

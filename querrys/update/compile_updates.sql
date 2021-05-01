@@ -12,3 +12,5 @@
 
 @C:\lang\mde-Trb1\querrys\update\update_leaderboard.sql;
 
+@C:\lang\mde-Trb1\querrys\update\update_leaderboard_trg.sql;
+
