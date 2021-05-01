@@ -120,28 +120,56 @@ def handle_get_request(self, message:dict):
             send_func(json.dumps(new_message))
         
         if ticket == "get_notifications":
-            pass
+            print("Getting Notifications to "+app)
+            q = "select * from notification_screen where fit_user_id="+str(users[app])+" and date_hour between sysdate - "+str(new_args["days"])+" and sysdate"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["notifications"] = result
+            new_args["days"] = len(result)
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
         
         if ticket == "get_transactions":
-            pass
-        
+            print("Getting Transactions to "+app)
+            q = "select * from transactions_screen where fit_user_id="+str(users[app])+" and t_date between sysdate - "+str(new_args["days"])+" and sysdate"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["transactions"] = result
+            new_args["days"] = len(result)
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
+
         if ticket == "get_daily_status":
-            pass
-        
-        if ticket == "get_transactions":
-            pass
-        
-        if ticket == "get_transactions":
-            pass
+            print("Getting Daily Status to "+app)
+            q = "select * from daily_status_screen where fit_user_id="+str(users[app])+" and status_date between to_date('"+new_args["begin_date"]+"','YYYY-MM-DD') and to_date('"+new_args["end_date"]+"','YYYY-MM-DD')+1"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["status"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
         
         if ticket == "get_exercises":
-            pass
+            print("Getting Exercises to "+app)
+            q = "select * from recent_exercises_screen where fit_user_id="+str(users[app])
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["exercises"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
         
         if ticket == "get_nonactive_users":
+            
             pass
         
-        if ticket == "get_user_activitie":
+        if ticket == "get_user_activities":
             pass
+
+        if ticket == "get_user_paid_screen":
+            q = "select id, name, premium, total_paid(user_paid_screen.id, to_date('"+new_args["begin_date"]+"','YYYY-MM-DD'),sysdate) from user_paid_screen"
     print("\n") 
 
 
@@ -177,28 +205,17 @@ def handle_post_request(self, message:dict):
         
         if ticket == "create_activities":
             pass
-        
-        if ticket == "create_daily_goals":
-            pass
-        
-        if ticket == "create_daily_status":
-            pass
-        
+                
         if ticket == "create_exercises":
             pass
         
         if ticket == "create_friends":
             pass
-        
-        if ticket == "create_notice":
-            pass
-        
+                
         if ticket == "create_transaction":
             pass
-        
-        if ticket == "create_user_activity":
-            pass
-    
+
+
     print("\n")          
 
 def handle_put_request(self, message:dict):

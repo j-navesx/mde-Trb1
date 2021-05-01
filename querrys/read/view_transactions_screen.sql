@@ -8,3 +8,4 @@ create or replace view transactions_screen
         transaction.t_date
     from transaction
         left join profile on profile.fit_user_id = transaction.fit_user_id
+        order by transaction.t_date desc
