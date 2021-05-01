@@ -6,4 +6,4 @@ create or replace view user_paid_screen
         profile.premium
     from fit_user
         left join profile on profile.fit_user_id = fit_user.id
-        order by fit_user.premium desc, fit_user.id
+        order by profile.premium desc, fit_user.id
