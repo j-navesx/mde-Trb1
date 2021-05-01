@@ -191,6 +191,18 @@ def handle_get_request(self, message:dict):
             new_args["users"] = result
             print("Sending:",new_message)
             send_func(json.dumps(new_message))
+
+        if ticket == "get_leaderboard":
+            print("Getting User Leaderboard to"+app)
+            q = "select * from my_leaderboard_screen where fit_user_id ="+str(users[app])
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            [line.pop(0) for line in result]
+            new_args["users"] = result
+            new_args["users"] = result
+            print("Sending:",new_message)
+            send_func(json.dumps(new_message))
+
     print("\n")
     conn.commit()
 
@@ -245,7 +257,7 @@ def handle_post_request(self, message:dict):
         
         if ticket == "create_friends":
             print("Send Friend Request for"+app)
-            q = "select id from fit_user where username='" + args["username"]+"'"
+            q = "select fit_user_id from profile where name='" + args["name"]+"'"
             result, error_flag = execute_queries(q)
             u_id = result[0][0]
             q = "begin create_friends("+str(users[app])+","+str(u_id)+"); end;"
@@ -279,19 +291,43 @@ def handle_patch_request(self, message:dict):
             print(result)
 
         if ticket == "update_friends":
-            pass
-
-        if ticket == "update_leaderboard":
-            pass
+            print("Update Friend for"+app)
+            q = "select fit_user_id from profile where name ='"+args["name"]+"'"
+            result, error_flag = execute_queries(q, True)
+            fr_id = result[0][0]
+            q = "begin update_friends("+str(users[app])+","+str(fr_id)+"); end;"
+            result, error_flag = execute_queries(q, True)
 
         if ticket == "update_daily_goals":
-            pass
+            print("Update Friend for"+app)
+            if (args["daily_steps"]):
+                q = "update daily_goals set daily_steps = "+str(args["daily_steps"])+" where fit_user_id="+str(users[app])
+                result, error_flag = execute_queries(q, True)
+            if (args["daily_cals"]):
+                q = "update daily_goals set daily_cals = "+str(args["daily_cals"])+" where fit_user_id="+str(users[app])
+                result, error_flag = execute_queries(q, True)
 
     print('\n')
     conn.commit()
 
 def handle_delete_request(self, message:dict):
-    pass
+    app = message.get("appid")
+    ticket = message.get("action")
+    args = message.get("args")
+    new_message = {}
+    send_func = lambda x: self.wfile.write(x.encode('utf-8'))
+    if message.get("appid") != "request" or not None:
+        
+        if ticket == "delete_friend":
+            print("Update Friend for"+app)
+            q = "select fit_user_id from profile where name ='"+args["name"]+"'"
+            result, error_flag = execute_queries(q, True)
+            fr_id = result[0][0]
+            q = "begin delete_friend("+str(users[app])+","+str(fr_id)+"); end;"
+            result, error_flag = execute_queries(q, True)
+
+    print('\n')
+    conn.commit()
 
 class MyServer(BaseHTTPRequestHandler):
     def _set_headers(self):

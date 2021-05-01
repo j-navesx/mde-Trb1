@@ -98,7 +98,6 @@ public class Application extends javax.swing.JFrame {
         stepsNumber.setText("12345");
 
         dailyStepsProgressBar.setValue(10);
-        dailyStepsProgressBar.setString("10%");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

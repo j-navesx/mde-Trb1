@@ -230,7 +230,6 @@
                 <Component class="javax.swing.JProgressBar" name="dailyStepsProgressBar">
                   <Properties>
                     <Property name="value" type="int" value="10"/>
-                    <Property name="string" type="java.lang.String" value="10%"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
