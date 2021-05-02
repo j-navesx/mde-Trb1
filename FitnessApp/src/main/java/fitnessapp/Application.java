@@ -6,6 +6,8 @@
 package fitnessapp;
 import java.util.Arrays;
 import javax.swing.JTable;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import org.json.JSONObject;
 import org.json.JSONArray;
@@ -36,6 +38,11 @@ public class Application extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         setNewGoalsOkButton = new javax.swing.JButton();
+        NewFriendPopUp = new javax.swing.JDialog();
+        jLabel6 = new javax.swing.JLabel();
+        NewFriendName = new javax.swing.JTextField();
+        OkAddFriendButton = new javax.swing.JButton();
+        errorNewFriendAdd = new javax.swing.JLabel();
         mainWindow = new javax.swing.JTabbedPane();
         LogRegTab = new javax.swing.JTabbedPane();
         loginTab = new javax.swing.JPanel();
@@ -69,7 +76,12 @@ public class Application extends javax.swing.JFrame {
         caloriesNumber = new javax.swing.JLabel();
         exerciseDateText = new javax.swing.JLabel();
         friendsListTab = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
         friendsListTable = new javax.swing.JTable();
+        addFriendButton = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        friendsRequestTable = new javax.swing.JTable();
 
         NewGoalsPopUp.setTitle("Define New Goals");
         NewGoalsPopUp.setMinimumSize(new java.awt.Dimension(460, 260));
@@ -110,7 +122,7 @@ public class Application extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(201, 201, 201)
                         .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         NewGoalsPopUpLayout.setVerticalGroup(
             NewGoalsPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,6 +138,55 @@ public class Application extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(setNewGoalsOkButton)
                 .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        NewFriendPopUp.setTitle("New Friend");
+        NewFriendPopUp.setMinimumSize(new java.awt.Dimension(480, 300));
+        NewFriendPopUp.setPreferredSize(new java.awt.Dimension(480, 300));
+        NewFriendPopUp.setSize(new java.awt.Dimension(480, 300));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Friend's Name");
+        jLabel6.setToolTipText("");
+
+        NewFriendName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        OkAddFriendButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        OkAddFriendButton.setText("ADD");
+        OkAddFriendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OkAddFriendButtonActionPerformed(evt);
+            }
+        });
+
+        errorNewFriendAdd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout NewFriendPopUpLayout = new javax.swing.GroupLayout(NewFriendPopUp.getContentPane());
+        NewFriendPopUp.getContentPane().setLayout(NewFriendPopUpLayout);
+        NewFriendPopUpLayout.setHorizontalGroup(
+            NewFriendPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewFriendPopUpLayout.createSequentialGroup()
+                .addContainerGap(164, Short.MAX_VALUE)
+                .addGroup(NewFriendPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewFriendName, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(OkAddFriendButton)
+                    .addComponent(errorNewFriendAdd))
+                .addGap(165, 165, 165))
+        );
+        NewFriendPopUpLayout.setVerticalGroup(
+            NewFriendPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewFriendPopUpLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(NewFriendName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(OkAddFriendButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(errorNewFriendAdd)
+                .addGap(42, 42, 42))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -201,7 +262,7 @@ public class Application extends javax.swing.JFrame {
                 .addComponent(logInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(errorLabel)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(537, Short.MAX_VALUE))
         );
 
         LogRegTab.addTab("Login", loginTab);
@@ -214,7 +275,7 @@ public class Application extends javax.swing.JFrame {
         );
         registerTabLayout.setVerticalGroup(
             registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
+            .addGap(0, 974, Short.MAX_VALUE)
         );
 
         LogRegTab.addTab("Register", registerTab);
@@ -452,11 +513,15 @@ public class Application extends javax.swing.JFrame {
 
         mainWindow.addTab("Home Screen", homeScreenTab);
 
+        friendsListTab.setMaximumSize(new java.awt.Dimension(452, 200));
+        friendsListTab.setPreferredSize(new java.awt.Dimension(452, 200));
         friendsListTab.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 friendsListTabComponentShown(evt);
             }
         });
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1250, 600));
 
         friendsListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -481,28 +546,131 @@ public class Application extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        friendsListTable.setMinimumSize(new java.awt.Dimension(452, 402));
+        friendsListTable.setPreferredSize(new java.awt.Dimension(452, 402));
         friendsListTable.getTableHeader().setReorderingAllowed(false);
-        friendsListTab.setViewportView(friendsListTable);
+        jScrollPane1.setViewportView(friendsListTable);
         if (friendsListTable.getColumnModel().getColumnCount() > 0) {
             friendsListTable.getColumnModel().getColumn(0).setResizable(false);
             friendsListTable.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        mainWindow.addTab("Friends List", friendsListTab);
+        addFriendButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addFriendButton.setText("Add New Friend");
+        addFriendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addFriendButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainWindow)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainWindow, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
-        );
+        friendsRequestTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null}
+            },
+            new String [] {
+                "username", "Name", "Accepted"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, true
+            };
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        friendsRequestTable.setRowSelectionAllowed(false);
+        friendsRequestTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        friendsRequestTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        friendsRequestTable.setShowGrid(true);
+        friendsRequestTable.getTableHeader().setReorderingAllowed(false);
+        friendsRequestTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                friendsRequestTableMouseClicked(evt);
+            }
+        });
+        friendsRequestTable.getModel().addTableModelListener(
+            new TableModelListener() 
+            {
+                public void tableChanged(TableModelEvent evt) 
+                {
+                    System.out.println("Click Detected");
+                    System.out.println(evt.getColumn());
+                    System.out.println(evt.getFirstRow());
+                    System.out.println(friendsRequestTable.getRowCount());
+                    if(evt.getColumn() == 2){
+                        int index = evt.getFirstRow();
+                        Arrays b = null;
+                        JSONObject friends_request = Application.this.fitapp.get_friends_request(b);
+                        JSONObject argsr = friends_request.getJSONObject("args");
+                        JSONArray usersr = argsr.getJSONArray("users");
+                        JSONArray user_selected = usersr.getJSONArray(index);
+                        String name_selected = user_selected.getString(1);
+                        Application.this.fitapp.update_friends(name_selected);
+                        DefaultTableModel tabler = (DefaultTableModel) friendsRequestTable.getModel();
+                        tabler.removeRow(index);
+                        friendsRequestTable = new JTable(tabler);
+                    }
+                }
+            });
+            jScrollPane2.setViewportView(friendsRequestTable);
+            if (friendsRequestTable.getColumnModel().getColumnCount() > 0) {
+                friendsRequestTable.getColumnModel().getColumn(0).setResizable(false);
+                friendsRequestTable.getColumnModel().getColumn(1).setResizable(false);
+                friendsRequestTable.getColumnModel().getColumn(2).setResizable(false);
+            }
+
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(17, 17, 17)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(22, 22, 22))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addFriendButton, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(495, 495, 495))
+            );
+            jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 413, Short.MAX_VALUE)
+                    .addComponent(addFriendButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(83, 83, 83))
+            );
+
+            friendsListTab.setViewportView(jPanel1);
+
+            mainWindow.addTab("Friends List", friendsListTab);
+
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+            getContentPane().setLayout(layout);
+            layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(mainWindow)
+            );
+            layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(mainWindow, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            );
+
+            pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     private void addExerciseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addExerciseButtonActionPerformed
         // TODO add your handling code here:
@@ -629,19 +797,64 @@ public class Application extends javax.swing.JFrame {
 
     private void friendsListTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_friendsListTabComponentShown
         if(this.logedIn){
+            // Friends List Table
             Arrays a = null;
             JSONObject friends_list = this.fitapp.get_friends_list(a);
             JSONObject args = friends_list.getJSONObject("args");
             JSONArray users = args.getJSONArray("users");
             DefaultTableModel table = (DefaultTableModel) friendsListTable.getModel();
+            if (table.getRowCount() > 0){
+                for (int i = table.getRowCount() - 1; i > -1; i--) {
+                    table.removeRow(i);
+                }
+            }
             for (int i = 0 ; i < users.length(); i++){
                JSONArray user = users.getJSONArray(i);
                String[] data= {String.valueOf(user.get(0)), String.valueOf(user.get(1))};
                table.addRow(data);
             }
             friendsListTable = new JTable(table);
+            
+            // Friends Request Table
+            Arrays b = null;
+            JSONObject friends_request = this.fitapp.get_friends_request(b);
+            JSONObject argsr = friends_request.getJSONObject("args");
+            JSONArray usersr = argsr.getJSONArray("users");
+            DefaultTableModel tabler = (DefaultTableModel) friendsRequestTable.getModel();
+            if (tabler.getRowCount() > 0){
+                for (int i = tabler.getRowCount() - 1; i > -1; i--) {
+                    tabler.removeRow(i);
+                }
+            }
+            for (int i = 0 ; i < usersr.length(); i++){
+               JSONArray user = usersr.getJSONArray(i);
+               Object[] data= {String.valueOf(user.get(0)), String.valueOf(user.get(1)), false};
+               tabler.addRow(data);
+            }
+            friendsRequestTable = new JTable(tabler);
+            
         }
     }//GEN-LAST:event_friendsListTabComponentShown
+
+    private void addFriendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addFriendButtonActionPerformed
+        NewFriendPopUp.setVisible(true);
+    }//GEN-LAST:event_addFriendButtonActionPerformed
+
+    private void OkAddFriendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OkAddFriendButtonActionPerformed
+        if(NewFriendName.getText().length() > 0){
+            JSONObject result = this.fitapp.create_friends(NewFriendName.getText());
+            if (result.getInt("success") == 1){
+                NewFriendPopUp.setVisible(false);
+            }
+            else{
+                errorNewFriendAdd.setText("User not found or already added");
+            }
+        }
+    }//GEN-LAST:event_OkAddFriendButtonActionPerformed
+
+    private void friendsRequestTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_friendsRequestTableMouseClicked
+        
+    }//GEN-LAST:event_friendsRequestTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -686,17 +899,23 @@ public class Application extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane LogRegTab;
+    private javax.swing.JTextField NewFriendName;
+    private javax.swing.JDialog NewFriendPopUp;
     private javax.swing.JDialog NewGoalsPopUp;
+    private javax.swing.JButton OkAddFriendButton;
     private javax.swing.JButton addExerciseButton;
+    private javax.swing.JButton addFriendButton;
     private javax.swing.JLabel caloriesNumber;
     private javax.swing.JProgressBar dailyStepsProgressBar;
     private javax.swing.JLabel distanceNumber;
     private javax.swing.JLabel durationNumber;
     private javax.swing.JLabel errorLabel;
+    private javax.swing.JLabel errorNewFriendAdd;
     private javax.swing.JLabel exerciseDateText;
     private javax.swing.JButton friendsButton;
     private javax.swing.JScrollPane friendsListTab;
     private javax.swing.JTable friendsListTable;
+    private javax.swing.JTable friendsRequestTable;
     private javax.swing.JPanel homeScreen;
     private javax.swing.JScrollPane homeScreenTab;
     private javax.swing.JLabel jLabel1;
@@ -704,6 +923,10 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JInternalFrame lastExerciseFrame;
     private javax.swing.JLabel lastExerciseText;
     private javax.swing.JButton logInButton;

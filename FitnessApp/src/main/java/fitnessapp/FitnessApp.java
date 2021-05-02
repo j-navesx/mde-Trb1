@@ -254,7 +254,7 @@ public class FitnessApp {
         return null;
     }
     
-    public JSONObject get_friends_request(String users){
+    public JSONObject get_friends_request(Arrays users){
         HttpResponse<String> response = null;
         try {
             String str = String.format(""
