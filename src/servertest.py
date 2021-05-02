@@ -77,6 +77,8 @@ def handle_get_request(self, message:dict):
     ticket = message.get("action")
     new_message = dict(message)
     new_args = new_message.get("args")
+    succ = {"success":1}
+    fail = {"success":0}
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
 
     if message.get("appid") == "request":
@@ -165,7 +167,8 @@ def handle_get_request(self, message:dict):
         if ticket == "get_nonactive_users":
             print("Getting Non Active Users to "+app)
             q = "select id, name, active, begin_date, end_date, total_paid(id, begin_date, end_date) as total_paid from nonactive_users"
-            result, error_flag = execute_queries(q)
+            result, error_flag = execute_queries(q, True)
+            print(result)
             result = list(map(list,result))
             [line.pop(0) for line in result]
             new_args["users"] = result
@@ -212,6 +215,8 @@ def handle_post_request(self, message:dict):
     ticket = message.get("action")
     args = message.get("args")
     new_message = {}
+    succ = {"success":1}
+    fail = {"success":0}
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
 
     if message.get("appid") != "request" or not None:
@@ -252,16 +257,30 @@ def handle_post_request(self, message:dict):
             q = "select id from activities_template where name='" + args["act_name"]+"'"
             result, error_flag = execute_queries(q)
             act_id = result[0][0]
-            q = "begin create_exercises("+str(act_id)+","+str(users[app])+"); end;"
-            result, error_flag = execute_queries(q)
+            if act_id > 0:
+                q = "begin create_exercises("+str(act_id)+","+str(users[app])+"); end;"
+                result, error_flag = execute_queries(q)
+                if error_flag:
+                    send_func(json.dumps(fail))
+                else:
+                    send_func(json.dumps(succ))
+            else:
+                send_func(json.dumps(fail))
         
         if ticket == "create_friends":
             print("Send Friend Request for"+app)
             q = "select fit_user_id from profile where name='" + args["name"]+"'"
             result, error_flag = execute_queries(q)
             u_id = result[0][0]
-            q = "begin create_friends("+str(users[app])+","+str(u_id)+"); end;"
-            result, error_flag = execute_queries(q, True)
+            if u_id > 0:
+                q = "begin create_friends("+str(users[app])+","+str(u_id)+"); end;"
+                result, error_flag = execute_queries(q, True)
+                if error_flag:
+                    send_func(json.dumps(fail))
+                else:
+                    send_func(json.dumps(succ))
+            else:
+                send_func(json.dumps(fail))
                 
         if ticket == "create_transaction":
             print("Create Transaction for"+app)
@@ -281,6 +300,8 @@ def handle_patch_request(self, message:dict):
     ticket = message.get("action")
     args = message.get("args")
     new_message = {}
+    succ = {"success":1}
+    fail = {"success":0}
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
     if message.get("appid") != "request" or not None:
         
@@ -295,8 +316,16 @@ def handle_patch_request(self, message:dict):
             q = "select fit_user_id from profile where name ='"+args["name"]+"'"
             result, error_flag = execute_queries(q, True)
             fr_id = result[0][0]
-            q = "begin update_friends("+str(users[app])+","+str(fr_id)+"); end;"
-            result, error_flag = execute_queries(q, True)
+            if fr_id > 0:
+                q = "begin update_friends("+str(users[app])+","+str(fr_id)+"); end;"
+                result, error_flag = execute_queries(q, True)
+                if error_flag:
+                    send_func(json.dumps(fail))
+                else:
+                    send_func(json.dumps(succ))
+            else:
+                send_func(json.dumps(fail))
+
 
         if ticket == "update_daily_goals":
             print("Update Daily Goals for"+app)
@@ -315,6 +344,8 @@ def handle_delete_request(self, message:dict):
     ticket = message.get("action")
     args = message.get("args")
     new_message = {}
+    succ = {"success":1}
+    fail = {"success":0}
     send_func = lambda x: self.wfile.write(x.encode('utf-8'))
     if message.get("appid") != "request" or not None:
         
@@ -323,8 +354,15 @@ def handle_delete_request(self, message:dict):
             q = "select fit_user_id from profile where name ='"+args["name"]+"'"
             result, error_flag = execute_queries(q, True)
             fr_id = result[0][0]
-            q = "begin delete_friend("+str(users[app])+","+str(fr_id)+"); end;"
-            result, error_flag = execute_queries(q, True)
+            if fr_id > 0:
+                q = "begin delete_friend("+str(users[app])+","+str(fr_id)+"); end;"
+                result, error_flag = execute_queries(q, True)
+                if error_flag:
+                    send_func(json.dumps(fail))
+                else:
+                    send_func(json.dumps(succ))
+            else:
+                send_func(json.dumps(fail))
 
     print('\n')
     conn.commit()
