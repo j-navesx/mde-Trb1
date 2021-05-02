@@ -198,7 +198,7 @@ def handle_get_request(self, message:dict):
 
         if ticket == "get_leaderboard":
             print("Getting User Leaderboard to"+app)
-            q = "select * from my_leaderboard_screen where fit_user_id ="+str(users[app])
+            q = "select * from my_leaderboard_screen where totals_fit_user_id ="+str(users[app])
             result, error_flag = execute_queries(q)
             result = list(map(list,result))
             [line.pop(0) for line in result]
