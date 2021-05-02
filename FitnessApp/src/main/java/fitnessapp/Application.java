@@ -1230,14 +1230,21 @@ public class Application extends javax.swing.JFrame {
             Object calories = args.get("calories");
             Object begin_date = args.get("begin_date");
             userName.setText(name);
+            int steps;
+            int daily_steps;
             if(isteps == JSONObject.NULL){
-                isteps = 0;
+                steps = 0;
+            }
+            else{
+                steps = ((BigDecimal) isteps).intValue();
             }
             if(idaily_steps == JSONObject.NULL){
-                idaily_steps = 0;
+                daily_steps = 0;
             }
-            int steps = ((BigDecimal) isteps).intValue();
-            int daily_steps = ((BigDecimal) idaily_steps).intValue();
+            else{
+                daily_steps = ((BigDecimal) idaily_steps).intValue();
+            }
+            
             stepsNumber.setText(String.valueOf(steps));
             int percentage = 0;
             if (daily_steps != 0){
@@ -1357,7 +1364,7 @@ public class Application extends javax.swing.JFrame {
                 mainWindow.addTab("Exercises",exerciseTab);
                 mainWindow.addTab("Transactions",transactionTab);
                 mainWindow.addTab("Leader Board",leaderboardTab);
-                mainWindow.addTab("Leader Board",notificationTab);                
+                mainWindow.addTab("Notifications",notificationTab);                
             }
             else{
                 errorRegLabel.setText("Username already exists");
@@ -1439,12 +1446,14 @@ public class Application extends javax.swing.JFrame {
                     table.removeRow(i);
                 }
             }
+            
             for (int i = 0 ; i < transactions.length(); i++){
-               JSONArray exercise = transactions.getJSONArray(i);
-               Object[] data= {exercise.get(0),exercise.get(1),exercise.get(2),exercise.get(3)};
+               JSONArray tr = transactions.getJSONArray(i);
+               Object[] data= {tr.get(0),tr.get(1),tr.get(2),tr.get(3)};
                table.addRow(data);
+               transactionsTable = new JTable(table);
             }
-            transactionsTable = new JTable(table);
+            
         }
     }//GEN-LAST:event_transactionTabComponentShown
 
