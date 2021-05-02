@@ -6,7 +6,7 @@ create or replace view home_screen
         daily_status.steps, 
         daily_goals.daily_steps, 
         profile.weight,
-        extract(minute from duration) duration, 
+        extract(day from 24*60*exercises.duration) as duration, 
         exercises.distance, 
         exercises.calories, 
         to_char(exercises.begin_date,'yyyy-mm-dd') begin_date
