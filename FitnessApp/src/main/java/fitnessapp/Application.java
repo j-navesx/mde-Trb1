@@ -130,6 +130,9 @@ public class Application extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         leaderboardTable = new javax.swing.JTable();
         jLabel22 = new javax.swing.JLabel();
+        notificationTab = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        notificaitonsTable = new javax.swing.JTable();
 
         NewGoalsPopUp.setTitle("Define New Goals");
         NewGoalsPopUp.setMinimumSize(new java.awt.Dimension(460, 260));
@@ -1109,11 +1112,62 @@ public class Application extends javax.swing.JFrame {
                     .addGap(133, 133, 133)
                     .addComponent(jLabel22)
                     .addGap(36, 36, 36)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(379, Short.MAX_VALUE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(518, Short.MAX_VALUE))
             );
 
             mainWindow.addTab("Leader Board", leaderboardTab);
+
+            notificationTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+                public void componentShown(java.awt.event.ComponentEvent evt) {
+                    notificationTabComponentShown(evt);
+                }
+            });
+
+            notificaitonsTable.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+
+                },
+                new String [] {
+                    "Name", "Activitie", "Date", "Title", "Description"
+                }
+            ) {
+                boolean[] canEdit = new boolean [] {
+                    false, false, false, false, false
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+            notificaitonsTable.getTableHeader().setReorderingAllowed(false);
+            jScrollPane6.setViewportView(notificaitonsTable);
+            if (notificaitonsTable.getColumnModel().getColumnCount() > 0) {
+                notificaitonsTable.getColumnModel().getColumn(0).setResizable(false);
+                notificaitonsTable.getColumnModel().getColumn(1).setResizable(false);
+                notificaitonsTable.getColumnModel().getColumn(2).setResizable(false);
+                notificaitonsTable.getColumnModel().getColumn(3).setResizable(false);
+                notificaitonsTable.getColumnModel().getColumn(4).setResizable(false);
+            }
+
+            javax.swing.GroupLayout notificationTabLayout = new javax.swing.GroupLayout(notificationTab);
+            notificationTab.setLayout(notificationTabLayout);
+            notificationTabLayout.setHorizontalGroup(
+                notificationTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(notificationTabLayout.createSequentialGroup()
+                    .addGap(374, 374, 374)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(454, Short.MAX_VALUE))
+            );
+            notificationTabLayout.setVerticalGroup(
+                notificationTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(notificationTabLayout.createSequentialGroup()
+                    .addGap(223, 223, 223)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(357, Short.MAX_VALUE))
+            );
+
+            mainWindow.addTab("Notifications", notificationTab);
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -1150,6 +1204,7 @@ public class Application extends javax.swing.JFrame {
                 mainWindow.addTab("Exercises",exerciseTab);
                 mainWindow.addTab("Transactions",transactionTab);
                 mainWindow.addTab("Leader Board",leaderboardTab);
+                mainWindow.addTab("Notifications", notificationTab);
             }
             else{
                 errorLabel.setText("incorrect username or password");
@@ -1302,6 +1357,7 @@ public class Application extends javax.swing.JFrame {
                 mainWindow.addTab("Exercises",exerciseTab);
                 mainWindow.addTab("Transactions",transactionTab);
                 mainWindow.addTab("Leader Board",leaderboardTab);
+                mainWindow.addTab("Leader Board",notificationTab);                
             }
             else{
                 errorRegLabel.setText("Username already exists");
@@ -1422,6 +1478,27 @@ public class Application extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_leaderboardTabComponentShown
 
+    private void notificationTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_notificationTabComponentShown
+        if(this.logedIn){
+            Arrays a = null;
+            JSONObject notification_list = this.fitapp.get_notifications("7",a);
+            JSONObject args = notification_list.getJSONObject("args");
+            JSONArray nots = args.getJSONArray("notifications");
+            DefaultTableModel table = (DefaultTableModel) notificaitonsTable.getModel();
+            if (table.getRowCount() > 0){
+                for (int i = table.getRowCount() - 1; i > -1; i--) {
+                    table.removeRow(i);
+                }
+            }
+            for (int i = 0 ; i < nots.length(); i++){
+               JSONArray not = nots.getJSONArray(i);
+               Object[] data= {not.get(0),not.get(1),not.get(2),not.get(3),not.get(4)};
+               table.addRow(data);
+            }
+            notificaitonsTable = new JTable(table);
+        }
+    }//GEN-LAST:event_notificationTabComponentShown
+
     /**
      * @param args the command line arguments
      */
@@ -1462,6 +1539,7 @@ public class Application extends javax.swing.JFrame {
                 app.mainWindow.remove(app.exerciseTab);
                 app.mainWindow.remove(app.leaderboardTab);
                 app.mainWindow.remove(app.transactionTab);
+                app.mainWindow.remove(app.notificationTab);
             }
         });
     }
@@ -1526,6 +1604,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JInternalFrame lastExerciseFrame;
     private javax.swing.JLabel lastExerciseText;
     private javax.swing.JTable lastExercisesTable;
@@ -1539,6 +1618,8 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JButton newExerciseButton;
     private javax.swing.JTextField newStepsGoals;
     private javax.swing.JButton newTransactionButton;
+    private javax.swing.JTable notificaitonsTable;
+    private javax.swing.JPanel notificationTab;
     private javax.swing.JTextField passwordLabel;
     private javax.swing.JTextField passwordReg;
     private javax.swing.JLabel percentageText;
