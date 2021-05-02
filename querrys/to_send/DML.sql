@@ -581,6 +581,18 @@ end;
         order by begin_date desc
 ;
 --------------------------------------------------------
+--  DDL for View MY_LEADERBOARD_SCREEN
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW MY_LEADERBOARD_SCREEN ("NAME", "PLACE") AS 
+  select 
+        activities_template.name, 
+        friends_leaderboard.place 
+    from friends_leaderboard
+        left join activities_template on activities_template.id = friends_leaderboard.totals_activities_template_id
+    order by place
+;
+--------------------------------------------------------
 --  DDL for View TRANSACTIONS_SCREEN
 --------------------------------------------------------
 

@@ -6,3 +6,4 @@ create or replace view my_leaderboard_screen
     from friends_leaderboard
         left join activities_template on activities_template.id = friends_leaderboard.totals_activities_template_id
     order by place
+    
