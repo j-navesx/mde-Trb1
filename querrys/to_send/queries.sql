@@ -263,7 +263,7 @@ from (
     select value
     from transaction
     where t_date 
-    between begin_date and end_date
+    between to_date('2021-04-28','YYYY-MM-DD') and to_date('2021-05-02','YYYY-MM-DD')
     and fit_user_id = 1
 );
 

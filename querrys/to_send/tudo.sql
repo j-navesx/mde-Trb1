@@ -1244,7 +1244,7 @@ call create_user ('Narayana', 'mde', 'Narayana@campus.fct.unl.pt', 'Narayana', 6
 
 -- Update daily_goals
 
---update daily_goals set daily_steps = 1000, daily_cals = 400 where fit_user_id = 1;
+update daily_goals set daily_steps = 1000, daily_cals = 400 where fit_user_id = 1;
 update daily_goals set daily_steps = 1000, daily_cals = 400 where fit_user_id = 2;
 update daily_goals set daily_steps = 1000, daily_cals = 400 where fit_user_id = 3;
 update daily_goals set daily_steps = 1000, daily_cals = 400 where fit_user_id = 4;
