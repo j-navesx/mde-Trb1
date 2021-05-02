@@ -168,3 +168,5 @@ from home_screen
 order by fit_user_id;
 
 select * from daily_goals;
+
+select name from activities_template;
