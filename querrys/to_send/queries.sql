@@ -1,3 +1,14 @@
+-- RF 1
+
+
+
+-- RF 2
+
+
+
+-- RF 3
+
+
 
 -- RF 4
 -- Visualizar os valores diários para um utilizador entre duas datas.

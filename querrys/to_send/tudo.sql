@@ -1569,3 +1569,4 @@ call update_leaderboard(18,4);
 call update_leaderboard(11,4);
 call update_leaderboard(21,4);
 
+commit;
