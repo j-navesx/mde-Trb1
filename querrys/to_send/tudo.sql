@@ -276,7 +276,7 @@ ALTER TABLE user_activity
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_ACTIVITIES_TEMPLATE" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_ACTIVITIES_TEMPLATE (
     iname           VARCHAR2,
     ical_step_mult  NUMBER,
     ical_dist_mutl  NUMBER,
@@ -331,7 +331,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_DAILY_GOALS" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_DAILY_GOALS (
     ifit_user_id  INTEGER,
     idaily_steps  NUMBER,
     idaily_cals   NUMBER
@@ -347,7 +347,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_DAILY_STATUS" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_DAILY_STATUS (
     ifit_user_id  INTEGER
 ) as
 begin
@@ -377,7 +377,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_EXERCISES" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_EXERCISES (
     iactivities_template_id  INTEGER,
     ifit_user_id             INTEGER
 ) as
@@ -392,7 +392,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_FRIENDS" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_FRIENDS (
     ifit_user_id     INTEGER,
     ifit_user_id1    INTEGER
 ) as
@@ -407,7 +407,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_NOTICE" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_NOTICE (
     iexercises_ex_id  INTEGER,
     ifit_user_id      INTEGER,
     ititle            VARCHAR2,
@@ -425,7 +425,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_TRANSACTIONS" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_TRANSACTIONS (
     ifit_user_id  INTEGER,
     ivalue        NUMBER
 ) as
@@ -448,7 +448,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_USER" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_USER (
     iusername     VARCHAR2,
     ipassword     VARCHAR2,
     iemail        VARCHAR2,
@@ -518,7 +518,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."CREATE_USER_ACTIVITY" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE CREATE_USER_ACTIVITY (
     ifit_user_id  INTEGER
 ) as
 begin
@@ -542,7 +542,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."DELECT_USER" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE DELECT_USER (
     p_ID in FIT_USER.ID%type
 ) is
 begin
@@ -556,7 +556,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."DELETE_ACTIVITIES" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE DELETE_ACTIVITIES (
     p_ID in ACTIVITIES_TEMPLATE.ID%type
 ) is
     begin
@@ -570,7 +570,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."DELETE_FRIEND" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE DELETE_FRIEND (
     ifit_user_id1 in FRIENDS_LIST.FIT_USER_ID1%type,
     ifit_user_id in FRIENDS_LIST.FIT_USER_ID%type
 ) is
@@ -585,7 +585,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."UPDATE_EXERCISES" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE UPDATE_EXERCISES (
     ifit_user_id in fit_user.id%type,
     idistance in EXERCISES.DISTANCE%type,
     isteps in EXERCISES.STEPS%type,
@@ -672,7 +672,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."UPDATE_FRIENDS" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE UPDATE_FRIENDS (
     ifit_user_id in FRIENDS_LIST.FIT_USER_ID%type,
     ifit_user_id1 in FRIENDS_LIST.FIT_USER_ID1%type
 ) is
@@ -691,7 +691,7 @@ end;
 --------------------------------------------------------
 set define off;
 
-  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "MDE_TRAB1"."UPDATE_LEADERBOARD" (
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE UPDATE_LEADERBOARD (
     itotals_fit_user_id in FRIENDS_LEADERBOARD.TOTALS_FIT_USER_ID%type,
     itotals_activities_template_id in FRIENDS_LEADERBOARD.TOTALS_ACTIVITIES_TEMPLATE_ID%type
 ) is
@@ -737,7 +737,7 @@ end;
 --  DDL for View DAILY_STATUS_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."DAILY_STATUS_SCREEN" ("FIT_USER_ID", "NAME", "DAILY_ID", "STATUS_DATE", "DISTANCE", "STEPS", "WEIGHT", "CALORIES", "COMPLETED") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW DAILY_STATUS_SCREEN ("FIT_USER_ID", "NAME", "DAILY_ID", "STATUS_DATE", "DISTANCE", "STEPS", "WEIGHT", "CALORIES", "COMPLETED") AS 
   select     
         daily_status.fit_user_id,
         profile.name,
@@ -755,7 +755,7 @@ end;
 --  DDL for View FRIENDS_LIST_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."FRIENDS_LIST_SCREEN" ("FIT_USER_ID", "USERNAME", "NAME") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW FRIENDS_LIST_SCREEN ("FIT_USER_ID", "USERNAME", "NAME") AS 
   select
         friends_list.fit_user_id,
         fit_user.username,
@@ -769,7 +769,7 @@ end;
 --  DDL for View FRIENDS_REQUEST_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."FRIENDS_REQUEST_SCREEN" ("FIT_USER_ID1", "USERNAME", "NAME") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW FRIENDS_REQUEST_SCREEN ("FIT_USER_ID1", "USERNAME", "NAME") AS 
   select
         friends_list.fit_user_id1,
         fit_user.username,
@@ -783,7 +783,7 @@ end;
 --  DDL for View HOME_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."HOME_SCREEN" ("FIT_USER_ID", "NAME", "STEPS", "DAILY_STEPS", "WEIGHT", "DURATION", "DISTANCE", "CALORIES", "BEGIN_DATE") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW HOME_SCREEN ("FIT_USER_ID", "NAME", "STEPS", "DAILY_STEPS", "WEIGHT", "DURATION", "DISTANCE", "CALORIES", "BEGIN_DATE") AS 
   select 
         profile.fit_user_id,
         profile.name, 
@@ -804,7 +804,7 @@ end;
 --  DDL for View NONACTIVE_USERS
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."NONACTIVE_USERS" ("ID", "NAME", "ACTIVE", "BEGIN_DATE", "END_DATE") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW NONACTIVE_USERS ("ID", "NAME", "ACTIVE", "BEGIN_DATE", "END_DATE") AS 
   select
         fit_user.id,
         profile.name,
@@ -821,7 +821,7 @@ end;
 --  DDL for View NOTIFICATION_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."NOTIFICATION_SCREEN" ("FIT_USER_ID", "USER_NAME", "NAME", "DATE_HOUR", "TITLE", "DESCRIPTION") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW NOTIFICATION_SCREEN ("FIT_USER_ID", "USER_NAME", "NAME", "DATE_HOUR", "TITLE", "DESCRIPTION") AS 
   select
         notice.fit_user_id,
         profile.name as user_name,
@@ -840,7 +840,7 @@ end;
 --  DDL for View RECENT_EXERCISES_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."RECENT_EXERCISES_SCREEN" ("FIT_USER_ID", "NAME", "BEGIN_DATE", "DURATION", "STEPS", "DISTANCE", "CALORIES") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW RECENT_EXERCISES_SCREEN ("FIT_USER_ID", "NAME", "BEGIN_DATE", "DURATION", "STEPS", "DISTANCE", "CALORIES") AS 
   select 
         exercises.fit_user_id,
         activities_template.name,
@@ -857,7 +857,7 @@ end;
 --  DDL for View TRANSACTIONS_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."TRANSACTIONS_SCREEN" ("FIT_USER_ID", "NAME", "TR_ID", "VALUE", "T_DATE") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW TRANSACTIONS_SCREEN ("FIT_USER_ID", "NAME", "TR_ID", "VALUE", "T_DATE") AS 
   select
         transaction.fit_user_id,
         profile.name, 
@@ -872,7 +872,7 @@ end;
 --  DDL for View USER_ACTIVITIES_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."USER_ACTIVITIES_SCREEN" ("FIT_USER_ID", "NAME", "ACT_DATE", "BEGIN_DATE", "END_DATE", "PAID") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW USER_ACTIVITIES_SCREEN ("FIT_USER_ID", "NAME", "ACT_DATE", "BEGIN_DATE", "END_DATE", "PAID") AS 
   select  
         user_activity.fit_user_id,
         profile.name,
@@ -887,7 +887,7 @@ end;
 --  DDL for View USER_PAID_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW "MDE_TRAB1"."USER_PAID_SCREEN" ("ID", "NAME", "PREMIUM") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW USER_PAID_SCREEN ("ID", "NAME", "PREMIUM") AS 
   select 
         fit_user.id,
         profile.name,
@@ -900,7 +900,7 @@ end;
 --  DDL for Function CHECK_PASSWORD
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE FUNCTION "MDE_TRAB1"."CHECK_PASSWORD" 
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION CHECK_PASSWORD 
   (user_name VARCHAR2, passin VARCHAR2)
   return INTEGER
   is
@@ -924,7 +924,7 @@ end;
 --  DDL for Function TOTAL_PAID
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE FUNCTION "MDE_TRAB1"."TOTAL_PAID" (
+  CREATE OR REPLACE NONEDITIONABLE FUNCTION TOTAL_PAID (
     ifit_user_id fit_user.id%type,
     begin_date  date, 
     end_date    date
@@ -956,7 +956,7 @@ end;
 --  DDL for Trigger NOTICE_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."NOTICE_TRG" 
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER NOTICE_TRG
     after update of end_date
     on exercises
     referencing new as ex
@@ -990,12 +990,12 @@ begin
     end if;
 end;
 /
-ALTER TRIGGER "MDE_TRAB1"."NOTICE_TRG" ENABLE;
+ALTER TRIGGER NOTICE_TRG ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger UPDATE_DAILY_STATUS_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_DAILY_STATUS_TRG" 
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER UPDATE_DAILY_STATUS_TRG
     after update of end_date
     on exercises
     referencing new as ex
@@ -1079,12 +1079,12 @@ begin
         and to_date(status_date,'YYYY-MM-DD') = to_date(ex_end_date,'YYYY-MM-DD');
 end;
 /
-ALTER TRIGGER "MDE_TRAB1"."UPDATE_DAILY_STATUS_TRG" ENABLE;
+ALTER TRIGGER UPDATE_DAILY_STATUS_TRG ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger UPDATE_DAILY_WEIGHT_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_DAILY_WEIGHT_TRG" 
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER UPDATE_DAILY_WEIGHT_TRG
     after update of weight
     on profile
     referencing new as profile
@@ -1098,12 +1098,12 @@ begin
         fit_user_id = :profile.fit_user_id and status_date = (select sysdate from dual);
 end;
 /
-ALTER TRIGGER "MDE_TRAB1"."UPDATE_DAILY_WEIGHT_TRG" ENABLE;
+ALTER TRIGGER UPDATE_DAILY_WEIGHT_TRG ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger UPDATE_LEADERBOARD_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_LEADERBOARD_TRG" 
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER UPDATE_LEADERBOARD_TRG 
     after update of end_date
     on exercises
     referencing new as ex
@@ -1112,12 +1112,12 @@ begin
     update_leaderboard (:ex.fit_user_id, :ex.activities_template_id);
 end;
 /
-ALTER TRIGGER "MDE_TRAB1"."UPDATE_LEADERBOARD_TRG" ENABLE;
+ALTER TRIGGER UPDATE_LEADERBOARD_TRG ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger UPDATE_TOTALS_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_TOTALS_TRG" 
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER UPDATE_TOTALS_TRG
     after update of end_date
     on exercises
     referencing new as ex
@@ -1131,12 +1131,12 @@ begin
         and activities_template_id = :ex.activities_template_id;
 end;
 /
-ALTER TRIGGER "MDE_TRAB1"."UPDATE_TOTALS_TRG" ENABLE;
+ALTER TRIGGER UPDATE_TOTALS_TRG ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger UPDATE_USER_ACTIVITY_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE NONEDITIONABLE TRIGGER "MDE_TRAB1"."UPDATE_USER_ACTIVITY_TRG" 
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER UPDATE_USER_ACTIVITY_TRG 
     after update of active
     on fit_user
     referencing new as new old as old
@@ -1189,7 +1189,7 @@ begin
     end if;
 end;
 /
-ALTER TRIGGER "MDE_TRAB1"."UPDATE_USER_ACTIVITY_TRG" ENABLE;
+ALTER TRIGGER UPDATE_USER_ACTIVITY_TRG ENABLE;
 
 -- Create users
 
