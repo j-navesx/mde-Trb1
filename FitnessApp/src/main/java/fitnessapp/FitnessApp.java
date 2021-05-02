@@ -41,6 +41,32 @@ public class FitnessApp {
         }
     }
     
+    public JSONObject get_activities_names(Arrays activities){
+        HttpResponse<String> response = null;
+        try {
+            String str = String.format(""
+                            + "{\n\t\"appid\": \"%s\","
+                            + "\n\t\"action\": \"get_activities_available\","
+                            + "\n\t\"args\": "
+                            + "{\n\t\t\"activities\": \"%s\""
+                            + "\n\t}\n}", 
+                            this.appid, activities);
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("http://localhost:9000/"))
+                    .header("Content-Type", "application/json")
+                    .method("GET", HttpRequest.BodyPublishers.ofString(str))
+                    .build();
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
+    }
+    
     public JSONObject get_leaderboard(Arrays data){
         HttpResponse<String> response = null;
         try {
@@ -341,7 +367,7 @@ public class FitnessApp {
     }
     
     public JSONObject create_user(String username, String password, String email, 
-            String name, float weight, int height, String bday, char gender){
+            String name, int weight, int height, String bday, String gender){
         HttpResponse<String> response = null;
         try {
             String str = String.format(""

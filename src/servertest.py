@@ -206,6 +206,15 @@ def handle_get_request(self, message:dict):
             print("Sending:",new_message)
             send_func(json.dumps(new_message))
 
+        if ticket == "get_activities_available":
+            print("Getting Activities Available to"+app)
+            q = "select name from activities_template"
+            result, error_flag = execute_queries(q)
+            result = list(map(list,result))
+            new_args["activities"] = result
+            print("Sending:", new_message)
+            send_func(json.dumps(new_message))
+
     print("\n")
     conn.commit()
 
@@ -246,6 +255,10 @@ def handle_post_request(self, message:dict):
             print("Create User Requested for "+app)
             q = "begin create_user('"+args["username"]+"','"+args["password"]+"','"+args["email"]+"','"+args["name"]+"',"+str(args["weight"])+","+str(args["height"])+",to_date('"+args["bday"]+"','YYYY-MM-DD'),'"+args["gender"]+"'); end;"
             result, error_flag = execute_queries(q)
+            if error_flag:
+                send_func(json.dumps(fail))
+            else:
+                send_func(json.dumps(succ))
 
         if ticket == "create_activities":
             print("Create Activity Requested for "+app)
@@ -332,9 +345,11 @@ def handle_patch_request(self, message:dict):
             if (args["daily_steps"]):
                 q = "update daily_goals set daily_steps = "+str(args["daily_steps"])+" where fit_user_id="+str(users[app])
                 result, error_flag = execute_queries(q, True)
+                print("Updated steps")
             if (args["daily_cals"]):
                 q = "update daily_goals set daily_cals = "+str(args["daily_cals"])+" where fit_user_id="+str(users[app])
                 result, error_flag = execute_queries(q, True)
+                print("Updated calories")
 
     print('\n')
     conn.commit()

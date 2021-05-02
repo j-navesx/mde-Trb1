@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package fitnessapp;
+import java.math.BigDecimal;
 import java.util.Arrays;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -43,6 +45,17 @@ public class Application extends javax.swing.JFrame {
         NewFriendName = new javax.swing.JTextField();
         OkAddFriendButton = new javax.swing.JButton();
         errorNewFriendAdd = new javax.swing.JLabel();
+        NewExercisePopUp = new javax.swing.JDialog();
+        activitiesNamesCombo = new javax.swing.JComboBox<>();
+        startExerciseButton = new javax.swing.JButton();
+        FinishExercisePopUp = new javax.swing.JDialog();
+        updateExerciseDistance = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        updateExerciseSteps = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        updateExerciseBpm = new javax.swing.JTextField();
+        updateExerciseButton = new javax.swing.JButton();
         mainWindow = new javax.swing.JTabbedPane();
         LogRegTab = new javax.swing.JTabbedPane();
         loginTab = new javax.swing.JPanel();
@@ -54,10 +67,27 @@ public class Application extends javax.swing.JFrame {
         logInButton = new javax.swing.JButton();
         errorLabel = new javax.swing.JLabel();
         registerTab = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        usernameReg = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        passwordReg = new javax.swing.JTextField();
+        emailReg = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        nameReg = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        weightReg = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        heightReg = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        bdayReg = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        genderReg = new javax.swing.JTextField();
+        createNewUserButton = new javax.swing.JButton();
+        errorRegLabel = new javax.swing.JLabel();
         homeScreenTab = new javax.swing.JScrollPane();
         homeScreen = new javax.swing.JPanel();
-        addExerciseButton = new javax.swing.JButton();
-        friendsButton = new javax.swing.JButton();
         userIcon = new javax.swing.JLabel();
         userName = new javax.swing.JLabel();
         stepsFrame = new javax.swing.JInternalFrame();
@@ -82,6 +112,12 @@ public class Application extends javax.swing.JFrame {
         addFriendButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         friendsRequestTable = new javax.swing.JTable();
+        exerciseTab = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        lastExercisesTable = new javax.swing.JTable();
+        newExerciseButton = new javax.swing.JButton();
+        leaderboardTab = new javax.swing.JPanel();
+        transactionTab = new javax.swing.JPanel();
 
         NewGoalsPopUp.setTitle("Define New Goals");
         NewGoalsPopUp.setMinimumSize(new java.awt.Dimension(460, 260));
@@ -189,6 +225,106 @@ public class Application extends javax.swing.JFrame {
                 .addGap(42, 42, 42))
         );
 
+        NewExercisePopUp.setMinimumSize(new java.awt.Dimension(480, 300));
+        NewExercisePopUp.setPreferredSize(new java.awt.Dimension(480, 300));
+        NewExercisePopUp.setSize(new java.awt.Dimension(480, 300));
+        NewExercisePopUp.addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                NewExercisePopUpWindowOpened(evt);
+            }
+        });
+
+        activitiesNamesCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                activitiesNamesComboActionPerformed(evt);
+            }
+        });
+
+        startExerciseButton.setText("Start");
+        startExerciseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startExerciseButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout NewExercisePopUpLayout = new javax.swing.GroupLayout(NewExercisePopUp.getContentPane());
+        NewExercisePopUp.getContentPane().setLayout(NewExercisePopUpLayout);
+        NewExercisePopUpLayout.setHorizontalGroup(
+            NewExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewExercisePopUpLayout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addGroup(NewExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(activitiesNamesCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(startExerciseButton))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        NewExercisePopUpLayout.setVerticalGroup(
+            NewExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewExercisePopUpLayout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(activitiesNamesCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(startExerciseButton)
+                .addContainerGap(106, Short.MAX_VALUE))
+        );
+
+        FinishExercisePopUp.setMinimumSize(new java.awt.Dimension(480, 300));
+        FinishExercisePopUp.setPreferredSize(new java.awt.Dimension(480, 300));
+        FinishExercisePopUp.setSize(new java.awt.Dimension(480, 300));
+
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel16.setText("Distance:");
+
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel17.setText("Steps:");
+
+        jLabel18.setText("BPM:");
+
+        updateExerciseButton.setText("SUBMIT");
+        updateExerciseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateExerciseButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout FinishExercisePopUpLayout = new javax.swing.GroupLayout(FinishExercisePopUp.getContentPane());
+        FinishExercisePopUp.getContentPane().setLayout(FinishExercisePopUpLayout);
+        FinishExercisePopUpLayout.setHorizontalGroup(
+            FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FinishExercisePopUpLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(updateExerciseDistance, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateExerciseSteps, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(updateExerciseBpm, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(updateExerciseButton)
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+        FinishExercisePopUpLayout.setVerticalGroup(
+            FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FinishExercisePopUpLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateExerciseDistance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addGap(40, 40, 40)
+                .addGroup(FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateExerciseSteps, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(updateExerciseButton))
+                .addGap(40, 40, 40)
+                .addGroup(FinishExercisePopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateExerciseBpm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addContainerGap(77, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FitnessApp");
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -262,20 +398,120 @@ public class Application extends javax.swing.JFrame {
                 .addComponent(logInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(errorLabel)
-                .addContainerGap(537, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
         LogRegTab.addTab("Login", loginTab);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Register New User");
+
+        jLabel8.setText("username");
+
+        jLabel9.setText("password");
+
+        jLabel10.setText("email");
+
+        jLabel11.setText("Name");
+
+        jLabel12.setText("weight");
+
+        jLabel13.setText("height");
+
+        jLabel14.setText("birth day (yyyy-mm-dd)");
+
+        jLabel15.setText("gender");
+
+        createNewUserButton.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        createNewUserButton.setText("CREATE");
+        createNewUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createNewUserButtonActionPerformed(evt);
+            }
+        });
+
+        errorRegLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        errorRegLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout registerTabLayout = new javax.swing.GroupLayout(registerTab);
         registerTab.setLayout(registerTabLayout);
         registerTabLayout.setHorizontalGroup(
             registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGroup(registerTabLayout.createSequentialGroup()
+                .addGap(277, 277, 277)
+                .addGroup(registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel8)
+                    .addComponent(usernameReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(passwordReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(nameReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel12)
+                    .addComponent(weightReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(heightReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(bdayReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15)
+                    .addComponent(genderReg, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(272, 272, 272))
+            .addGroup(registerTabLayout.createSequentialGroup()
+                .addGap(492, 492, 492)
+                .addGroup(registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel7)
+                    .addComponent(createNewUserButton)
+                    .addComponent(errorRegLabel))
+                .addGap(337, 494, Short.MAX_VALUE))
         );
         registerTabLayout.setVerticalGroup(
             registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 974, Short.MAX_VALUE)
+            .addGroup(registerTabLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel7)
+                .addGap(47, 47, 47)
+                .addGroup(registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(registerTabLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(usernameReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(passwordReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(emailReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nameReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(registerTabLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(weightReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel13)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(heightReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bdayReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47)
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(genderReg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createNewUserButton)
+                .addGap(27, 27, 27)
+                .addComponent(errorRegLabel)
+                .addGap(373, 373, 373))
         );
 
         LogRegTab.addTab("Register", registerTab);
@@ -295,29 +531,6 @@ public class Application extends javax.swing.JFrame {
                 homeScreenTabComponentShown(evt);
             }
         });
-
-        addExerciseButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        addExerciseButton.setText("+");
-        addExerciseButton.setAlignmentX(0.5F);
-        addExerciseButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addExerciseButton.setFocusable(false);
-        addExerciseButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        addExerciseButton.setMaximumSize(new java.awt.Dimension(60, 60));
-        addExerciseButton.setMinimumSize(new java.awt.Dimension(60, 60));
-        addExerciseButton.setName(""); // NOI18N
-        addExerciseButton.setPreferredSize(new java.awt.Dimension(60, 60));
-        addExerciseButton.setSelected(true);
-        addExerciseButton.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        addExerciseButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        addExerciseButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addExerciseButtonActionPerformed(evt);
-            }
-        });
-
-        friendsButton.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        friendsButton.setText("Friends");
-        friendsButton.setFocusable(false);
 
         userIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userIcon.setText("[ICON]");
@@ -473,40 +686,31 @@ public class Application extends javax.swing.JFrame {
         homeScreenLayout.setHorizontalGroup(
             homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homeScreenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(friendsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(186, 186, 186)
+                .addGap(307, 307, 307)
                 .addGroup(homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(weightFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stepsFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(userIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(userIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 655, Short.MAX_VALUE)
                     .addComponent(lastExerciseFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(240, 240, 240)
-                .addComponent(addExerciseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(306, 306, 306))
         );
         homeScreenLayout.setVerticalGroup(
             homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homeScreenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(userIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(addExerciseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(friendsButton)))
+                .addComponent(userIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(userName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(stepsFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(weightFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(58, 58, 58)
                 .addComponent(lastExerciseFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
-        addExerciseButton.getAccessibleContext().setAccessibleName("addExerciseButton");
         userIcon.getAccessibleContext().setAccessibleName("userIcon");
 
         homeScreenTab.setViewportView(homeScreen);
@@ -649,7 +853,7 @@ public class Application extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                         .addComponent(jScrollPane2))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 413, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                     .addComponent(addFriendButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(83, 83, 83))
             );
@@ -657,6 +861,95 @@ public class Application extends javax.swing.JFrame {
             friendsListTab.setViewportView(jPanel1);
 
             mainWindow.addTab("Friends List", friendsListTab);
+
+            exerciseTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+                public void componentShown(java.awt.event.ComponentEvent evt) {
+                    exerciseTabComponentShown(evt);
+                }
+            });
+
+            lastExercisesTable.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+
+                },
+                new String [] {
+                    "Name", "Date", "Duration", "Steps", "Distance", "Calories"
+                }
+            ) {
+                boolean[] canEdit = new boolean [] {
+                    false, false, false, false, false, false
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+            jScrollPane3.setViewportView(lastExercisesTable);
+            if (lastExercisesTable.getColumnModel().getColumnCount() > 0) {
+                lastExercisesTable.getColumnModel().getColumn(0).setResizable(false);
+                lastExercisesTable.getColumnModel().getColumn(1).setResizable(false);
+                lastExercisesTable.getColumnModel().getColumn(2).setResizable(false);
+                lastExercisesTable.getColumnModel().getColumn(3).setResizable(false);
+                lastExercisesTable.getColumnModel().getColumn(4).setResizable(false);
+                lastExercisesTable.getColumnModel().getColumn(5).setResizable(false);
+            }
+
+            newExerciseButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+            newExerciseButton.setText("NEW EXERCISE");
+            newExerciseButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    newExerciseButtonActionPerformed(evt);
+                }
+            });
+
+            javax.swing.GroupLayout exerciseTabLayout = new javax.swing.GroupLayout(exerciseTab);
+            exerciseTab.setLayout(exerciseTabLayout);
+            exerciseTabLayout.setHorizontalGroup(
+                exerciseTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(exerciseTabLayout.createSequentialGroup()
+                    .addGap(278, 278, 278)
+                    .addGroup(exerciseTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(newExerciseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 663, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(339, Short.MAX_VALUE))
+            );
+            exerciseTabLayout.setVerticalGroup(
+                exerciseTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exerciseTabLayout.createSequentialGroup()
+                    .addGap(168, 168, 168)
+                    .addComponent(newExerciseButton, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(281, 281, 281))
+            );
+
+            mainWindow.addTab("Exercises", exerciseTab);
+
+            javax.swing.GroupLayout leaderboardTabLayout = new javax.swing.GroupLayout(leaderboardTab);
+            leaderboardTab.setLayout(leaderboardTabLayout);
+            leaderboardTabLayout.setHorizontalGroup(
+                leaderboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1280, Short.MAX_VALUE)
+            );
+            leaderboardTabLayout.setVerticalGroup(
+                leaderboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 687, Short.MAX_VALUE)
+            );
+
+            mainWindow.addTab("Leader Board", leaderboardTab);
+
+            javax.swing.GroupLayout transactionTabLayout = new javax.swing.GroupLayout(transactionTab);
+            transactionTab.setLayout(transactionTabLayout);
+            transactionTabLayout.setHorizontalGroup(
+                transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1280, Short.MAX_VALUE)
+            );
+            transactionTabLayout.setVerticalGroup(
+                transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 687, Short.MAX_VALUE)
+            );
+
+            mainWindow.addTab("Transactions", transactionTab);
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
@@ -666,15 +959,11 @@ public class Application extends javax.swing.JFrame {
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(mainWindow, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+                .addComponent(mainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, 720, Short.MAX_VALUE)
             );
 
             pack();
         }// </editor-fold>//GEN-END:initComponents
-
-    private void addExerciseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addExerciseButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addExerciseButtonActionPerformed
 
     private void usernameLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameLabelActionPerformed
         // TODO add your handling code here:
@@ -694,6 +983,9 @@ public class Application extends javax.swing.JFrame {
                 this.logedIn = true;
                 mainWindow.addTab("Home Screen",homeScreenTab);
                 mainWindow.addTab("Friends List",friendsListTab);
+                mainWindow.addTab("Exercises",exerciseTab);
+                mainWindow.addTab("Transactions",transactionTab);
+                mainWindow.addTab("Leader Board",leaderboardTab);
             }
             else{
                 errorLabel.setText("incorrect username or password");
@@ -703,43 +995,7 @@ public class Application extends javax.swing.JFrame {
     }//GEN-LAST:event_logInButtonActionPerformed
 
     private void homeScreenTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeScreenTabFocusGained
-        if (this.logedIn){    
-            JSONObject home_screen = this.fitapp.get_home("",0,0,0,0,0,0,"");
-            JSONObject args = home_screen.getJSONObject("args");
-            String name = args.getString("name");
-            Object isteps = args.get("steps");
-            Object idaily_steps = args.get("daily_steps");
-            String weight = String.valueOf(args.get("weight"));
-            Object duration = args.get("duration");
-            Object distance = args.get("distance");
-            Object calories = args.get("calories");
-            Object begin_date = args.get("begin_date");
-            userName.setText(name);
-            if(isteps == JSONObject.NULL){
-                isteps = 0;
-            }
-            if(idaily_steps == JSONObject.NULL){
-                idaily_steps = 0;
-            }
-            int steps = (Integer) isteps;
-            int daily_steps = (Integer) idaily_steps;
-            stepsNumber.setText(String.valueOf(steps));
-            int percentage = 0;
-            if (daily_steps != 0){
-                percentage = (steps/daily_steps) * 100;
-            }
-            dailyStepsProgressBar.setValue(percentage);
-            percentageText.setText(String.format("%s %% out of %s", percentage, daily_steps));
-            weightNumber.setText(weight);
-            
-            if(duration != JSONObject.NULL){
-                durationNumber.setText(String.format("%s minutes", duration));
-                distanceNumber.setText(String.format("%s km", distance));
-                caloriesNumber.setText(String.format("%s calories", calories));
-                exerciseDateText.setText(String.format("%s", begin_date));
-            }
-            
-        }
+
     }//GEN-LAST:event_homeScreenTabFocusGained
 
     private void homeScreenTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_homeScreenTabComponentShown
@@ -761,12 +1017,12 @@ public class Application extends javax.swing.JFrame {
             if(idaily_steps == JSONObject.NULL){
                 idaily_steps = 0;
             }
-            int steps = (Integer) isteps;
-            int daily_steps = (Integer) idaily_steps;
+            int steps = ((BigDecimal) isteps).intValue();
+            int daily_steps = ((BigDecimal) idaily_steps).intValue();
             stepsNumber.setText(String.valueOf(steps));
             int percentage = 0;
             if (daily_steps != 0){
-                percentage = (steps/daily_steps) * 100;
+                percentage = ((steps  * 100)/daily_steps) ;
             }
             dailyStepsProgressBar.setValue(percentage);
             percentageText.setText(String.format("%s %% out of %s", percentage, daily_steps));
@@ -856,6 +1112,101 @@ public class Application extends javax.swing.JFrame {
         
     }//GEN-LAST:event_friendsRequestTableMouseClicked
 
+    private void createNewUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createNewUserButtonActionPerformed
+        String username = usernameReg.getText();
+        String password = passwordReg.getText();
+        String email = emailReg.getText();
+        String name = nameReg.getText();
+        String weightS = weightReg.getText();
+        String heightS = heightReg.getText();
+        String bday = bdayReg.getText();
+        String gender = genderReg.getText();
+        if(username.length() != 0 || password.length() != 0 || email.length() != 0 || name.length() != 0 || username.length() != 0 || 
+                weightS.length() != 0 || heightS.length() != 0 || bday.length() != 0 || gender.length() != 0 ){
+            int weight = Integer.parseInt(weightS);
+            int height = Integer.parseInt(heightS);
+            JSONObject result = this.fitapp.create_user(username, password, email, name, weight, height, bday, gender);
+            int success = result.getInt("success");
+            if (success == 1) {
+                this.fitapp.login(username, password);
+                LogRegTab.remove(loginTab);
+                LogRegTab.remove(registerTab);
+                mainWindow.remove(LogRegTab);
+                this.logedIn = true;
+                mainWindow.addTab("Home Screen",homeScreenTab);
+                mainWindow.addTab("Friends List",friendsListTab);
+                mainWindow.addTab("Exercises",exerciseTab);
+                mainWindow.addTab("Transactions",transactionTab);
+                mainWindow.addTab("Leader Board",leaderboardTab);
+            }
+            else{
+                errorRegLabel.setText("Username already exists");
+            }
+            
+        }
+        else{
+            errorRegLabel.setText("No Fields can be left empty");
+        }
+    }//GEN-LAST:event_createNewUserButtonActionPerformed
+
+    private void exerciseTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_exerciseTabComponentShown
+        if(this.logedIn){
+            Arrays a = null;
+            JSONObject exercises_list = this.fitapp.get_exercises(a);
+            JSONObject args = exercises_list.getJSONObject("args");
+            JSONArray exercises = args.getJSONArray("exercises");
+            DefaultTableModel table = (DefaultTableModel) lastExercisesTable.getModel();
+            if (table.getRowCount() > 0){
+                for (int i = table.getRowCount() - 1; i > -1; i--) {
+                    table.removeRow(i);
+                }
+            }
+            for (int i = 0 ; i < exercises.length(); i++){
+               JSONArray exercise = exercises.getJSONArray(i);
+               Object[] data= {exercise.get(0),exercise.get(1),exercise.get(2),exercise.get(3),exercise.get(4),exercise.get(5)};
+               table.addRow(data);
+            }
+            lastExercisesTable = new JTable(table);
+        }
+    }//GEN-LAST:event_exerciseTabComponentShown
+
+    private void newExerciseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newExerciseButtonActionPerformed
+        NewExercisePopUp.setVisible(true);
+    }//GEN-LAST:event_newExerciseButtonActionPerformed
+
+    private void activitiesNamesComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_activitiesNamesComboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_activitiesNamesComboActionPerformed
+
+    private void NewExercisePopUpWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_NewExercisePopUpWindowOpened
+        Arrays a = null;
+        JSONObject activities = this.fitapp.get_activities_names(a);
+        JSONObject args = activities.getJSONObject("args");
+        JSONArray acts = args.getJSONArray("activities");
+        String[] names = new String[acts.length()];
+        for (int i = 0; i < acts.length(); i++ ){
+            JSONArray act = acts.getJSONArray(i);
+            names[i] = act.getString(0);
+        }
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<>(names);
+        activitiesNamesCombo.setModel(model);
+    }//GEN-LAST:event_NewExercisePopUpWindowOpened
+
+    private void updateExerciseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateExerciseButtonActionPerformed
+        float distance = Float.parseFloat(updateExerciseDistance.getText());
+        int steps = Integer.parseInt(updateExerciseSteps.getText());
+        int bpm = Integer.parseInt(updateExerciseBpm.getText());
+        this.fitapp.update_exercises(distance, steps, bpm);
+        FinishExercisePopUp.dispose();
+        NewExercisePopUp.dispose();
+    }//GEN-LAST:event_updateExerciseButtonActionPerformed
+
+    private void startExerciseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startExerciseButtonActionPerformed
+        String selected = activitiesNamesCombo.getItemAt(activitiesNamesCombo.getSelectedIndex());
+        this.fitapp.create_exercises(selected);
+        FinishExercisePopUp.setVisible(true);
+    }//GEN-LAST:event_startExerciseButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -893,60 +1244,97 @@ public class Application extends javax.swing.JFrame {
                 app.fitapp = fitapp;
                 app.mainWindow.remove(app.homeScreenTab);
                 app.mainWindow.remove(app.friendsListTab);
+                app.mainWindow.remove(app.exerciseTab);
+                app.mainWindow.remove(app.leaderboardTab);
+                app.mainWindow.remove(app.transactionTab);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog FinishExercisePopUp;
     private javax.swing.JTabbedPane LogRegTab;
+    private javax.swing.JDialog NewExercisePopUp;
     private javax.swing.JTextField NewFriendName;
     private javax.swing.JDialog NewFriendPopUp;
     private javax.swing.JDialog NewGoalsPopUp;
     private javax.swing.JButton OkAddFriendButton;
-    private javax.swing.JButton addExerciseButton;
+    private javax.swing.JComboBox<String> activitiesNamesCombo;
     private javax.swing.JButton addFriendButton;
+    private javax.swing.JTextField bdayReg;
     private javax.swing.JLabel caloriesNumber;
+    private javax.swing.JButton createNewUserButton;
     private javax.swing.JProgressBar dailyStepsProgressBar;
     private javax.swing.JLabel distanceNumber;
     private javax.swing.JLabel durationNumber;
+    private javax.swing.JTextField emailReg;
     private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel errorNewFriendAdd;
+    private javax.swing.JLabel errorRegLabel;
     private javax.swing.JLabel exerciseDateText;
-    private javax.swing.JButton friendsButton;
+    private javax.swing.JPanel exerciseTab;
     private javax.swing.JScrollPane friendsListTab;
     private javax.swing.JTable friendsListTable;
     private javax.swing.JTable friendsRequestTable;
+    private javax.swing.JTextField genderReg;
+    private javax.swing.JTextField heightReg;
     private javax.swing.JPanel homeScreen;
     private javax.swing.JScrollPane homeScreenTab;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JInternalFrame lastExerciseFrame;
     private javax.swing.JLabel lastExerciseText;
+    private javax.swing.JTable lastExercisesTable;
+    private javax.swing.JPanel leaderboardTab;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel loginTab;
     private javax.swing.JTabbedPane mainWindow;
+    private javax.swing.JTextField nameReg;
     private javax.swing.JTextField newCaloriesGoals;
+    private javax.swing.JButton newExerciseButton;
     private javax.swing.JTextField newStepsGoals;
     private javax.swing.JTextField passwordLabel;
+    private javax.swing.JTextField passwordReg;
     private javax.swing.JLabel percentageText;
     private javax.swing.JPanel registerTab;
     private javax.swing.JButton setNewGoalsButton;
     private javax.swing.JButton setNewGoalsOkButton;
+    private javax.swing.JButton startExerciseButton;
     private javax.swing.JInternalFrame stepsFrame;
     private javax.swing.JLabel stepsNumber;
     private javax.swing.JLabel stepsText;
+    private javax.swing.JPanel transactionTab;
+    private javax.swing.JTextField updateExerciseBpm;
+    private javax.swing.JButton updateExerciseButton;
+    private javax.swing.JTextField updateExerciseDistance;
+    private javax.swing.JTextField updateExerciseSteps;
     private javax.swing.JLabel userIcon;
     private javax.swing.JLabel userName;
     private javax.swing.JTextField usernameLabel;
+    private javax.swing.JTextField usernameReg;
     private javax.swing.JInternalFrame weightFrame;
     private javax.swing.JLabel weightNumber;
+    private javax.swing.JTextField weightReg;
     private javax.swing.JLabel weightText;
     // End of variables declaration//GEN-END:variables
 }
