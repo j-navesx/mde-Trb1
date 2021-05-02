@@ -299,7 +299,7 @@ def handle_patch_request(self, message:dict):
             result, error_flag = execute_queries(q, True)
 
         if ticket == "update_daily_goals":
-            print("Update Friend for"+app)
+            print("Update Daily Goals for"+app)
             if (args["daily_steps"]):
                 q = "update daily_goals set daily_steps = "+str(args["daily_steps"])+" where fit_user_id="+str(users[app])
                 result, error_flag = execute_queries(q, True)
