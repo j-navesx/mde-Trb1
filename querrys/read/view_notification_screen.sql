@@ -4,7 +4,7 @@ create or replace view notification_screen
         notice.fit_user_id,
         profile.name as user_name,
         activities_template.name,
-        notice.date_hour,
+        to_char(notice.date_hour) as date_hour,
         notice.title,
         notice.description
     from notice

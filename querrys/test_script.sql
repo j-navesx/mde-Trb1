@@ -86,7 +86,7 @@ call update_friends ( 11, 16);
 
 call create_exercises(4,1);
 
-call update_exercises(2,10,0,300);
+call update_exercises(1,10,0,300);
 
 call create_transactions (1, TO_NUMBER('0.99', '9.99'))
 
@@ -153,3 +153,13 @@ from fit_user
 where id = fit_user.id;
 
 select id, name, active, begin_date, end_date, total_paid(id, begin_date, end_date) as total_paid from nonactive_users;
+
+select duration , extract(day from 24*60*duration)
+from exercises
+where ex_id = 18;
+
+select * from nonactive_users;
+select * from notification_screen;
+select * from recent_exercises_screen;
+select * from user_activities_screen;
+

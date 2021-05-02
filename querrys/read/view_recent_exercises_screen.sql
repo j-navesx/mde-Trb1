@@ -3,8 +3,8 @@ create or replace view recent_exercises_screen
     select 
         exercises.fit_user_id,
         activities_template.name,
-        exercises.begin_date,
-        exercises.duration,
+        to_char(exercises.begin_date) as begin_date,
+        extract(day from 24*60*exercises.duration) as duration,
         exercises.steps,
         exercises.distance,
         exercises.calories

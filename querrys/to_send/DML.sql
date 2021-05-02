@@ -536,8 +536,8 @@ end;
         fit_user.id,
         profile.name,
         fit_user.active,
-        user_activity.begin_date, 
-        user_activity.end_date
+        to_char(user_activity.begin_date) as begin_date, 
+        to_char(user_activity.end_date) as end_date
     from fit_user
         full outer join profile on profile.fit_user_id = fit_user.id
         full outer join user_activity on user_activity.fit_user_id = profile.fit_user_id
@@ -553,7 +553,7 @@ end;
         notice.fit_user_id,
         profile.name as user_name,
         activities_template.name,
-        notice.date_hour,
+        to_char(notice.date_hour) as date_hour,
         notice.title,
         notice.description
     from notice
@@ -571,8 +571,8 @@ end;
   select 
         exercises.fit_user_id,
         activities_template.name,
-        exercises.begin_date,
-        exercises.duration,
+        to_char(exercises.begin_date) as begin_date,
+        extract(day from 24*60*exercises.duration) as duration,
         exercises.steps,
         exercises.distance,
         exercises.calories
@@ -604,8 +604,8 @@ end;
         user_activity.fit_user_id,
         profile.name,
         user_activity.act_date,   
-        user_activity.begin_date, 
-        user_activity.end_date,   
+        to_char(user_activity.begin_date) as begin_date, 
+        to_char(user_activity.end_date) as end_date,      
         user_activity.paid
     from user_activity
         left join profile on profile.fit_user_id = user_activity.fit_user_id
