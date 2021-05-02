@@ -202,8 +202,7 @@ def handle_get_request(self, message:dict):
             result, error_flag = execute_queries(q)
             result = list(map(list,result))
             [line.pop(0) for line in result]
-            new_args["users"] = result
-            new_args["users"] = result
+            new_args["data"] = result
             print("Sending:",new_message)
             send_func(json.dumps(new_message))
 

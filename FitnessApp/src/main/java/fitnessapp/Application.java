@@ -127,6 +127,9 @@ public class Application extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         newTransactionButton = new javax.swing.JButton();
         leaderboardTab = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        leaderboardTable = new javax.swing.JTable();
+        jLabel22 = new javax.swing.JLabel();
 
         NewGoalsPopUp.setTitle("Define New Goals");
         NewGoalsPopUp.setMinimumSize(new java.awt.Dimension(460, 260));
@@ -457,7 +460,7 @@ public class Application extends javax.swing.JFrame {
                 .addComponent(logInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addComponent(errorLabel)
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(537, Short.MAX_VALUE))
         );
 
         LogRegTab.addTab("Login", loginTab);
@@ -912,7 +915,7 @@ public class Application extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
                         .addComponent(jScrollPane2))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 413, Short.MAX_VALUE)
                     .addComponent(addFriendButton, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(83, 83, 83))
             );
@@ -1052,20 +1055,62 @@ public class Application extends javax.swing.JFrame {
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(18, 18, 18)
                     .addComponent(newTransactionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(53, Short.MAX_VALUE))
+                    .addContainerGap(373, Short.MAX_VALUE))
             );
 
             mainWindow.addTab("Transactions", transactionTab);
+
+            leaderboardTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+                public void componentShown(java.awt.event.ComponentEvent evt) {
+                    leaderboardTabComponentShown(evt);
+                }
+            });
+
+            leaderboardTable.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+
+                },
+                new String [] {
+                    "Name", "Place"
+                }
+            ) {
+                boolean[] canEdit = new boolean [] {
+                    false, false
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+            jScrollPane5.setViewportView(leaderboardTable);
+            if (leaderboardTable.getColumnModel().getColumnCount() > 0) {
+                leaderboardTable.getColumnModel().getColumn(0).setResizable(false);
+                leaderboardTable.getColumnModel().getColumn(1).setResizable(false);
+            }
+
+            jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+            jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel22.setText("LEADERBOARD");
 
             javax.swing.GroupLayout leaderboardTabLayout = new javax.swing.GroupLayout(leaderboardTab);
             leaderboardTab.setLayout(leaderboardTabLayout);
             leaderboardTabLayout.setHorizontalGroup(
                 leaderboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 1280, Short.MAX_VALUE)
+                .addGroup(leaderboardTabLayout.createSequentialGroup()
+                    .addContainerGap(426, Short.MAX_VALUE)
+                    .addGroup(leaderboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jLabel22)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(402, 402, 402))
             );
             leaderboardTabLayout.setVerticalGroup(
                 leaderboardTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 687, Short.MAX_VALUE)
+                .addGroup(leaderboardTabLayout.createSequentialGroup()
+                    .addGap(133, 133, 133)
+                    .addComponent(jLabel22)
+                    .addGap(36, 36, 36)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(379, Short.MAX_VALUE))
             );
 
             mainWindow.addTab("Leader Board", leaderboardTab);
@@ -1078,7 +1123,7 @@ public class Application extends javax.swing.JFrame {
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(mainWindow, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+                .addComponent(mainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, 720, Short.MAX_VALUE)
             );
 
             pack();
@@ -1349,11 +1394,33 @@ public class Application extends javax.swing.JFrame {
 
     private void confirmTransactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmTransactionButtonActionPerformed
         this.fitapp.create_transaction(0.99);
+        NewTransactionPopUp.dispose();
     }//GEN-LAST:event_confirmTransactionButtonActionPerformed
 
     private void newTransactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newTransactionButtonActionPerformed
         NewTransactionPopUp.setVisible(true);
     }//GEN-LAST:event_newTransactionButtonActionPerformed
+
+    private void leaderboardTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_leaderboardTabComponentShown
+        if(this.logedIn){
+            Arrays a = null;
+            JSONObject leaderboard_list = this.fitapp.get_leaderboard(a);
+            JSONObject args = leaderboard_list.getJSONObject("args");
+            JSONArray places = args.getJSONArray("data");
+            DefaultTableModel table = (DefaultTableModel) leaderboardTable.getModel();
+            if (table.getRowCount() > 0){
+                for (int i = table.getRowCount() - 1; i > -1; i--) {
+                    table.removeRow(i);
+                }
+            }
+            for (int i = 0 ; i < places.length(); i++){
+               JSONArray place = places.getJSONArray(i);
+               Object[] data= {place.get(0),place.get(1)};
+               table.addRow(data);
+            }
+            transactionsTable = new JTable(table);
+        }
+    }//GEN-LAST:event_leaderboardTabComponentShown
 
     /**
      * @param args the command line arguments
@@ -1445,6 +1512,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1457,10 +1525,12 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JInternalFrame lastExerciseFrame;
     private javax.swing.JLabel lastExerciseText;
     private javax.swing.JTable lastExercisesTable;
     private javax.swing.JPanel leaderboardTab;
+    private javax.swing.JTable leaderboardTable;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel loginTab;
     private javax.swing.JTabbedPane mainWindow;

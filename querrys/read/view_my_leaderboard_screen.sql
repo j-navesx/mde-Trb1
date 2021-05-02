@@ -1,6 +1,7 @@
 create or replace view my_leaderboard_screen
     as
     select 
+        friends_leaderboard.totals_fit_user_id,
         activities_template.name, 
         friends_leaderboard.place 
     from friends_leaderboard
