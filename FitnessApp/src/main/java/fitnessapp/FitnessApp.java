@@ -427,7 +427,7 @@ public class FitnessApp {
         return null;
     }
     
-    public JSONObject create_transaction(float value){
+    public JSONObject create_transaction(double value){
         HttpResponse<String> response = null;
         try {
             String str = String.format(""

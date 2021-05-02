@@ -56,6 +56,11 @@ public class Application extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         updateExerciseBpm = new javax.swing.JTextField();
         updateExerciseButton = new javax.swing.JButton();
+        NewTransactionPopUp = new javax.swing.JDialog();
+        jLabel20 = new javax.swing.JLabel();
+        confirmTransactionButton = new javax.swing.JButton();
+        errorTransactionLabel = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         mainWindow = new javax.swing.JTabbedPane();
         LogRegTab = new javax.swing.JTabbedPane();
         loginTab = new javax.swing.JPanel();
@@ -116,8 +121,12 @@ public class Application extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         lastExercisesTable = new javax.swing.JTable();
         newExerciseButton = new javax.swing.JButton();
-        leaderboardTab = new javax.swing.JPanel();
         transactionTab = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        transactionsTable = new javax.swing.JTable();
+        jLabel19 = new javax.swing.JLabel();
+        newTransactionButton = new javax.swing.JButton();
+        leaderboardTab = new javax.swing.JPanel();
 
         NewGoalsPopUp.setTitle("Define New Goals");
         NewGoalsPopUp.setMinimumSize(new java.awt.Dimension(460, 260));
@@ -323,6 +332,56 @@ public class Application extends javax.swing.JFrame {
                     .addComponent(updateExerciseBpm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel18))
                 .addContainerGap(77, Short.MAX_VALUE))
+        );
+
+        NewTransactionPopUp.setMinimumSize(new java.awt.Dimension(480, 300));
+        NewTransactionPopUp.setPreferredSize(new java.awt.Dimension(480, 300));
+        NewTransactionPopUp.setSize(new java.awt.Dimension(480, 300));
+
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("NEW TRANSACTION");
+
+        confirmTransactionButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        confirmTransactionButton.setText("CONFIRM");
+        confirmTransactionButton.setToolTipText("");
+        confirmTransactionButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmTransactionButtonActionPerformed(evt);
+            }
+        });
+
+        errorTransactionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("Price: 0.99€");
+
+        javax.swing.GroupLayout NewTransactionPopUpLayout = new javax.swing.GroupLayout(NewTransactionPopUp.getContentPane());
+        NewTransactionPopUp.getContentPane().setLayout(NewTransactionPopUpLayout);
+        NewTransactionPopUpLayout.setHorizontalGroup(
+            NewTransactionPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, NewTransactionPopUpLayout.createSequentialGroup()
+                .addContainerGap(129, Short.MAX_VALUE)
+                .addGroup(NewTransactionPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(confirmTransactionButton)
+                    .addComponent(jLabel20)
+                    .addComponent(errorTransactionLabel)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+        NewTransactionPopUpLayout.setVerticalGroup(
+            NewTransactionPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewTransactionPopUpLayout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel21)
+                .addGap(50, 50, 50)
+                .addComponent(confirmTransactionButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(errorTransactionLabel)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -884,6 +943,7 @@ public class Application extends javax.swing.JFrame {
                     return canEdit [columnIndex];
                 }
             });
+            lastExercisesTable.getTableHeader().setReorderingAllowed(false);
             jScrollPane3.setViewportView(lastExercisesTable);
             if (lastExercisesTable.getColumnModel().getColumnCount() > 0) {
                 lastExercisesTable.getColumnModel().getColumn(0).setResizable(false);
@@ -925,6 +985,78 @@ public class Application extends javax.swing.JFrame {
 
             mainWindow.addTab("Exercises", exerciseTab);
 
+            transactionTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+                public void componentShown(java.awt.event.ComponentEvent evt) {
+                    transactionTabComponentShown(evt);
+                }
+            });
+
+            transactionsTable.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
+                },
+                new String [] {
+                    "Name", "Transaction ID", "Value", "Date"
+                }
+            ) {
+                boolean[] canEdit = new boolean [] {
+                    false, false, false, false
+                };
+
+                public boolean isCellEditable(int rowIndex, int columnIndex) {
+                    return canEdit [columnIndex];
+                }
+            });
+            transactionsTable.getTableHeader().setReorderingAllowed(false);
+            jScrollPane4.setViewportView(transactionsTable);
+            if (transactionsTable.getColumnModel().getColumnCount() > 0) {
+                transactionsTable.getColumnModel().getColumn(0).setResizable(false);
+                transactionsTable.getColumnModel().getColumn(1).setResizable(false);
+                transactionsTable.getColumnModel().getColumn(2).setResizable(false);
+                transactionsTable.getColumnModel().getColumn(3).setResizable(false);
+            }
+
+            jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+            jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel19.setText("TRANSACTIONS");
+
+            newTransactionButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+            newTransactionButton.setText("NEW TRANSACTION");
+            newTransactionButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    newTransactionButtonActionPerformed(evt);
+                }
+            });
+
+            javax.swing.GroupLayout transactionTabLayout = new javax.swing.GroupLayout(transactionTab);
+            transactionTab.setLayout(transactionTabLayout);
+            transactionTabLayout.setHorizontalGroup(
+                transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(transactionTabLayout.createSequentialGroup()
+                    .addContainerGap(420, Short.MAX_VALUE)
+                    .addGroup(transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel19)
+                        .addComponent(newTransactionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(408, 408, 408))
+            );
+            transactionTabLayout.setVerticalGroup(
+                transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(transactionTabLayout.createSequentialGroup()
+                    .addGap(77, 77, 77)
+                    .addComponent(jLabel19)
+                    .addGap(18, 18, 18)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addComponent(newTransactionButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(53, Short.MAX_VALUE))
+            );
+
+            mainWindow.addTab("Transactions", transactionTab);
+
             javax.swing.GroupLayout leaderboardTabLayout = new javax.swing.GroupLayout(leaderboardTab);
             leaderboardTab.setLayout(leaderboardTabLayout);
             leaderboardTabLayout.setHorizontalGroup(
@@ -938,19 +1070,6 @@ public class Application extends javax.swing.JFrame {
 
             mainWindow.addTab("Leader Board", leaderboardTab);
 
-            javax.swing.GroupLayout transactionTabLayout = new javax.swing.GroupLayout(transactionTab);
-            transactionTab.setLayout(transactionTabLayout);
-            transactionTabLayout.setHorizontalGroup(
-                transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 1280, Short.MAX_VALUE)
-            );
-            transactionTabLayout.setVerticalGroup(
-                transactionTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 687, Short.MAX_VALUE)
-            );
-
-            mainWindow.addTab("Transactions", transactionTab);
-
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
             getContentPane().setLayout(layout);
             layout.setHorizontalGroup(
@@ -959,7 +1078,7 @@ public class Application extends javax.swing.JFrame {
             );
             layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(mainWindow, javax.swing.GroupLayout.PREFERRED_SIZE, 720, Short.MAX_VALUE)
+                .addComponent(mainWindow, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
             );
 
             pack();
@@ -1207,6 +1326,35 @@ public class Application extends javax.swing.JFrame {
         FinishExercisePopUp.setVisible(true);
     }//GEN-LAST:event_startExerciseButtonActionPerformed
 
+    private void transactionTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_transactionTabComponentShown
+        if(this.logedIn){
+            Arrays a = null;
+            JSONObject transactions_list = this.fitapp.get_transactions("7",a);
+            JSONObject args = transactions_list.getJSONObject("args");
+            JSONArray transactions = args.getJSONArray("transactions");
+            DefaultTableModel table = (DefaultTableModel) transactionsTable.getModel();
+            if (table.getRowCount() > 0){
+                for (int i = table.getRowCount() - 1; i > -1; i--) {
+                    table.removeRow(i);
+                }
+            }
+            for (int i = 0 ; i < transactions.length(); i++){
+               JSONArray exercise = transactions.getJSONArray(i);
+               Object[] data= {exercise.get(0),exercise.get(1),exercise.get(2),exercise.get(3)};
+               table.addRow(data);
+            }
+            transactionsTable = new JTable(table);
+        }
+    }//GEN-LAST:event_transactionTabComponentShown
+
+    private void confirmTransactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmTransactionButtonActionPerformed
+        this.fitapp.create_transaction(0.99);
+    }//GEN-LAST:event_confirmTransactionButtonActionPerformed
+
+    private void newTransactionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newTransactionButtonActionPerformed
+        NewTransactionPopUp.setVisible(true);
+    }//GEN-LAST:event_newTransactionButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1258,11 +1406,13 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JTextField NewFriendName;
     private javax.swing.JDialog NewFriendPopUp;
     private javax.swing.JDialog NewGoalsPopUp;
+    private javax.swing.JDialog NewTransactionPopUp;
     private javax.swing.JButton OkAddFriendButton;
     private javax.swing.JComboBox<String> activitiesNamesCombo;
     private javax.swing.JButton addFriendButton;
     private javax.swing.JTextField bdayReg;
     private javax.swing.JLabel caloriesNumber;
+    private javax.swing.JButton confirmTransactionButton;
     private javax.swing.JButton createNewUserButton;
     private javax.swing.JProgressBar dailyStepsProgressBar;
     private javax.swing.JLabel distanceNumber;
@@ -1271,6 +1421,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel errorLabel;
     private javax.swing.JLabel errorNewFriendAdd;
     private javax.swing.JLabel errorRegLabel;
+    private javax.swing.JLabel errorTransactionLabel;
     private javax.swing.JLabel exerciseDateText;
     private javax.swing.JPanel exerciseTab;
     private javax.swing.JScrollPane friendsListTab;
@@ -1290,7 +1441,10 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1302,6 +1456,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JInternalFrame lastExerciseFrame;
     private javax.swing.JLabel lastExerciseText;
     private javax.swing.JTable lastExercisesTable;
@@ -1313,6 +1468,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JTextField newCaloriesGoals;
     private javax.swing.JButton newExerciseButton;
     private javax.swing.JTextField newStepsGoals;
+    private javax.swing.JButton newTransactionButton;
     private javax.swing.JTextField passwordLabel;
     private javax.swing.JTextField passwordReg;
     private javax.swing.JLabel percentageText;
@@ -1324,6 +1480,7 @@ public class Application extends javax.swing.JFrame {
     private javax.swing.JLabel stepsNumber;
     private javax.swing.JLabel stepsText;
     private javax.swing.JPanel transactionTab;
+    private javax.swing.JTable transactionsTable;
     private javax.swing.JTextField updateExerciseBpm;
     private javax.swing.JButton updateExerciseButton;
     private javax.swing.JTextField updateExerciseDistance;

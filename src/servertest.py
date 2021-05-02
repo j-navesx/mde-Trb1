@@ -135,8 +135,9 @@ def handle_get_request(self, message:dict):
         
         if ticket == "get_transactions":
             print("Getting Transactions to "+app)
-            q = "select * from transactions_screen where fit_user_id="+str(users[app])+" and t_date between sysdate - "+str(new_args["days"])+" and sysdate"
-            result, error_flag = execute_queries(q)
+            q = "select * from transactions_screen where fit_user_id = "+str(users[app])
+            result, error_flag = execute_queries(q, True)
+            print(result)
             result = list(map(list,result))
             [line.pop(0) for line in result]
             new_args["transactions"] = result
@@ -502,6 +503,28 @@ if __name__ == "__main__":
                 print("\nDatabase Empty")
                 print("Exiting...")
                 exit()
+
+        if sys.argv[1] == '-t':
+            print("\nStarting or Rebuilding Database\n")
+            result, error = execute_queries(get_queries("drop_all.sql"))
+            if not error:
+                print("Tables Dropped")
+            result, error = execute_queries(get_queries("fitness_schema.sql"))
+            if not error:
+                print("Database Build Successful")
+            for filename in get_queries("compile_crud.txt"):
+                procs = get_queries(filename)
+                procs.append(' ')
+                index = procs[0].find("asbegin")
+                index2 = procs[0].find("isbegin")
+                if index != -1:
+                    index += 2
+                    procs[0] = procs[0][:index] + " " + procs[0][index:]
+                if index2 != -1:
+                    index2 += 2
+                    procs[0] = procs[0][:index2] + " " + procs[0][index2:]
+                procs = ';'.join(procs)
+                result, error = execute_queries(procs)
         
         if sys.argv[1] == '-d':
             result, error = execute_queries(get_queries("drop_all.sql"))
