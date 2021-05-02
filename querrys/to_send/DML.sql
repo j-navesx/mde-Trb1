@@ -584,7 +584,7 @@ end;
 --  DDL for View MY_LEADERBOARD_SCREEN
 --------------------------------------------------------
 
-  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW MY_LEADERBOARD_SCREEN ("NAME", "PLACE") AS 
+  CREATE OR REPLACE FORCE NONEDITIONABLE VIEW MY_LEADERBOARD_SCREEN ("TOTALS_FIT_USER_ID", "NAME", "PLACE") AS 
   select 
         friends_leaderboard.totals_fit_user_id,
         activities_template.name, 
