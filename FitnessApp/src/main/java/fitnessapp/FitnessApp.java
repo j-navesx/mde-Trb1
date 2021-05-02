@@ -25,6 +25,22 @@ public class FitnessApp {
         return new JSONObject(response.body());
     }
     
+    public void get_AppId(){
+        HttpResponse<String> response = null;
+        try {
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create("http://localhost:9000/"))
+                    .header("Content-Type", "application/json")
+                    .method("GET", HttpRequest.BodyPublishers.ofString("{\n\t\"appid\": \"request\"\n}"))
+                    .build();
+            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            JSONObject new_appId = parseResponse(response);
+            this.appid = new_appId.getString("appid");
+        } catch (IOException | InterruptedException ex) {
+            Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public JSONObject get_leaderboard(Arrays data){
         HttpResponse<String> response = null;
         try {
@@ -45,7 +61,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_user_activities(Arrays users){
@@ -68,7 +87,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_users_paid(String begin_date, Arrays users){
@@ -92,7 +114,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_nonactive_users(Arrays users){
@@ -115,7 +140,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_exercises(Arrays exercises){
@@ -138,7 +166,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_daily_status(String begin_date, String end_date, Arrays status){
@@ -163,7 +194,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_transactions(String days, Arrays transactions){
@@ -187,7 +221,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_notifications(String days, Arrays notifications){
@@ -211,7 +248,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_friends_request(String users){
@@ -234,10 +274,13 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
-    public JSONObject get_friends_list(String users){
+    public JSONObject get_friends_list(Arrays users){
         HttpResponse<String> response = null;
         try {
             String str = String.format(""
@@ -257,11 +300,14 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject get_home(String name, int steps, int daily_steps, 
-            float weight, String duration, float distance, float calories, String begin_date){
+            float weight, int duration, float distance, float calories, String begin_date){
         HttpResponse<String> response = null;
         try {
             String str = String.format(""
@@ -288,7 +334,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject create_user(String username, String password, String email, 
@@ -319,7 +368,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject login(String username, String password){
@@ -343,7 +395,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject create_transaction(float value){
@@ -366,7 +421,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject create_friends(String name){
@@ -389,7 +447,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject create_exercises(String act_name){
@@ -412,7 +473,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject create_activities(String name, float cal_step_mult, float cal_dist_mult, float cal_time_mult){
@@ -438,7 +502,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject update_exercises(float distance, int steps, int bpm){
@@ -463,7 +530,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject update_friends(String name){
@@ -486,7 +556,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject update_daily_goals(int daily_steps, float daily_cals){
@@ -510,7 +583,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
     
     public JSONObject delete_friend(String user){
@@ -533,12 +609,10 @@ public class FitnessApp {
         } catch (IOException | InterruptedException ex) {
             Logger.getLogger(FitnessApp.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return parseResponse(response);
-    }
-    
-    public static void main(String[] args){
-        FitnessApp fit = new FitnessApp();
-        JSONObject create_user = fit.create_user("j.naves2", "mde", "j.naves@email", "Naves", 74, 171, "2000-08-12", 'M');
+        if(response.body().length() != 0){
+            return parseResponse(response);
+        }
+        return null;
     }
 }
 

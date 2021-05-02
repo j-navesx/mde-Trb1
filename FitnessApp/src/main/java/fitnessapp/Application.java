@@ -4,13 +4,18 @@
  * and open the template in the editor.
  */
 package fitnessapp;
-
+import java.util.Arrays;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import org.json.JSONObject;
+import org.json.JSONArray;
 /**
  *
  * @author Dell
  */
 public class Application extends javax.swing.JFrame {
-
+    public FitnessApp fitapp;
+    public boolean logedIn = false;
     /**
      * Creates new form Application
      */
@@ -25,31 +30,210 @@ public class Application extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
+        NewGoalsPopUp = new javax.swing.JDialog();
+        newStepsGoals = new javax.swing.JTextField();
+        newCaloriesGoals = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        setNewGoalsOkButton = new javax.swing.JButton();
+        mainWindow = new javax.swing.JTabbedPane();
+        LogRegTab = new javax.swing.JTabbedPane();
+        loginTab = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        usernameLabel = new javax.swing.JTextField();
+        passwordLabel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        logInButton = new javax.swing.JButton();
+        errorLabel = new javax.swing.JLabel();
+        registerTab = new javax.swing.JPanel();
+        homeScreenTab = new javax.swing.JScrollPane();
+        homeScreen = new javax.swing.JPanel();
         addExerciseButton = new javax.swing.JButton();
         friendsButton = new javax.swing.JButton();
         userIcon = new javax.swing.JLabel();
         userName = new javax.swing.JLabel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
+        stepsFrame = new javax.swing.JInternalFrame();
         stepsText = new javax.swing.JLabel();
         stepsNumber = new javax.swing.JLabel();
         dailyStepsProgressBar = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
-        jInternalFrame2 = new javax.swing.JInternalFrame();
-        stepsText1 = new javax.swing.JLabel();
-        stepsNumber1 = new javax.swing.JLabel();
-        dailyStepsProgressBar1 = new javax.swing.JProgressBar();
-        jLabel2 = new javax.swing.JLabel();
+        percentageText = new javax.swing.JLabel();
+        setNewGoalsButton = new javax.swing.JButton();
+        weightFrame = new javax.swing.JInternalFrame();
+        weightText = new javax.swing.JLabel();
+        weightNumber = new javax.swing.JLabel();
+        lastExerciseFrame = new javax.swing.JInternalFrame();
+        lastExerciseText = new javax.swing.JLabel();
+        distanceNumber = new javax.swing.JLabel();
+        durationNumber = new javax.swing.JLabel();
+        caloriesNumber = new javax.swing.JLabel();
+        exerciseDateText = new javax.swing.JLabel();
+        friendsListTab = new javax.swing.JScrollPane();
+        friendsListTable = new javax.swing.JTable();
+
+        NewGoalsPopUp.setTitle("Define New Goals");
+        NewGoalsPopUp.setMinimumSize(new java.awt.Dimension(460, 260));
+        NewGoalsPopUp.setPreferredSize(new java.awt.Dimension(480, 300));
+        NewGoalsPopUp.setSize(new java.awt.Dimension(480, 300));
+
+        newStepsGoals.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        newCaloriesGoals.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setText("New Steps");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("New Calories");
+
+        setNewGoalsOkButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        setNewGoalsOkButton.setText("OK");
+        setNewGoalsOkButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setNewGoalsOkButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout NewGoalsPopUpLayout = new javax.swing.GroupLayout(NewGoalsPopUp.getContentPane());
+        NewGoalsPopUp.getContentPane().setLayout(NewGoalsPopUpLayout);
+        NewGoalsPopUpLayout.setHorizontalGroup(
+            NewGoalsPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewGoalsPopUpLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(NewGoalsPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(setNewGoalsOkButton)
+                    .addGroup(NewGoalsPopUpLayout.createSequentialGroup()
+                        .addComponent(newStepsGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(163, 163, 163)
+                        .addComponent(newCaloriesGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(NewGoalsPopUpLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(201, 201, 201)
+                        .addComponent(jLabel2)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        NewGoalsPopUpLayout.setVerticalGroup(
+            NewGoalsPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NewGoalsPopUpLayout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(NewGoalsPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(NewGoalsPopUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(newStepsGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(newCaloriesGoals, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(setNewGoalsOkButton)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FitnessApp");
         setPreferredSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
 
-        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jScrollPane2.getVerticalScrollBar().setUnitIncrement(20);
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("LOGIN");
+
+        usernameLabel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameLabelActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel4.setText("username:");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel5.setText("password:");
+
+        logInButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        logInButton.setText("OK");
+        logInButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logInButtonActionPerformed(evt);
+            }
+        });
+
+        errorLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        errorLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout loginTabLayout = new javax.swing.GroupLayout(loginTab);
+        loginTab.setLayout(loginTabLayout);
+        loginTabLayout.setHorizontalGroup(
+            loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(logInButton)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(errorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(loginTabLayout.createSequentialGroup()
+                .addGap(292, 292, 292)
+                .addGroup(loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwordLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                    .addComponent(usernameLabel))
+                .addContainerGap(500, Short.MAX_VALUE))
+        );
+        loginTabLayout.setVerticalGroup(
+            loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginTabLayout.createSequentialGroup()
+                .addGap(175, 175, 175)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(usernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(loginTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(logInButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(errorLabel)
+                .addContainerGap(217, Short.MAX_VALUE))
+        );
+
+        LogRegTab.addTab("Login", loginTab);
+
+        javax.swing.GroupLayout registerTabLayout = new javax.swing.GroupLayout(registerTab);
+        registerTab.setLayout(registerTabLayout);
+        registerTabLayout.setHorizontalGroup(
+            registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1280, Short.MAX_VALUE)
+        );
+        registerTabLayout.setVerticalGroup(
+            registerTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 654, Short.MAX_VALUE)
+        );
+
+        LogRegTab.addTab("Register", registerTab);
+
+        mainWindow.addTab("Login and Register", LogRegTab);
+
+        homeScreenTab.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        homeScreenTab.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        homeScreenTab.getVerticalScrollBar().setUnitIncrement(20);
+        homeScreenTab.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                homeScreenTabFocusGained(evt);
+            }
+        });
+        homeScreenTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                homeScreenTabComponentShown(evt);
+            }
+        });
 
         addExerciseButton.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         addExerciseButton.setText("+");
@@ -75,7 +259,7 @@ public class Application extends javax.swing.JFrame {
         friendsButton.setFocusable(false);
 
         userIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        userIcon.setText("jLabel1");
+        userIcon.setText("[ICON]");
         userIcon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         userIcon.setMaximumSize(new java.awt.Dimension(205, 220));
         userIcon.setMinimumSize(new java.awt.Dimension(205, 220));
@@ -87,7 +271,7 @@ public class Application extends javax.swing.JFrame {
         userName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userName.setText("NAME");
 
-        jInternalFrame1.setVisible(true);
+        stepsFrame.setVisible(true);
 
         stepsText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         stepsText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -99,131 +283,222 @@ public class Application extends javax.swing.JFrame {
 
         dailyStepsProgressBar.setValue(10);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("10% out of 9999 steps");
+        percentageText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        percentageText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        percentageText.setText("10% out of 9999 steps");
 
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+        setNewGoalsButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        setNewGoalsButton.setText("Set New Goals");
+        setNewGoalsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                setNewGoalsButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout stepsFrameLayout = new javax.swing.GroupLayout(stepsFrame.getContentPane());
+        stepsFrame.getContentPane().setLayout(stepsFrameLayout);
+        stepsFrameLayout.setHorizontalGroup(
+            stepsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(stepsFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                .addGroup(stepsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(dailyStepsProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stepsNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stepsText)
-                    .addComponent(jLabel1))
+                    .addComponent(percentageText)
+                    .addComponent(setNewGoalsButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
+        stepsFrameLayout.setVerticalGroup(
+            stepsFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(stepsFrameLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(stepsText)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(stepsNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dailyStepsProgressBar, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(percentageText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(setNewGoalsButton)
                 .addContainerGap())
         );
 
-        jInternalFrame2.setVisible(true);
+        weightFrame.setVisible(true);
 
-        stepsText1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        stepsText1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        stepsText1.setText("Steps:");
+        weightText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        weightText.setText("Weight (kg): ");
 
-        stepsNumber1.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
-        stepsNumber1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        stepsNumber1.setText("12345");
+        weightNumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        weightNumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        weightNumber.setText("12345");
 
-        dailyStepsProgressBar1.setValue(10);
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("10% out of 9999 steps");
-
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+        javax.swing.GroupLayout weightFrameLayout = new javax.swing.GroupLayout(weightFrame.getContentPane());
+        weightFrame.getContentPane().setLayout(weightFrameLayout);
+        weightFrameLayout.setHorizontalGroup(
+            weightFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(weightFrameLayout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
+                .addGroup(weightFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(weightNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(weightText))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        weightFrameLayout.setVerticalGroup(
+            weightFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(weightFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(dailyStepsProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stepsNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stepsText1)
-                    .addComponent(jLabel2))
+                .addComponent(weightText, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(weightNumber)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
+
+        lastExerciseFrame.setVisible(true);
+
+        lastExerciseText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lastExerciseText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lastExerciseText.setText("Last Exercise:");
+
+        distanceNumber.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
+        distanceNumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        durationNumber.setFont(new java.awt.Font("Segoe UI", 1, 25)); // NOI18N
+        durationNumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        caloriesNumber.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        caloriesNumber.setToolTipText("");
+
+        exerciseDateText.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        exerciseDateText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout lastExerciseFrameLayout = new javax.swing.GroupLayout(lastExerciseFrame.getContentPane());
+        lastExerciseFrame.getContentPane().setLayout(lastExerciseFrameLayout);
+        lastExerciseFrameLayout.setHorizontalGroup(
+            lastExerciseFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lastExerciseFrameLayout.createSequentialGroup()
+                .addContainerGap(76, Short.MAX_VALUE)
+                .addGroup(lastExerciseFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lastExerciseText)
+                    .addComponent(caloriesNumber)
+                    .addComponent(exerciseDateText, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, lastExerciseFrameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(stepsText1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stepsNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dailyStepsProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(durationNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(distanceNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6))
+        );
+        lastExerciseFrameLayout.setVerticalGroup(
+            lastExerciseFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lastExerciseFrameLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(lastExerciseText)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(lastExerciseFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(distanceNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(durationNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(caloriesNumber)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(exerciseDateText)
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout homeScreenLayout = new javax.swing.GroupLayout(homeScreen);
+        homeScreen.setLayout(homeScreenLayout);
+        homeScreenLayout.setHorizontalGroup(
+            homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeScreenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(friendsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(186, 186, 186)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(weightFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stepsFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(userIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lastExerciseFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(240, 240, 240)
                 .addComponent(addExerciseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        homeScreenLayout.setVerticalGroup(
+            homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(homeScreenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(userIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(homeScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(addExerciseButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(friendsButton)))
                 .addGap(18, 18, 18)
                 .addComponent(userName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
-                .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116))
+                .addComponent(stepsFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(weightFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(lastExerciseFrame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         addExerciseButton.getAccessibleContext().setAccessibleName("addExerciseButton");
         userIcon.getAccessibleContext().setAccessibleName("userIcon");
 
-        jScrollPane2.setViewportView(jPanel2);
+        homeScreenTab.setViewportView(homeScreen);
+
+        mainWindow.addTab("Home Screen", homeScreenTab);
+
+        friendsListTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                friendsListTabComponentShown(evt);
+            }
+        });
+
+        friendsListTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "username", "Name"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        friendsListTable.getTableHeader().setReorderingAllowed(false);
+        friendsListTab.setViewportView(friendsListTable);
+        if (friendsListTable.getColumnModel().getColumnCount() > 0) {
+            friendsListTable.getColumnModel().getColumn(0).setResizable(false);
+            friendsListTable.getColumnModel().getColumn(1).setResizable(false);
+        }
+
+        mainWindow.addTab("Friends List", friendsListTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1008, Short.MAX_VALUE)
+            .addComponent(mainWindow)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(mainWindow, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         pack();
@@ -233,10 +508,147 @@ public class Application extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_addExerciseButtonActionPerformed
 
+    private void usernameLabelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameLabelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameLabelActionPerformed
+
+    private void logInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInButtonActionPerformed
+        if(usernameLabel.getText().length() == 0 || passwordLabel.getText().length() == 0){
+            errorLabel.setText("username or password blank");
+        }
+        else{
+            JSONObject result = this.fitapp.login(usernameLabel.getText(), passwordLabel.getText());
+            int success = result.getInt("success");
+            if (success == 1) {
+                LogRegTab.remove(loginTab);
+                LogRegTab.remove(registerTab);
+                mainWindow.remove(LogRegTab);
+                this.logedIn = true;
+                mainWindow.addTab("Home Screen",homeScreenTab);
+                mainWindow.addTab("Friends List",friendsListTab);
+            }
+            else{
+                errorLabel.setText("incorrect username or password");
+            }
+        }
+        
+    }//GEN-LAST:event_logInButtonActionPerformed
+
+    private void homeScreenTabFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_homeScreenTabFocusGained
+        if (this.logedIn){    
+            JSONObject home_screen = this.fitapp.get_home("",0,0,0,0,0,0,"");
+            JSONObject args = home_screen.getJSONObject("args");
+            String name = args.getString("name");
+            Object isteps = args.get("steps");
+            Object idaily_steps = args.get("daily_steps");
+            String weight = String.valueOf(args.get("weight"));
+            Object duration = args.get("duration");
+            Object distance = args.get("distance");
+            Object calories = args.get("calories");
+            Object begin_date = args.get("begin_date");
+            userName.setText(name);
+            if(isteps == JSONObject.NULL){
+                isteps = 0;
+            }
+            if(idaily_steps == JSONObject.NULL){
+                idaily_steps = 0;
+            }
+            int steps = (Integer) isteps;
+            int daily_steps = (Integer) idaily_steps;
+            stepsNumber.setText(String.valueOf(steps));
+            int percentage = 0;
+            if (daily_steps != 0){
+                percentage = (steps/daily_steps) * 100;
+            }
+            dailyStepsProgressBar.setValue(percentage);
+            percentageText.setText(String.format("%s %% out of %s", percentage, daily_steps));
+            weightNumber.setText(weight);
+            
+            if(duration != JSONObject.NULL){
+                durationNumber.setText(String.format("%s minutes", duration));
+                distanceNumber.setText(String.format("%s km", distance));
+                caloriesNumber.setText(String.format("%s calories", calories));
+                exerciseDateText.setText(String.format("%s", begin_date));
+            }
+            
+        }
+    }//GEN-LAST:event_homeScreenTabFocusGained
+
+    private void homeScreenTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_homeScreenTabComponentShown
+        if (this.logedIn){    
+            JSONObject home_screen = this.fitapp.get_home("",0,0,0,0,0,0,"");
+            JSONObject args = home_screen.getJSONObject("args");
+            String name = args.getString("name");
+            Object isteps = args.get("steps");
+            Object idaily_steps = args.get("daily_steps");
+            String weight = String.valueOf(args.get("weight"));
+            Object duration = args.get("duration");
+            Object distance = args.get("distance");
+            Object calories = args.get("calories");
+            Object begin_date = args.get("begin_date");
+            userName.setText(name);
+            if(isteps == JSONObject.NULL){
+                isteps = 0;
+            }
+            if(idaily_steps == JSONObject.NULL){
+                idaily_steps = 0;
+            }
+            int steps = (Integer) isteps;
+            int daily_steps = (Integer) idaily_steps;
+            stepsNumber.setText(String.valueOf(steps));
+            int percentage = 0;
+            if (daily_steps != 0){
+                percentage = (steps/daily_steps) * 100;
+            }
+            dailyStepsProgressBar.setValue(percentage);
+            percentageText.setText(String.format("%s %% out of %s", percentage, daily_steps));
+            weightNumber.setText(weight);
+            
+            if(duration != JSONObject.NULL){
+                durationNumber.setText(String.format("%s minutes", duration));
+                distanceNumber.setText(String.format("%s km", distance));
+                caloriesNumber.setText(String.format("%s calories", calories));
+                exerciseDateText.setText(String.format("%s", begin_date));
+            }
+            
+        }
+    }//GEN-LAST:event_homeScreenTabComponentShown
+
+    private void setNewGoalsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setNewGoalsButtonActionPerformed
+        NewGoalsPopUp.setVisible(true);
+    }//GEN-LAST:event_setNewGoalsButtonActionPerformed
+
+    private void setNewGoalsOkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_setNewGoalsOkButtonActionPerformed
+        if(newStepsGoals.getText().length() > 0  && newCaloriesGoals.getText().length() > 0){
+            int new_cals = Integer.valueOf(newCaloriesGoals.getText());
+            int new_steps = Integer.valueOf(newStepsGoals.getText());
+            this.fitapp.update_daily_goals(new_steps, new_cals);
+            NewGoalsPopUp.setVisible(false);
+        }
+    }//GEN-LAST:event_setNewGoalsOkButtonActionPerformed
+
+    private void friendsListTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_friendsListTabComponentShown
+        if(this.logedIn){
+            Arrays a = null;
+            JSONObject friends_list = this.fitapp.get_friends_list(a);
+            JSONObject args = friends_list.getJSONObject("args");
+            JSONArray users = args.getJSONArray("users");
+            DefaultTableModel table = (DefaultTableModel) friendsListTable.getModel();
+            for (int i = 0 ; i < users.length(); i++){
+               JSONArray user = users.getJSONArray(i);
+               String[] data= {String.valueOf(user.get(0)), String.valueOf(user.get(1))};
+               table.addRow(data);
+            }
+            friendsListTable = new JTable(table);
+        }
+    }//GEN-LAST:event_friendsListTabComponentShown
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        FitnessApp fitapp = new FitnessApp();
+        fitapp.get_AppId();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -263,27 +675,55 @@ public class Application extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Application().setVisible(true);
+                Application app = new Application();
+                app.setVisible(true);
+                app.fitapp = fitapp;
+                app.mainWindow.remove(app.homeScreenTab);
+                app.mainWindow.remove(app.friendsListTab);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane LogRegTab;
+    private javax.swing.JDialog NewGoalsPopUp;
     private javax.swing.JButton addExerciseButton;
+    private javax.swing.JLabel caloriesNumber;
     private javax.swing.JProgressBar dailyStepsProgressBar;
-    private javax.swing.JProgressBar dailyStepsProgressBar1;
+    private javax.swing.JLabel distanceNumber;
+    private javax.swing.JLabel durationNumber;
+    private javax.swing.JLabel errorLabel;
+    private javax.swing.JLabel exerciseDateText;
     private javax.swing.JButton friendsButton;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JInternalFrame jInternalFrame2;
+    private javax.swing.JScrollPane friendsListTab;
+    private javax.swing.JTable friendsListTable;
+    private javax.swing.JPanel homeScreen;
+    private javax.swing.JScrollPane homeScreenTab;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JInternalFrame lastExerciseFrame;
+    private javax.swing.JLabel lastExerciseText;
+    private javax.swing.JButton logInButton;
+    private javax.swing.JPanel loginTab;
+    private javax.swing.JTabbedPane mainWindow;
+    private javax.swing.JTextField newCaloriesGoals;
+    private javax.swing.JTextField newStepsGoals;
+    private javax.swing.JTextField passwordLabel;
+    private javax.swing.JLabel percentageText;
+    private javax.swing.JPanel registerTab;
+    private javax.swing.JButton setNewGoalsButton;
+    private javax.swing.JButton setNewGoalsOkButton;
+    private javax.swing.JInternalFrame stepsFrame;
     private javax.swing.JLabel stepsNumber;
-    private javax.swing.JLabel stepsNumber1;
     private javax.swing.JLabel stepsText;
-    private javax.swing.JLabel stepsText1;
     private javax.swing.JLabel userIcon;
     private javax.swing.JLabel userName;
+    private javax.swing.JTextField usernameLabel;
+    private javax.swing.JInternalFrame weightFrame;
+    private javax.swing.JLabel weightNumber;
+    private javax.swing.JLabel weightText;
     // End of variables declaration//GEN-END:variables
 }
