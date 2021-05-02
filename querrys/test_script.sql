@@ -163,3 +163,8 @@ select * from notification_screen;
 select * from recent_exercises_screen;
 select * from user_activities_screen;
 
+select * 
+from home_screen
+order by fit_user_id;
+
+select * from daily_goals;

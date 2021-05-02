@@ -1,5 +1,5 @@
 -- RF 1
--- Implementar as operações CRUD4 da BD em termos de utilizadores, perfis,
+-- Implementar as operações CRUD da BD em termos de utilizadores, perfis,
 -- objetivos diários e tipos de exercícios.
 
 select * from fit_user;
@@ -111,7 +111,7 @@ order by fit_user_id;
 
 select * 
 from daily_status_screen
-where fit_user_id = 1
+where fit_user_id = 18
 and status_date
 between to_date('2021-04-28','YYYY-MM-DD') 
 and to_date('2021-05-02','YYYY-MM-DD')+1;
@@ -256,18 +256,18 @@ order by place;
 -- Proponha um requisito relevante ainda por identificar e que requeira uma query 
 -- com funções de agregação (sum, max, min, etc) para o satisfazer. Implemente.
 
--- max() utilizado no trigger update_user_activity_trg
+-- sum() utilizado na function total_paid
 
 select sum(value)
 from (
     select value
     from transaction
     where t_date 
-    between to_date('2021-04-28','YYYY-MM-DD') and to_date('2021-05-02','YYYY-MM-DD')
+    between to_date('2021-04-28','YYYY-MM-DD') and to_date('2021-05-02','YYYY-MM-DD')+1
     and fit_user_id = 1
 );
 
--- sum() utilizado na function total_paid
+-- max() utilizado no trigger update_user_activity_trg
 
 select max(t_date)
 from ( 
